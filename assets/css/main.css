@@ -319,6 +319,13 @@ footer ul {
   margin: 0;
   padding: 0; }
 
+.post-content {
+  font-size: 18px; }
+
+.post-content h2 {
+  color: dodgerblue;
+  text-shadow: 1px 1px .5px black; }
+
 .panel, .well {
   border-radius: 0px; }
 
@@ -353,6 +360,23 @@ footer ul {
 
 .label {
   font-weight: normal; }
+
+.post-feed img {
+  margin-bottom: 10px; }
+
+.post-feed img:hover {
+  opacity: .7;
+  transition-duration: .8s; }
+
+.post-feed .date, .post-feed .excerpt {
+  margin-bottom: 27px; }
+
+.post-feed .date {
+  color: #999;
+  opacity: .7; }
+
+.post-feed .excerpt {
+  font-size: 1.5em; }
 
 /*END*/
 /*Extended functionality*/

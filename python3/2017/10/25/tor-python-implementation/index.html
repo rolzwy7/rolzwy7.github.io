@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <!--
 Rolzwy7 https://github.com/
 Generated with Jekyll: https://jekyllrb.com/
@@ -11,10 +11,10 @@ env: development
     
     
     <meta charset="utf-8">
-    <meta name="description" content="lorem pisum jada jada jada">
+    <meta name="description" content="How to implement Tor connections in your Python script on Windows OS.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Search</title>
+    <title>How to connect to Tor with Python on Windows</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
@@ -23,8 +23,8 @@ env: development
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Custom Style -->
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="http://localhost:4000/es/search/">
-    <link rel="alternate" type="application/rss+xml" title="Rolzwy7" href="/es/feed.xml">
+    <link rel="canonical" href="http://localhost:4000/python3/2017/10/25/tor-python-implementation/">
+    <link rel="alternate" type="application/rss+xml" title="Rolzwy7" href="/feed.xml">
     <!-- Imports JS body end -->
     <script src="/assets/js/header.js" charset="utf-8"></script>
     <link rel="icon" sizes="192x192" href="/assets/images/favicon.png">
@@ -43,7 +43,7 @@ env: development
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         </button>
-    <a class="navbar-brand" href="/es/">
+    <a class="navbar-brand" href="/">
         <img src="/assets/images/logo.svg" alt="">
         Rolzwy7
     </a>
@@ -55,7 +55,7 @@ env: development
                 <input type="text" name="search" value="" required autocomplete="off">
                 <input type="submit" name="" value="Search">
                 &emsp;|&emsp;
-                <a class="pointer upper select-lang">es</a>
+                <a class="pointer upper select-lang">en</a>
             </form>
         </li>
         <!-- <li><a href="/projects/">Projects</a></li> -->
@@ -67,6 +67,12 @@ env: development
         <li><a href="/categories/">All posts</a></li>
         <li class="divider"></li>
         <li class="dropdown-header">Category</li>
+        
+            <li><a href="/categories/?cat=python3">
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                &nbsp;
+                Python3
+            </a></li>
         
         <li>
         </ul>
@@ -116,7 +122,7 @@ env: development
         </li>
         <!-- Lang -->
         <li>
-            <a class="pointer upper select-lang">es</a>
+            <a class="pointer upper select-lang">en</a>
         </li>
         </ul>
         </div><!--/.nav-collapse -->
@@ -127,76 +133,169 @@ env: development
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="container" ng-app="SearchApp">
+        <div class="container">
     <div class="row">
-        <div class="col-lg-8 col-md-7 right-panel-posts">
-            <div>
-    <input id="search_input" type="text" onkeydown="as_you_type_search(this)" onchange="as_you_type_search(this)" placeholder="Search" autofocus autocomplete="off">
-    <hr>
-    <ul style="margin: 0;padding: 0;">
-        
-    </ul>
-</div>
-
-<script type="text/javascript">
-var as_you_type_search = function (this_) {
-    var search_term = $(this_).val();
-    var search_items = $(".search-item");
-    var c = 0;
-    for(var i=0;i<search_items.length;i++){
-        if($(search_items[i]).text().toLowerCase().indexOf(
-            search_term
-        ) >= 0) {
-            c += 1;
-            $(search_items[i]).css("display", "table-row");
-        } else {
-            $(search_items[i]).css("display", "none");
-        }
-    }
-}
-var on_load_param = function (text) {
-    var search_term = text;
-    var search_items = $(".search-item");
-    var c = 0;
-    for(var i=0;i<search_items.length;i++){
-        if($(search_items[i]).text().toLowerCase().indexOf(
-            search_term
-        ) >= 0) {
-            c += 1;
-            $(search_items[i]).css("display", "table-row");
-        } else {
-            $(search_items[i]).css("display", "none");
-        }
-    }
-}
-$(document).ready(function(){
-    var search_tmp = getUrlParameter("search");
-    if(search_tmp != undefined) {
-        if(search_tmp.length > 50) {
-            window.location = "/";
-        }
-        setTimeout(function(){
-            $("#search_input").val(search_tmp);
-            on_load_param(search_tmp);
-        }, 500);
-    }
-});
-</script>
+        <div class="col-lg-8 col-md-7">
+            <!-- Advert -->
+<!-- <div style="margin-bottom: 20px; text-align: center;">
+    Advert
+</div> -->
 
         </div>
+        <div class="col-lg-8 col-md-7">
+            <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+                <header class="post-header">
+                    <h1 class="post-title" itemprop="name headline">
+                        How to connect to Tor with Python on Windows
+                    </h1>
+                    <p>
+                        
+                        <span class="label label-success" style="margin-right: 5px;">
+                            Python3
+                        </span>
+                        
+                    </p>
+                    <p class="post-meta">
+                        <time datetime="2017-10-25T00:00:00+02:00" itemprop="datePublished">
+                            
+                            2017/10/25
+                        </time>
+                        
+                            &nbsp;|&nbsp;
+                            <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                <span itemprop="name">
+                                    <a href="https://github.com/rolzwy7">
+                                        Rolzwy7
+                                    </a>
+                                </span>
+                            </span>
+                        
+                    </p>
+                </header>
+
+            <div class="post-content" itemprop="articleBody">
+            How to implement Tor connections in your Python script on Windows OS.
+<!--separator-->
+<hr>
+<h2>Step 1 - Install Tor</h2>
+Install Tor Browser from <a href="https://www.torproject.org/">Tor Project</a> and
+unpack it.
+<br> ( I unpacked my files to disk root <b>E:\</b> so path to main Tor directory for me is
+<b>E:\Tor Browser</b> ) <br><br>
+It's always good to be sure that Tor is up to date so start Tor Browser, then click on
+<b>toc (menu button)</b>
+in the top right of the browser and then in <b>the circle with a question mark</b> and finally
+<b>"About Tor Browser"</b>
+
+<hr>
+<h2>Step 2 - Generate password</h2>
+To generate password for port control you need to use <b>tor.exe</b> executable that is located in
+<br> <b>E:\Tor Browser\Browser\TorBrowser\Tor</b> directory. <br>
+
+Open command line in this directory and type: <br> <br>
+<div class="well well-sm">
+    tor.exe --hash-password YOUR_SECRET_PASSWORD | more
+</div>
+Copy hash similiar to one below that appeared in the console: <br>
+<b>16:6C0FADC9C6C7A51560FCA22399129702F1E994CB9CC51F90A087CAB0E3</b> <br>
+And remember YOUR_SECRET_PASSWORD
+We'll need them later. <br> <br>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+        <i class="fa fa-star" aria-hidden="true"></i>
+    </h3>
+  </div>
+  <div class="panel-body">
+    Pay attention to <b>'| more'</b> at the end of command.
+If you don't use this pipe there will be no output. <br>
+  </div>
+</div>
+
+<a href="https://stackoverflow.com/questions/30601300/tor-console-output-issue-running-tor-hash-password-gives-no-result" target="_blank" class="post-link">
+    <i class="fa fa-stack-overflow" aria-hidden="true"></i>
+    &nbsp;No console output tor.exe
+</a>
+
+<hr>
+<h2>Step 3 - Create config file</h2>
+In <b>E:\Tor Browser\Browser\TorBrowser\Data\Tor</b> (where torrc is located) <br>
+Create new file. For example <b>tor_python_conf</b> and paste in everything what is below in bordered box.
+<br> <br>
+<span style="color:crimson;">
+    Remember to change paths if you have different then mine and replace my test password <br>
+    with yours (from Step 2) under 'HashedControlPassword'
+</span>
+<br> <br>
+<div class="well well-sm">
+DataDirectory E:\Tor Browser\Browser\TorBrowser\Data\Tor <br>
+GeoIPFile E:\Tor Browser\Browser\TorBrowser\Data\Tor\geoip <br>
+GeoIPv6File E:\Tor Browser\Browser\TorBrowser\Data\Tor\geoip6 <br>
+HiddenServiceStatistics 0 <br>
+<br>
+SocksPort 9150 IPv6Traffic PreferIPv6 KeepAliveIsolateSOCKSAuth <br>
+ControlPort 9151 <br>
+CookieAuthentication 1 <br>
+<br>
+HashedControlPassword
+16:6C0FADC9C6C7A51560FCA22399129702F1E994CB9CC51F90A087CAB0E3 <br>
+</div>
+<hr>
+<h2>Step 4 - Start Tor with own config file</h2>
+With command line start tor.exe. <br>
+Parameter -f is a path to config file that we created in Step 3<br>
+<div class="well well-sm">
+tor.exe -f "E:\Tor Browser\Browser\TorBrowser\Data\Tor\tor_python_conf" | more
+</div>
+Wait until Tor server fully start. (remember to add '| more' at the end of previous command)
+<h2>Step 4 - Implement Tor client in your Python script</h2>
+Download simple tor control module from: <a href="https://github.com/rolzwy7/onion">Here</a>
+<br>
+Unpack it and change root directory to (for example) <b>onion</b> <br>
+Install all needed modules from <b>requirements.txt</b> with pip. <br> <br>
+<div class="well well-sm">
+python -m pip install -r requirements.txt
+</div>
+Create your python script in the same directory that <b>onion</b> directory is and<br>
+paste everything below <br>
+<br>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="kn">from</span> <span class="nn">onion</span> <span class="kn">import</span> <span class="n">Tor</span><span class="p">,</span> <span class="n">TorRequests</span>
+<span class="n">object_</span> <span class="o">=</span> <span class="n">Tor</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="s">"YOUR_SECRET_PASSWORD"</span><span class="p">)</span>
+<span class="n">object_</span> <span class="o">=</span> <span class="n">TorRequests</span><span class="p">()</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+<br>
+If you see your "Tor current endpoint" that means everything's working properly.
+
+            </div>
+
+            <!--  -->
+            </article>
+        </div>
+    <!-- Right content -->
         <div class="col-lg-4 col-md-5 right-panel-posts">
             <!-- Advert -->
 <!-- <div style="margin-bottom: 20px; text-align: center;">
     Advert
 </div> -->
 
+            <!-- Posts -->
             <div class="panel panel-primary">
             <div class="panel-heading">
                 <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>
-                &nbsp;Last posts
+                &nbsp;Related posts
             </div>
                 <div class="panel-body">
                     <ul class="list-group">
+                        
+                        
+                        
+                        <li class="list-group-item" title="2017/10/25">
+                            <a href="/python3/2017/10/25/tor-python-implementation/">
+                                How to connect to Tor with Python on Windows
+                            </a>
+                        </li>
                         
                     </ul>
                 </div>
@@ -210,12 +309,17 @@ $(document).ready(function(){
                 <div class="panel-body">
                     <ul class="list-group">
                         
+                        <li class="list-group-item">
+                            <a href="/categories/?cat=python3">
+                                Python3
+                            </a>
+                        </li>
+                        
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-
 </div>
 
       </div>
@@ -329,7 +433,7 @@ ornvijkhl2s@gmail.com
 </a> 2017
 
                     &nbsp;|&nbsp;
-                    <a href="/es/feed.xml" target="_blank">
+                    <a href="/feed.xml" target="_blank">
     <i class="fa fa-rss" aria-hidden="true"></i>
     
     &nbsp;RSS
@@ -369,7 +473,7 @@ ornvijkhl2s@gmail.com
                     </li>
                     <li>
 
-                        <a href="/es/search/">
+                        <a href="/es/python3/2017/10/25/tor-python-implementation/">
                         <img src="/assets/images/es.png" alt="Español">
                         &emsp;Español&emsp;
                         </a>
