@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="en" /><updated>2017-10-27T17:34:09+02:00</updated><id>/</id><title type="html">Rolzwy7</title><subtitle>Another blog about programming. Nothing to see here.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="en" /><updated>2017-10-27T19:55:29+02:00</updated><id>/</id><title type="html">Rolzwy7</title><subtitle>Another blog about programming. Nothing to see here.
 </subtitle><entry><title type="html">How to connect to Tor with Python on Windows</title><link href="/python3/2017/10/25/tor-python-implementation/" rel="alternate" type="text/html" title="How to connect to Tor with Python on Windows" /><published>2017-10-25T00:00:00+02:00</published><updated>2017-10-25T00:00:00+02:00</updated><id>/python3/2017/10/25/tor-python-implementation</id><content type="html" xml:base="/python3/2017/10/25/tor-python-implementation/">How to implement Tor connections in your Python script on Windows OS.
 &lt;!--separator--&gt;
 &lt;div class=&quot;row&quot;&gt;
@@ -7,13 +7,13 @@
         Used Python3 modules: &lt;br&gt;
         &lt;ul&gt;
             &lt;b&gt;
-                &lt;li&gt;socket &lt;/li&gt;
-                &lt;li&gt;socks &lt;/li&gt;
-                &lt;li&gt;os &lt;/li&gt;
-                &lt;li&gt;time &lt;/li&gt;
-                &lt;li&gt;pdb &lt;/li&gt;
-                &lt;li&gt;socks &lt;/li&gt;
-                &lt;li&gt;requests &lt;/li&gt;
+                &lt;li&gt; - socket &lt;/li&gt;
+                &lt;li&gt; - socks &lt;/li&gt;
+                &lt;li&gt; - os &lt;/li&gt;
+                &lt;li&gt; - time &lt;/li&gt;
+                &lt;li&gt; - pdb &lt;/li&gt;
+                &lt;li&gt; - socks &lt;/li&gt;
+                &lt;li&gt; - requests &lt;/li&gt;
             &lt;/b&gt;
         &lt;/ul&gt;
         &lt;hr&gt;
@@ -111,13 +111,11 @@
         Create your python script in the same directory that &lt;b&gt;onion&lt;/b&gt; directory is and&lt;br&gt;
         paste everything below &lt;br&gt;
         &lt;br&gt;
-        &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
-3
-4&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;        &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;onion&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Tor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TorRequests&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;object_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Tor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;auth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;YOUR_SECRET_PASSWORD&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;object_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TorRequests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;w&quot;&gt;
+3&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;onion&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Tor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TorRequests&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;object_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Tor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;auth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;YOUR_SECRET_PASSWORD&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;object_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TorRequests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
         &lt;br&gt;
         Start your script. &lt;br&gt;
