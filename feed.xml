@@ -1,31 +1,46 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2017-10-26T22:12:18+02:00</updated><id>http://localhost:4000/</id><title type="html">Rolzwy7</title><subtitle>lorem pisum jada jada jada
-</subtitle><entry><title type="html">How to connect to Tor with Python on Windows</title><link href="http://localhost:4000/python3/2017/10/25/tor-python-implementation/" rel="alternate" type="text/html" title="How to connect to Tor with Python on Windows" /><published>2017-10-25T00:00:00+02:00</published><updated>2017-10-25T00:00:00+02:00</updated><id>http://localhost:4000/python3/2017/10/25/tor-python-implementation</id><content type="html" xml:base="http://localhost:4000/python3/2017/10/25/tor-python-implementation/">How to implement Tor connections in your Python script on Windows OS.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="en" /><updated>2017-10-27T17:34:09+02:00</updated><id>/</id><title type="html">Rolzwy7</title><subtitle>Another blog about programming. Nothing to see here.
+</subtitle><entry><title type="html">How to connect to Tor with Python on Windows</title><link href="/python3/2017/10/25/tor-python-implementation/" rel="alternate" type="text/html" title="How to connect to Tor with Python on Windows" /><published>2017-10-25T00:00:00+02:00</published><updated>2017-10-25T00:00:00+02:00</updated><id>/python3/2017/10/25/tor-python-implementation</id><content type="html" xml:base="/python3/2017/10/25/tor-python-implementation/">How to implement Tor connections in your Python script on Windows OS.
 &lt;!--separator--&gt;
-&lt;hr&gt;
-&lt;h2&gt;Step 1 - Install Tor&lt;/h2&gt;
-Install Tor Browser from &lt;a href=&quot;https://www.torproject.org/&quot;&gt;Tor Project&lt;/a&gt; and
-unpack it.
-&lt;br&gt; ( I unpacked my files to disk root &lt;b&gt;E:\&lt;/b&gt; so path to main Tor directory for me is
-&lt;b&gt;E:\Tor Browser&lt;/b&gt; ) &lt;br&gt;&lt;br&gt;
-It's always good to be sure that Tor is up to date so start Tor Browser, then click on
-&lt;b&gt;toc (menu button)&lt;/b&gt;
-in the top right of the browser and then in &lt;b&gt;the circle with a question mark&lt;/b&gt; and finally
-&lt;b&gt;&quot;About Tor Browser&quot;&lt;/b&gt;
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-lg-12&quot;&gt;
+        &lt;hr&gt;
+        Used Python3 modules: &lt;br&gt;
+        &lt;ul&gt;
+            &lt;b&gt;
+                &lt;li&gt;socket &lt;/li&gt;
+                &lt;li&gt;socks &lt;/li&gt;
+                &lt;li&gt;os &lt;/li&gt;
+                &lt;li&gt;time &lt;/li&gt;
+                &lt;li&gt;pdb &lt;/li&gt;
+                &lt;li&gt;socks &lt;/li&gt;
+                &lt;li&gt;requests &lt;/li&gt;
+            &lt;/b&gt;
+        &lt;/ul&gt;
+        &lt;hr&gt;
+        &lt;h2&gt;Step 1 - Install Tor&lt;/h2&gt;
+        Install Tor Browser from &lt;a href=&quot;https://www.torproject.org/&quot;&gt;Tor Project&lt;/a&gt; and
+        unpack it.
+        &lt;br&gt; ( I unpacked my files to disk root &lt;b&gt;E:\&lt;/b&gt; so path to main Tor directory for me is
+        &lt;b&gt;E:\Tor Browser&lt;/b&gt; ) &lt;br&gt;&lt;br&gt;
+        It's always good to be sure that Tor is up to date so start Tor Browser, then click on
+        &lt;b&gt;toc (menu button)&lt;/b&gt;
+        in the top right of the browser and then in &lt;b&gt;the circle with a question mark&lt;/b&gt; and finally
+        &lt;b&gt;&quot;About Tor Browser&quot;&lt;/b&gt;
 
-&lt;hr&gt;
-&lt;h2&gt;Step 2 - Generate password&lt;/h2&gt;
-To generate password for port control you need to use &lt;b&gt;tor.exe&lt;/b&gt; executable that is located in
-&lt;br&gt; &lt;b&gt;E:\Tor Browser\Browser\TorBrowser\Tor&lt;/b&gt; directory. &lt;br&gt;
+        &lt;hr&gt;
+        &lt;h2&gt;Step 2 - Generate password&lt;/h2&gt;
+        To generate password for port control you need to use &lt;b&gt;tor.exe&lt;/b&gt; executable that is located in
+        &lt;br&gt; &lt;b&gt;E:\Tor Browser\Browser\TorBrowser\Tor&lt;/b&gt; directory. &lt;br&gt;
 
-Open command line in this directory and type: &lt;br&gt; &lt;br&gt;
-&lt;div class=&quot;well well-sm&quot;&gt;
-    tor.exe --hash-password YOUR_SECRET_PASSWORD | more
-&lt;/div&gt;
-Copy hash similiar to one below that appeared in the console: &lt;br&gt;
-&lt;b&gt;16:6C0FADC9C6C7A51560FCA22399129702F1E994CB9CC51F90A087CAB0E3&lt;/b&gt; &lt;br&gt;
-And remember YOUR_SECRET_PASSWORD
-We'll need them later. &lt;br&gt; &lt;br&gt;
-&lt;div class=&quot;panel panel-warning&quot;&gt;
+        Open command line in this directory and type: &lt;br&gt; &lt;br&gt;
+        &lt;div class=&quot;well well-sm&quot;&gt;
+            tor.exe --hash-password YOUR_SECRET_PASSWORD | more
+        &lt;/div&gt;
+        Copy hash similiar to one below that appeared in the console: &lt;br&gt;
+        &lt;b&gt;16:6C0FADC9C6C7A51560FCA22399129702F1E994CB9CC51F90A087CAB0E3&lt;/b&gt; &lt;br&gt;
+        And remember YOUR_SECRET_PASSWORD
+        We'll need them later. &lt;br&gt; &lt;br&gt;
+        &lt;div class=&quot;panel panel-warning&quot;&gt;
   &lt;div class=&quot;panel-heading&quot;&gt;
     &lt;h3 class=&quot;panel-title&quot;&gt;
         &lt;i class=&quot;fa fa-star&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
@@ -33,62 +48,82 @@ We'll need them later. &lt;br&gt; &lt;br&gt;
   &lt;/div&gt;
   &lt;div class=&quot;panel-body&quot;&gt;
     Pay attention to &lt;b&gt;'| more'&lt;/b&gt; at the end of command.
-If you don't use this pipe there will be no output. &lt;br&gt;
+        If you don't use this pipe there will be no output. &lt;br&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;a href=&quot;https://stackoverflow.com/questions/30601300/tor-console-output-issue-running-tor-hash-password-gives-no-result&quot; target=&quot;_blank&quot; class=&quot;post-link&quot;&gt;
+        &lt;a href=&quot;https://stackoverflow.com/questions/30601300/tor-console-output-issue-running-tor-hash-password-gives-no-result&quot; target=&quot;_blank&quot; class=&quot;post-link&quot;&gt;
     &lt;i class=&quot;fa fa-stack-overflow&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
     &amp;nbsp;No console output tor.exe
 &lt;/a&gt;
 
-&lt;hr&gt;
-&lt;h2&gt;Step 3 - Create config file&lt;/h2&gt;
-In &lt;b&gt;E:\Tor Browser\Browser\TorBrowser\Data\Tor&lt;/b&gt; (where torrc is located) &lt;br&gt;
-Create new file. For example &lt;b&gt;tor_python_conf&lt;/b&gt; and paste in everything what is below in bordered box.
-&lt;br&gt; &lt;br&gt;
-&lt;span style=&quot;color:crimson;&quot;&gt;
-    Remember to change paths if you have different then mine and replace my test password &lt;br&gt;
-    with yours (from Step 2) under 'HashedControlPassword'
-&lt;/span&gt;
-&lt;br&gt; &lt;br&gt;
-&lt;div class=&quot;well well-sm&quot;&gt;
-DataDirectory E:\Tor Browser\Browser\TorBrowser\Data\Tor &lt;br&gt;
-GeoIPFile E:\Tor Browser\Browser\TorBrowser\Data\Tor\geoip &lt;br&gt;
-GeoIPv6File E:\Tor Browser\Browser\TorBrowser\Data\Tor\geoip6 &lt;br&gt;
-HiddenServiceStatistics 0 &lt;br&gt;
-&lt;br&gt;
-SocksPort 9150 IPv6Traffic PreferIPv6 KeepAliveIsolateSOCKSAuth &lt;br&gt;
-ControlPort 9151 &lt;br&gt;
-CookieAuthentication 1 &lt;br&gt;
-&lt;br&gt;
-HashedControlPassword
-16:6C0FADC9C6C7A51560FCA22399129702F1E994CB9CC51F90A087CAB0E3 &lt;br&gt;
-&lt;/div&gt;
-&lt;hr&gt;
-&lt;h2&gt;Step 4 - Start Tor with own config file&lt;/h2&gt;
-With command line start tor.exe. &lt;br&gt;
-Parameter -f is a path to config file that we created in Step 3&lt;br&gt;
-&lt;div class=&quot;well well-sm&quot;&gt;
-tor.exe -f &quot;E:\Tor Browser\Browser\TorBrowser\Data\Tor\tor_python_conf&quot; | more
-&lt;/div&gt;
-Wait until Tor server fully start. (remember to add '| more' at the end of previous command)
-&lt;h2&gt;Step 4 - Implement Tor client in your Python script&lt;/h2&gt;
-Download simple tor control module from: &lt;a href=&quot;https://github.com/rolzwy7/onion&quot;&gt;Here&lt;/a&gt;
-&lt;br&gt;
-Unpack it and change root directory to (for example) &lt;b&gt;onion&lt;/b&gt; &lt;br&gt;
-Install all needed modules from &lt;b&gt;requirements.txt&lt;/b&gt; with pip. &lt;br&gt; &lt;br&gt;
-&lt;div class=&quot;well well-sm&quot;&gt;
-python -m pip install -r requirements.txt
-&lt;/div&gt;
-Create your python script in the same directory that &lt;b&gt;onion&lt;/b&gt; directory is and&lt;br&gt;
-paste everything below &lt;br&gt;
-&lt;br&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+        &lt;hr&gt;
+         &lt;!-- advert in article --&gt;
+        &lt;script async src=&quot;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&quot;&gt;&lt;/script&gt;
+        &lt;ins class=&quot;adsbygoogle&quot;
+        style=&quot;display:block; text-align:center;&quot;
+        data-ad-layout=&quot;in-article&quot;
+        data-ad-format=&quot;fluid&quot;
+        data-ad-client=&quot;ca-pub-6537025406088107&quot;
+        data-ad-slot=&quot;3525271800&quot;&gt;&lt;/ins&gt;
+        &lt;script&gt;
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        &lt;/script&gt;
+        &lt;hr&gt;
+        &lt;h2&gt;Step 3 - Create config file&lt;/h2&gt;
+        In &lt;b&gt;E:\Tor Browser\Browser\TorBrowser\Data\Tor&lt;/b&gt; (where torrc is located) &lt;br&gt;
+        Create new file. For example &lt;b&gt;tor_python_conf&lt;/b&gt; and paste in everything what is below in bordered box.
+        &lt;br&gt; &lt;br&gt;
+        &lt;span style=&quot;color:crimson;&quot;&gt;
+            Remember to change paths if you have different then mine and replace my test password &lt;br&gt;
+            with yours (from Step 2) under 'HashedControlPassword'
+        &lt;/span&gt;
+        &lt;br&gt; &lt;br&gt;
+        &lt;div class=&quot;well well-sm&quot;&gt;
+        DataDirectory E:\Tor Browser\Browser\TorBrowser\Data\Tor &lt;br&gt;
+        GeoIPFile E:\Tor Browser\Browser\TorBrowser\Data\Tor\geoip &lt;br&gt;
+        GeoIPv6File E:\Tor Browser\Browser\TorBrowser\Data\Tor\geoip6 &lt;br&gt;
+        HiddenServiceStatistics 0 &lt;br&gt;
+        &lt;br&gt;
+        SocksPort 9150 IPv6Traffic PreferIPv6 KeepAliveIsolateSOCKSAuth &lt;br&gt;
+        ControlPort 9151 &lt;br&gt;
+        CookieAuthentication 1 &lt;br&gt;
+        &lt;br&gt;
+        HashedControlPassword
+        16:6C0FADC9C6C7A51560FCA22399129702F1E994CB9CC51F90A087CAB0E3 &lt;br&gt;
+        &lt;/div&gt;
+        &lt;hr&gt;
+        &lt;h2&gt;Step 4 - Start Tor with own config file&lt;/h2&gt;
+        With command line start tor.exe. &lt;br&gt;
+        Parameter -f is a path to config file that we created in Step 3&lt;br&gt;
+        &lt;div class=&quot;well well-sm&quot;&gt;
+        tor.exe -f &quot;E:\Tor Browser\Browser\TorBrowser\Data\Tor\tor_python_conf&quot; | more
+        &lt;/div&gt;
+        Wait until Tor server fully start. (remember to add '| more' at the end of previous command)
+        &lt;h2&gt;Step 4 - Implement Tor client in your Python script&lt;/h2&gt;
+        Download simple tor control module from: &lt;a href=&quot;https://github.com/rolzwy7/onion&quot;&gt;Here&lt;/a&gt;
+        &lt;br&gt;
+        Unpack it and change root directory to (for example) &lt;b&gt;onion&lt;/b&gt; &lt;br&gt;
+        Install all needed modules from &lt;b&gt;requirements.txt&lt;/b&gt; with pip. &lt;br&gt; &lt;br&gt;
+        &lt;div class=&quot;well well-sm&quot;&gt;
+        python -m pip install -r requirements.txt
+        &lt;/div&gt;
+        Create your python script in the same directory that &lt;b&gt;onion&lt;/b&gt; directory is and&lt;br&gt;
+        paste everything below &lt;br&gt;
+        &lt;br&gt;
+        &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
-3&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;onion&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Tor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TorRequests&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;object_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Tor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;auth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;YOUR_SECRET_PASSWORD&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;object_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TorRequests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+3
+4&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;        &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;onion&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Tor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TorRequests&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;object_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Tor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;auth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;YOUR_SECRET_PASSWORD&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;object_&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TorRequests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;br&gt;
-If you see your &quot;Tor current endpoint&quot; that means everything's working properly.</content><author><name>Rolzwy7</name></author><category term="python" /><category term="tor" /><summary type="html">How to implement Tor connections in your Python script on Windows OS.</summary></entry></feed>
+        &lt;br&gt;
+        Start your script. &lt;br&gt;
+        If you see your &quot;Tor current endpoint&quot; that means everything's working properly.
+        &lt;br&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</content><author><name>Rolzwy7</name></author><category term="python" /><category term="tor" /><summary type="html">How to implement Tor connections in your Python script on Windows OS.</summary></entry></feed>
