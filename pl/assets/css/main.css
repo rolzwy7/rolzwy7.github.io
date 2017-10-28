@@ -333,6 +333,9 @@ footer ul {
 .panel, .well {
   border-radius: 0px; }
 
+.well {
+  word-break: break-all; }
+
 .panel-warning > .panel-heading {
   color: #ffffff;
   background-color: #f0ad4e;
