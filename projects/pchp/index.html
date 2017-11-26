@@ -1,0 +1,267 @@
+<!-- //
+//
+//
+Dont look here senpai. It's a mess
+//
+//
+// -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <style media="screen">
+            * {
+                font-family: Consolas;
+            }
+            a:visited {color:dodgerblue;}
+            a {color:dodgerblue;text-decoration: none;}
+            a:hover {color:rgba(30, 144, 255, .7);}
+            .pointer {
+                cursor: pointer;
+            }
+            /*HR*/
+            hr {
+              height: 0;
+              -webkit-box-sizing: content-box;
+                 -moz-box-sizing: content-box;
+                      box-sizing: content-box;
+            }
+            hr {
+              margin-top: 20px;
+              margin-bottom: 20px;
+              border: 0;
+              border-top: 1px solid #eee;
+            }
+            @keyframes logoAnim {
+                0%   {color:rgba(0,0,0, 1.0);}
+                25%  {color:rgba(0,0,0, .9);}
+                50%  {color:rgba(0,0,0, .7);}
+                75%  {color:rgba(0,0,0, .9);}
+                100% {color:rgba(0,0,0, 1.0);}
+            }
+            .randomPick {
+                animation-name: logoAnim;
+                animation-duration: 1.5s;
+                animation-iteration-count: infinite;
+            }
+            .howto li {
+                margin-bottom: 5px;
+            }
+        </style>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Pro/g/ramming Challanges v4.0 - Random challange picker.">
+        <meta name="keywords" content="Programming Challanges, /g/, Pro/g/ramming Challanges v4.0">
+        <meta name="author" content="Rolzwy7">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+        <title>Pro/g/ramming Challanges v4.0 - Random Picker</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body ng-app="ProgChRandomPickerApp" ng-controller="mainCtrl" ng-cloak>
+        <!-- Navbar -->
+        <md-toolbar>
+          <div class="md-toolbar-tools" style="background:rgba(0, 0, 0, 0.95);">
+
+            <md-button class="md-icon-button" aria-label="Sidenav" ng-click="toggleLeft()">
+                <md-icon ng-style="{'font-size':'18px'}">
+                     <i class="fa fa-bars" aria-hidden="true"></i>
+                </md-icon>
+            </md-button>
+
+            <h2 flex md-truncate>
+                <a style="color:white;" class="md-title">
+                    Pro/g/ramming Challanges v4.0 - Random Picker
+                </a>
+            </h2>
+
+            <md-button class="md-icon-button" aria-label="Logout">
+                <md-icon ng-style="{'font-size':'18px'}">
+                    <i class="fa fa-circle" aria-hidden="true"></i>
+                </md-icon>
+            </md-button>
+
+          </div>
+        </md-toolbar>
+        <!-- Sidenav -->
+        <md-sidenav class="md-sidenav-left"
+                    md-component-id="left"
+                    md-disable-backdrop md-whiteframe="4">
+            <md-toolbar class="pointer" ng-click="toggleLeft()" style="background:rgba(0, 0, 0, 0.95);">
+                <h1 class="md-toolbar-tools" layout-align="end center">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                &nbsp;
+                </h1>
+            </md-toolbar>
+
+            <md-content>
+
+            <md-list-item class="secondary-button-padding" ng-href="/">
+            <i class="fa fa-code" aria-hidden="true"></i>&nbsp;
+            <span>Show all challanges</span>
+            </md-list-item>
+
+            </md-content>
+        </md-sidenav>
+        <div layout="column">
+            <div flex style="text-align:center;margin-top:15px;">
+                <span class="fa-stack fa-lg pointer randomPick" title="Pick random challange" style="font-size:40px;">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-random fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                </span>
+                <br>
+                Click here to pick random challange!
+                <br>
+
+<md-input-container md-no-float>
+<label>Difficulty</label>
+<md-select ng-model="ctrl.userState">
+<md-option><em>All</em></md-option>
+<md-option ng-repeat="state in ctrl.states" ng-value="state.abbrev" ng-disabled="$index === 1">
+{{state.abbrev}}
+</md-option>
+</md-select>
+</md-input-container>
+
+<md-input-container md-no-float>
+<label>Problem type</label>
+<md-select ng-model="ctrl.userState">
+<md-option><em>All</em></md-option>
+<md-option ng-repeat="state in ctrl.states" ng-value="state.abbrev" ng-disabled="$index === 1">
+{{state.abbrev}}
+</md-option>
+</md-select>
+</md-input-container>
+
+                <hr>
+            </div>
+        </div>
+
+        <div layout="column" layout-gt-sm="row">
+            <div flex="33" style="padding:11px;">
+                <h2>
+                    <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                    &nbsp;Resources
+                </h2>
+            </div>
+            <div flex="33" style="padding:11px;">
+                <h2>
+                    <i class="fa fa-trophy" aria-hidden="true"></i>
+                    &nbsp;Additional Challanges
+                </h2>
+                <ul class="howto" style="list-style:none;">
+                    <li><a target="_blank" href="http://hackerrank.com">
+                    <b>hackerrank.com</b>
+                    </a>
+                    </li>
+                    <li><a target="_blank" href="http://codechef.com">
+                    <b>codechef.com</b>
+                    </a>
+                    </li>
+                    <li><a target="_blank" href="http://codefights.com">
+                    <b>codefights.com</b>
+                    </a>
+                    </li>
+                    <li><a target="_blank" href="http://projecteuler.net">
+                    <b>projecteuler.net</b>
+                    </a>
+                    </li>
+                    <li><a target="_blank" href="http://rosettacode.org">
+                    <b>rosettacode.org</b>
+                    </a>
+                    </li>
+                    <li><a target="_blank" href="http://codeabbey.com">
+                    <b>codeabbey.com</b>
+                    </a>
+                    </li>
+                    <li><a target="_blank" href="http://codingbat.com">
+                    <b>codingbat.com</b>
+                    </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- How To -->
+            <div flex="33" style="padding:11px;">
+                <h2>
+                    <i class="fa fa-question-circle" aria-hidden="true"></i>
+                    &nbsp;How To
+                </h2>
+                <ul class="howto" style="list-style:upper-roman;">
+                    <li>
+                        <b>Learn to use git</b> <br>
+                        Learn to use git, commit early and often. <br>
+                        Build your portfolio. Present your work on your website.
+                        (You can use GitPages)
+                    </li>
+                    <li>
+                        <b>Understand the problem</b> <br>
+                        Do your own research. It's incedibly useful skill which
+                        can be applied to and can be applied to anything else.
+                        <br>
+                        If the problem seems difficult, good! Draw it out, write it out,
+                        do whatever you need to do to solve it.
+                        <br>
+                        If the problem you're solving is too easy, brainstorm and
+                        try adding additional functionality. Try combining it with
+                        other ideas to make your software more challanging.
+                    </li>
+                    <li>
+                        <b>Implementation</b> <br>
+                        Take the language you're most familiar with to start your project.
+                        If the problem is too easy, pick a language you've never used before.
+                        Don't be afraid to write awful code and don't worry about the best
+                        implementation. Get a working implementation first, then refactor and
+                        clean it up.
+                    </li>
+                    <li>
+                        <b>Test</b> <br>
+                        Write test cases for your program. Get used to thinking about how
+                        you can break your software. Find problems, bugs and fix them.
+                        Repeat over and over again and document it. Throw it together in
+                        your portfolio (don't forget to commit)
+                    </li>
+                    <li>
+                        <b>Re-Implement</b> <br>
+                        Now that you have something together with lots of documentation and experience,
+                        try different language and try to match it as closely as possible to your first
+                        implementation. Add features, try new techniques, new styles. Go crazy!
+                    </li>
+                    <li>
+                        <b>Don't stop learning</b> <br>
+                        Now that you've gotten this far, don't stop trying to challange yourself.
+                        Keep a portfolio/blog/diary and keep adding to it.
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+    var app = angular.module('ProgChRandomPickerApp', ['ngMaterial']);
+    app.controller("mainCtrl", function($scope, $http, $mdPanel, $timeout,
+    $mdSidenav, $mdDialog){
+        // Load challanges
+        $scope.challangesProgchv4 =  [];
+        $http({
+            method:"GET",
+            url:"./db/gchallangesv4.json",
+        }).then(function(success){
+            $scope.challangesProgchv4 = success.data;
+            console.log(success.data);
+        },function(reason){
+            console.log("Error $http");
+        });
+        // Sidenav, Navbar
+        $scope.toggleLeft = buildToggler('left');
+        $scope.toggleRight = buildToggler('right');
+        function buildToggler(componentId) {
+        return function() {
+        $mdSidenav(componentId).toggle();
+        };
+        }
+    });
+    </script>
+</html>
