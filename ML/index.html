@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="GradientDescentApp">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Angular Material style sheet -->
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+        <meta charset="utf-8">
+        <title>{ML}</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
+        <!-- Angular Material requires Angular.js Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+        <!-- Angular Material Library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    </head>
+    <body ng-controller="MainController as Ctrl">
+        <h3>
+            Gradient Descent - example
+        </h3>
+        <hr>
+        <div layout="row">
+            <div flex="60">
+                <canvas id="canvas" style="display: block;"></canvas>
+            </div>
+            <div flex>
+                <span>M: {{data.m | number: 6}}</span> <br>
+                <span>B: {{data.b | number: 6}}</span> <br>
+                <span>F(x) = {{data.m | number: 3}} * x + {{data.b | number: 3}}</span> <br>
+            </div>
+            <div flex>
+                <md-input-container>
+                <label>M</label>
+                    <input ng-model="data.m">
+                </md-input-container>
+                <md-input-container>
+                <label>B</label>
+                    <input ng-model="data.b">
+                </md-input-container>
+            </div>
+        </div>
+        <div layout="row" style="padding: 7px;">
+            <div flex>
+                <md-checkbox ng-model="data.let_loop" aria-label="Checkbox 1">
+                    <span ng-if="data.let_loop">Calculating...</span>
+                    <span ng-if="!data.let_loop">Stopped</span>
+                </md-checkbox>
+            </div>
+            <div flex>
+                <!-- X Range -->
+                <md-input-container>
+                <label>X Zero Range</label>
+                <input ng-model="data.xrange">
+                 <md-button ng-click="functions.updateChartData()">apply x zero range</md-button>
+                </md-input-container>
+                <!-- learining_rate -->
+            </div>
+            <div flex>
+                <md-input-container>
+                    <label>Learning Rate</label>
+                    <input ng-model="data.learining_rate">
+                </md-input-container>
+            </div>
+            <div flex>
+                <md-button class="md-raised md-primary" ng-click="functions.randomizePoints()">Randomize Points</md-button>
+                <md-button class="md-raised md-primary" ng-click="functions.gradientDescent()">Gradient Perform Once</md-button>
+            </div>
+
+        </div>
+        <div layout="row" style="padding: 7px;">
+            <div flex>
+
+                <md-input-container>
+                    <label>Add point: X</label>
+                    <input type="number" ng-model="data.add_x">
+                </md-input-container>
+                <md-input-container>
+                    <label>Add point: Y</label>
+                    <input type="number" ng-model="data.add_y">
+                </md-input-container>
+                <md-button class="md-raised md-primary" ng-click="functions.addPoint()">Add Point</md-button>
+            </div>
+        </div>
+
+    </body>
+        <script src="./js/js_example.js" charset="utf-8"></script>
+</html>
