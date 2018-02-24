@@ -2,6 +2,17 @@ var app = angular.module("GradientDescentApp", ["ngMaterial"])
 
 app.controller("MainController", function($scope, $interval){
 
+    var shuffle = function(array) {
+      var tmp, current, top = array.length;
+      if(top) while(--top) {
+        current = Math.floor(Math.random() * (top + 1));
+        tmp = array[current];
+        array[current] = array[top];
+        array[top] = tmp;
+      }
+      return array;
+    }
+
     var getEvenFromZeroRange = function(num) {
         num = Math.floor(num);
         if(num % 2 != 0)
@@ -12,7 +23,7 @@ app.controller("MainController", function($scope, $interval){
     // Data
     $scope.data = {
         xrange: 20,
-        points:[{x: 4, y: -7}],
+        points:[{x: 4, y: -7.8}],
         starting_line:getEvenFromZeroRange(20),
         best_fit:getEvenFromZeroRange(20),
         m: 1,
@@ -59,7 +70,7 @@ app.controller("MainController", function($scope, $interval){
         responsive: true,
         title:{
             display:true,
-            text:'Gradient Descent - example'
+            text:'Gradient Descent - Example'
         },
         legend: {
             display: false
@@ -137,10 +148,28 @@ app.controller("MainController", function($scope, $interval){
             var tmp = 0;
             for(var i=0;i<xs.length;i++) {
                 tmp = xs[i];
-                xs[i] = Math.floor(Math.random() * 10) - 5;
+                xs[i] = Math.random() * 10 - 5;
                 // console.log(tmp,":", xs[i]);
                 ret.push({x:tmp, y:xs[i]});
             }
+            config.data.datasets[2].data = ret;
+            chart.update();
+        },
+        randomizePointsClose: function() {
+            var xs = [
+                -8,-7,-6,-5,-8,-8,-7,-6,-5,-8,
+                8,7,6,5,8,8,7,6,5,8
+            ];
+            // xs = shuffle(xs);
+            var ret = [];
+            var tmp = 0;
+            for(var i=0;i<xs.length;i++) {
+                tmp = xs[i];
+                xs[i] = Math.random() * 10 - 3;
+                console.log(tmp,":", xs[i]);
+                ret.push({x:tmp, y:xs[i]});
+            }
+            console.log(ret);
             config.data.datasets[2].data = ret;
             chart.update();
         },
@@ -171,6 +200,6 @@ app.controller("MainController", function($scope, $interval){
         if($scope.data.let_loop) {
             $scope.functions.gradientDescent();
         }
-    }, 200);
+    }, 220);
 
 });
