@@ -1,6 +1,11 @@
 var app = angular.module("GradientDescentApp", ["ngMaterial"])
 
-app.controller("MainController", function($scope, $interval){
+app.controller("MainController", function($scope, $interval, $timeout){
+
+    $scope.adjustSliderValue = function(element) {
+        console.log(element.sliderValue/1000.0);
+        $scope.data.learining_rate = element.sliderValue/1000.0;
+    };
 
     var shuffle = function(array) {
       var tmp, current, top = array.length;
@@ -28,8 +33,9 @@ app.controller("MainController", function($scope, $interval){
         best_fit:getEvenFromZeroRange(20),
         m: 1,
         b: 0,
-        learining_rate: 0.005,
+        learining_rate: 0.001,
         let_loop: false,
+        overall_loops: 15,
     }
     // Create chart
     var ctx = document.getElementById("canvas").getContext("2d");
@@ -121,7 +127,6 @@ app.controller("MainController", function($scope, $interval){
         }}
     };
 
-
     var chart = new Chart(ctx, config);
     // Chart controls
     $scope.functions = {
@@ -193,6 +198,20 @@ app.controller("MainController", function($scope, $interval){
                 this.updateChartData();
             }
 
+            // if($scope.data.overall_loops % 6 == 0) {
+            //     var new_eq = "";
+            //     if($scope.data.b < 0)
+            //         new_eq = "f(x) = " + String($scope.data.m) + "x - " + String(Math.abs($scope.data.b));
+            //     else
+            //         new_eq = "f(x) = " + String($scope.data.m) + "x + " + String(Math.abs($scope.data.b));
+            //
+            //     $scope.data.eq_refresh_mod += 1;
+            //     console.log(new_eq);
+            //     var math = MathJax.Hub.getAllJax("slopeEq")[0];
+            //     MathJax.Hub.Queue(["Text", math, new_eq]);
+            // }
+
+            $scope.data.overall_loops += 1;
         },
     };
 
