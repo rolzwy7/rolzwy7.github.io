@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app="QuineApp">
+    <head>
+        <meta charset="utf-8">
+        <title>Quine McCluskey</title>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <!-- Angular Material requires Angular.js Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+        <!-- Angular Material Library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+        <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    </head>
+    <body ng-controller="MainCtrl as Ctrl">
+        <md-toolbar class="md-hue-2" md-colors="{background: 'blue-200'}" style="margin-bottom:15px;">
+            <div class="md-toolbar-tools">
+                <h2 flex md-truncate>
+                    Quine Mccluskey Method
+                </h2>
+            </div>
+        </md-toolbar>
+
+        <div layout="column" layout-gt-sm="row">
+            <div flex>
+                <md-input-container style="width:80%;">
+                    <label>Implicants ( Divided by semicolon )</label>
+                    <input type="text" ng-model="vars.implicants">
+                </md-input-container>
+                <md-button md-colors="{background:'red'}" ng-click="actions.calculate()">Calculate</md-button>
+            </div>
+        </div>
+
+        <div layout="column" layout-gt-sm="row">
+            <div flex>
+                <p>
+
+                </p>
+            </div>
+            <div flex>
+                <p>Table ( Inputs (bits): {{vars.bits}} )</p>
+                <table id="final_table" border="1" style="border-collapse: collapse;">
+                    <thead>
+                        <tr>
+
+                            <td></td>
+                            <td ng-repeat="top_t in top_table" style="text-align:center;">
+                                <b>{{top_t}}</b>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tr ng-repeat="left_t in left_table" left-val="{{left_t}}" left-val="{{left_t}}" row-num={{$index}}>
+                        <td>
+                            <b>
+                                {{left_table[$index]}}
+                            </b>
+                        </td>
+                        <td ng-class="functions.isLonelyX($parent.$index, $index)" ng-repeat="top_t in top_table" top-val="{{top_t}}" left-val="{{left_t}}" row-num={{$parent.$index}} col-num={{$index}}>
+                            <!-- {{left_t + " ("+$parent.$index+"/"+$index+") " + top_t}} -->
+                            <span ng-show="functions.dashComparision(left_t, top_t)">X</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div layout="column" layout-gt-sm="row">
+            <div flex>
+                <div id="slopeEq">
+                    $${}$$
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="./assets/js/ctrl.js" charset="utf-8"></script>
+</html>
