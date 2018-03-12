@@ -324,6 +324,7 @@ app.controller("MainCtrl", function($scope, $mdToast, QuineService){
     };
     $scope.actions = {
         calculate: function() {
+            $scope.vars.final_patterns = [];
             $scope.vars.lonely_xs_col_nums = [];
             $scope.vars.lonely_xs_row_nums = [];
             $scope.vars.bits = QuineService.checkImplicants($scope.vars.implicants);
@@ -397,6 +398,7 @@ app.controller("MainCtrl", function($scope, $mdToast, QuineService){
                     $scope.left_table[nice_solution_result[i]]
                 );
             }
+
             console.log($scope.vars.final_patterns);
             var final_eq = "";
             for(var i=0;i<$scope.vars.final_patterns.length;i++) {
