@@ -1,19 +1,5 @@
-
-
-var app = angular.module("QuineApp", ["ngMaterial"]);
-
 app.factory("QuineFactory", function(){
     var factory = {
-        zeroColumn: function(matrix, row) {
-            var ret = matrix;
-            for(var i=0;i<matrix[0].length;i++) {
-                for(var j=0;j<matrix.length;j++) {
-                    if(row == i)
-                        ret[j][i] = 0;
-                }
-            }
-            return ret;
-        },
         checkImplicant: function(implicant, lenght) {
             var implicant = String(implicant);
             // Check for lenght
@@ -151,26 +137,15 @@ app.factory("QuineFactory", function(){
     return factory;
 });
 
-app.service("QuineService", function(QuineFactory){
-
-    this.getMatrixSum = function(matrix) {
-        var ret = 0;
-        for(var j=0;j<matrix.length;j++) {
-            for(var i=0;i<matrix[0].length;i++) {
-                ret += matrix[j][i];
-            }
-        }
-        return ret;
-    }
+app.service("QuineService", function(QuineFactory, Matrix){
 
     this.checkIsSolution = function(matrix, row) {
-        console.log("Kurwa", matrix);
         for(var i=0;i<matrix[0].length;i++) {
             if(matrix[row][i] == 1)
-                matrix = QuineFactory.zeroColumn(matrix, i);
+                matrix = Matrix.zeroColumn(matrix, i);
         }
         console.log("Zero'ing row", row, "is a solution");
-        if(this.getMatrixSum(matrix) == 0)
+        if(Matrix.sum(matrix) == 0)
             return true;
         else
             return false;
@@ -223,22 +198,22 @@ app.service("QuineService", function(QuineFactory){
         return ret;
     };
 
-    this.getGetParam = function(parameterName) {
-        var result = null,
-        tmp = [];
-        location.search.substr(1).split("&").forEach(function (item) {
-            tmp = item.split("=");
-            if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
-        });
-        return result;
-    };
+    // this.getGetParam = function(parameterName) {
+    //     var result = null,
+    //     tmp = [];
+    //     location.search.substr(1).split("&").forEach(function (item) {
+    //         tmp = item.split("=");
+    //         if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+    //     });
+    //     return result;
+    // };
 
     this.zeroCrossXs = function(matrix, lonely_x_rows) {
         for(var j=0;j<matrix.length;j++) {
             for(var i=0;i<matrix[0].length;i++) {
                 for(var k=0;k<lonely_x_rows.length;k++) {
                     if(matrix[j][i] == 1 && lonely_x_rows[k] == j) {
-                        matrix = QuineFactory.zeroColumn(matrix, i);
+                        matrix = Matrix.zeroColumn(matrix, i);
                         break
                     }
                 }
@@ -284,44 +259,26 @@ app.service("QuineService", function(QuineFactory){
     };
 
 });
-
-app.controller("MainCtrl", function($scope, $mdToast, QuineService){
-    $scope.vars = {};
-    $scope.vars.default_implicants = "0000;0001;1000;0101;0110;0111;1110;1111";
-    // $scope.vars.default_implicants = "0000;0100;1100;1000;0010;0110;1110;1010"; // my example
-    $scope.vars.implicants = $scope.vars.default_implicants;
-    var alpha = "abcdefghijklmnopqrstuvwxyz"
-    $scope.vars.final_patterns = [];
-    // console.log(QuineService.getGetParam("implicants"));
-    $scope.top_table = [];
-    $scope.left_table = [];
-    $scope.functions = {
-        dashComparision: function(phi_pattern, to_compare) {
-            // console.log("Comparing in table:", phi_pattern, to_compare);
-            for(var i=0;i<phi_pattern.length;i++) {
-                if(phi_pattern[i] == "-") {continue;}
-                if(phi_pattern[i] != to_compare[i]) {
-                    return false;
-
-                }
-            }
-            return true;
-        },
-        isLonelyX: function(row, col) {
-            var ret = "";
-            for(var i=0;i<$scope.vars.lonely_xs_col_nums.length;i++) {
-                if(col == $scope.vars.lonely_xs_col_nums[i]) {
-                    ret += "lonely-x-col ";
-                }
-            }
-            for(var i=0;i<$scope.vars.lonely_xs_row_nums.length;i++) {
-                if(row == $scope.vars.lonely_xs_row_nums[i]) {
-                    ret += "lonely-x-row ";
-                }
-            }
-            return ret;
-        },
+/*
+    Main controller for Quine McCluskey
+*/
+app.controller("QuineMcCluskey", function($scope, $mdToast, Matrix, ToastFactory, QuineService) {
+    // Variables
+    var default_implicants = "0000;0001;1000;0101;0110;0111;1110;1111";
+    $scope.vars = {
+        implicants: default_implicants,
+        final_patterns: [],
     };
+
+    // literals
+    var alpha = "abcdefghijklmnopqrstuvwxyz";
+
+    // Table for the user
+    $scope.table = {
+        top_table: [],
+        left_table: [],
+    };
+
     $scope.actions = {
         calculate: function() {
             $scope.vars.final_patterns = [];
@@ -340,28 +297,28 @@ app.controller("MainCtrl", function($scope, $mdToast, QuineService){
                 loop_implicants = result.arr;
                 console.log(result);
             } while(!result.finished);
-            $scope.top_table = $scope.vars.implicants.split(";");
-            $scope.left_table = result.arr.split(";");
+            $scope.table.top_table = $scope.vars.implicants.split(";");
+            $scope.table.left_table = result.arr.split(";");
             // Create final matrix
             var final_matrix = [];
-            for(var i=0;i<$scope.left_table.length;i++) {
+            for(var i=0;i<$scope.table.left_table.length;i++) {
                 var tmp = [];
-                for(var j=0;j<$scope.top_table.length;j++)
+                for(var j=0;j<$scope.table.top_table.length;j++)
                     tmp.push(0);
                 final_matrix.push(tmp);
             }
 
-            for(var i=0;i<$scope.left_table.length;i++)
-                for(var j=0;j<$scope.top_table.length;j++)
-                    if($scope.functions.dashComparision($scope.left_table[i], $scope.top_table[j]))
+            for(var i=0;i<$scope.table.left_table.length;i++)
+                for(var j=0;j<$scope.table.top_table.length;j++)
+                    if($scope.table_functions.dashComparision($scope.table.left_table[i], $scope.table.top_table[j]))
                         final_matrix[i][j] = 1;
             console.log(final_matrix);
             // Check columns with lonely X
             var tmp_col_sum = 0;
             var last_x_row = 0;
             var last_x_row_flag = true;
-            for(var i=0;i<$scope.top_table.length;i++) {
-                for(var j=0;j<$scope.left_table.length;j++) {
+            for(var i=0;i<$scope.table.top_table.length;i++) {
+                for(var j=0;j<$scope.table.left_table.length;j++) {
                     tmp_col_sum += final_matrix[j][i];
                     if(tmp_col_sum == 1 && last_x_row_flag == true) {
                         last_x_row = j;
@@ -385,7 +342,7 @@ app.controller("MainCtrl", function($scope, $mdToast, QuineService){
 
             // Get final patterns from lonely xs
             for(var i=0;i<$scope.vars.lonely_xs_row_nums.length;i++) {
-                $scope.vars.final_patterns.push($scope.left_table[$scope.vars.lonely_xs_row_nums[i]]);
+                $scope.vars.final_patterns.push($scope.table.left_table[$scope.vars.lonely_xs_row_nums[i]]);
             }
             $scope.vars.final_patterns = QuineService.delDuplArr($scope.vars.final_patterns);
             console.log("Final step 1:", $scope.vars.final_patterns);
@@ -395,7 +352,7 @@ app.controller("MainCtrl", function($scope, $mdToast, QuineService){
 
             for(var i=0;i<nice_solution_result.length;i++) {
                 $scope.vars.final_patterns.push(
-                    $scope.left_table[nice_solution_result[i]]
+                    $scope.table.left_table[nice_solution_result[i]]
                 );
             }
 
@@ -415,44 +372,25 @@ app.controller("MainCtrl", function($scope, $mdToast, QuineService){
         }
     };
 
-///////////////////
-// Material Toast
-///////////////////
-    var last = {
-        bottom: false,
-        top: true,
-        left: false,
-        right: true
-    };
-
-    $scope.toastPosition = angular.extend({},last);
-
-    $scope.getToastPosition = function() {
-        sanitizePosition();
-        return Object.keys($scope.toastPosition)
-        .filter(function(pos) { return $scope.toastPosition[pos]; })
-        .join(' ');
-    };
-
-    function sanitizePosition() {
-        var current = $scope.toastPosition;
-
-        if ( current.bottom && last.top ) current.top = false;
-        if ( current.top && last.bottom ) current.bottom = false;
-        if ( current.right && last.left ) current.left = false;
-        if ( current.left && last.right ) current.right = false;
-
-        last = angular.extend({},current);
-    }
-
-    $scope.showSimpleToast = function(text) {
-        var pinTo = $scope.getToastPosition();
-        $mdToast.show(
-        $mdToast.simple()
-        .textContent(text)
-        .position(pinTo)
-        .hideDelay(3000)
-        );
+    // Table functions
+    $scope.table_functions = {
+        dashComparision: function(phi_pattern, to_compare) {
+            for(var i=0;i<phi_pattern.length;i++) {
+                if(phi_pattern[i] == "-") continue;
+                if(phi_pattern[i] != to_compare[i]) return false;
+            }
+            return true;
+        },
+        isLonelyX: function(row, col) {
+            var ret = "";
+            for(var i=0;i<$scope.vars.lonely_xs_col_nums.length;i++)
+                if(col == $scope.vars.lonely_xs_col_nums[i])
+                    ret += "lonely-x-col ";
+            for(var i=0;i<$scope.vars.lonely_xs_row_nums.length;i++)
+                if(row == $scope.vars.lonely_xs_row_nums[i])
+                    ret += "lonely-x-row ";
+            return ret;
+        },
     };
 
 });
