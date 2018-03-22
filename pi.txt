@@ -1,0 +1,107 @@
+﻿# Sumuj tablicę
+Pętla:  POB n
+        ODE Jeden
+        SOM Koniec
+        ŁAD n
+        POB Suma
+Rozkaz: DOD Tablica
+        ŁAD Suma
+        POB Rozkaz
+        DOD Jeden
+        ŁAD Rozkaz
+        SOB Pętla
+Koniec: POB Suma
+        STP
+n:      RST 4
+Tablica:
+        RST 1
+        RST 2
+        RST 3
+        RST 4
+Suma:   RST 0
+Jeden:  RST 1
+
+
+# zad 7 (odwr tab)
+petla: pob dl
+petla: pob dl
+ode st1
+ode st1
+som koniec //Sprawdzanie czy tablica zawiera co najmniej dwa elementy. Jeżeli długość tablicy < 2 – nie ma co odwracać.
+dod st1
+ład dl //dl = dl -1
+et1: pob tab
+ład tmp //tmp = wartość aktualego elementu tablicy
+pob et2
+dod dl
+ład et2 //et2 wskazuje na element tablicy z indeksem o dl większym odpoprzedniego
+et2: pob tab
+et3: ład tab //et3 wskazuje na element tablicy sprzed zmian. Rozkaz ład ładuje do tego elementu wartość elementu o indeksie dl większym.
+pob et4
+dod dl
+ład et4 //et4 wskazuje na element z indeksem o dl większym o poprzedniego
+pob tmp
+et4: ład tab //Przypisanie do tab wartości zmiennej tmp.
+pob et1 //Aktualizacja wartości wskazywanych przez etykiety – przygotowanie do kolejnej iteracji
+dod st1
+ład et1
+pob et3
+dod st1
+ład et3
+pob tmp2 //Przywrócenie pierwotnych etykietom et2 i et4
+ład et2 
+pob tmp3
+ład et4
+sob petla //Skok do początku pętli.
+koniec: stp
+st1: rst 1
+tab: rst 10 rst 20 rst 30
+dl: rst 3 //Długość tablicy
+tmp: rpa
+tmp2: pob tab
+tmp3: ład tab
+
+
+# zad 6 zamian
+POB f
+DOD jeden
+ŁAD f
+POB h
+DOD jeden        
+ŁAD h
+petla:  POB dl
+        ODE dwa
+        SOM koniec
+        ŁAD dl
+e: POB tab
+   ŁAD tmp
+f: POB tab
+g: ŁAD tab
+   POB tmp
+h: ŁAD tab   
+   POB e
+   DOD dwa
+   ŁAD e
+   POB g
+   DOD dwa
+   ŁAD g
+   POB f
+   DOD dwa
+   ŁAD f        
+   POB h
+   DOD dwa        
+   ŁAD h
+   SOB petla
+
+koniec: STP
+       
+tab: RST 1
+       RST 2
+       RST 3
+       RST 4
+       RST 5
+       RST 6
+dl: RST 6
+tmp: RPA
+jeden: RST 1
+dwa:   RST 2
