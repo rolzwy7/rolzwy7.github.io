@@ -1,0 +1,76 @@
+#include <iostream>
+#include <chrono>
+#include <thread>
+#include <random>
+
+using namespace std;
+
+int h(int x, int i, int rozmiar)
+{
+	int j = 0;
+	if (i == 0)
+	{
+		j = x%rozmiar;
+	}
+	else if(i != 0)
+	{
+		j = ((x%rozmiar) + i) % rozmiar;
+	}
+	return j;
+}
+
+bool hash_al_wstaw(int x,int* tab, int rozmiar)
+{
+	for (int i = 0; i < rozmiar; i++)
+	{
+		int k = h(x, i, rozmiar);
+		if (tab[k] == -1)
+		{
+			tab[k] = x;
+			return true;
+		}
+	}
+	return false;
+}
+
+
+int losowa_liczba(int min = 0, int max = std::numeric_limits<int>::max())
+{
+	static std::default_random_engine gen(std::random_device{}());
+	static std::uniform_int_distribution<int> dist;
+	return dist(gen, std::uniform_int_distribution<int>::param_type{ min, max });
+}
+
+int main()
+{
+	int q = 0;
+	int w = 10000;
+	int tablica[100000];
+	for (int j = 0; j < 100000; j++)
+	{
+		tablica[j] = losowa_liczba(0, INT_MAX);
+	}
+	int rozmiar = 1000000;
+	int* tab = new int[rozmiar];
+	for (int i = 0; i < rozmiar; i++)
+	{
+		tab[i] = -1;
+	}
+	for (int z = 0; z < 10; z++)
+	{
+		auto start = std::chrono::high_resolution_clock::now();
+		for (int m = q; m < w; m++)
+		{
+			hash_al_wstaw(tablica[m], tab, rozmiar);
+		}
+		auto end = std::chrono::high_resolution_clock::now();
+		for (int n = 0; n < 90000; n++)
+		{
+			hash_al_wstaw(losowa_liczba(0, INT_MAX), tab, rozmiar);
+		}
+		std::chrono::duration<double, std::micro> duration = end - start;
+		cerr << "Uplynelo: " << duration.count()/10000 << "us\n";
+		q = q + 10000;
+		w = w + 10000;
+	}
+}
