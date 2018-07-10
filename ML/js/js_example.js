@@ -188,15 +188,18 @@ app.controller("MainController", function($scope, $interval, $timeout){
         },
         gradientDescent: function() {
             var data = config.data.datasets[2].data;
+            var cost = 0;
             for(var i=0; i < data.length ;i++) {
                 var x = data[i].x;
                 var y = data[i].y;
                 var guess = $scope.data.m * x + $scope.data.b;
                 var error = y - guess;
+                cost += Math.pow(error, 2);
                 $scope.data.m = Number($scope.data.m) + error * x * $scope.data.learining_rate;
                 $scope.data.b = Number($scope.data.b) + error * $scope.data.learining_rate;
                 this.updateChartData();
             }
+            console.log(cost/data.length);
 
             // if($scope.data.overall_loops % 6 == 0) {
             //     var new_eq = "";
@@ -215,10 +218,11 @@ app.controller("MainController", function($scope, $interval, $timeout){
         },
     };
 
+    $scope.functions.randomizePoints();
     $interval(function(){
         if($scope.data.let_loop) {
             $scope.functions.gradientDescent();
         }
-    }, 220);
+    }, 250);
 
 });

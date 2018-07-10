@@ -23,28 +23,6 @@
             Linear Regression with Gradient Descent
         </h3>
         <hr>
-        <!-- <div layout="row" style="padding: 7px;" layout-align="start start">
-            <div flex>
-                <md-input-container>
-                    <label>Add point: X</label>
-                    <input type="number" ng-model="data.add_x">
-                </md-input-container>
-                <md-input-container>
-                    <label>Add point: Y</label>
-                    <input type="number" ng-model="data.add_y">
-                </md-input-container>
-                <md-button class="md-raised md-primary" ng-click="functions.addPoint()">Add Point</md-button>
-            </div>
-
-        </div> -->
-        <div layout="column" layout-gt-md="row">
-            <div flex style="padding:10px;">
-                <h2>Learning Rate - slider (current value={{data.learining_rate}})</h2>
-                <md-slider-container>
-                    <md-slider flex md-discrete ng-model="sliderValue" ng-change="adjustSliderValue(this)" step="1" min="1" max="10" aria-label="rating"></md-slider>
-                </md-slider-container>
-            </div>
-        </div>
         <div layout="column" layout-gt-md="row" layout-align="center center">
             <div flex style="padding:10px;">
                 <h2>Slope equation</h2>
@@ -64,25 +42,6 @@
                  </div>
             </div>
         </div>
-        <div layout="column" layout-gt-md="row">
-            <div flex=20></div>
-                <!-- <span>M: {{data.m | number: 6}}</span> <br>
-                <span>B: {{data.b | number: 6}}</span> <br>
-                <span>F(x) = {{data.m | number: 3}} * x + {{data.b | number: 3}}</span> <br> -->
-                <!-- <md-input-container>
-                <label>M</label>
-                    <input ng-model="data.m" type="number">
-                </md-input-container>
-                <md-input-container>
-                <label>B</label>
-                    <input ng-model="data.b" type="number">
-                </md-input-container> -->
-
-            <div flex=60>
-                <canvas id="canvas" style="display: block;"></canvas>
-            </div>
-            <div flex=20></div>
-        </div>
         <div layout="column" layout-gt-md="row" style="padding:7px;">
             <div flex>
                 <md-checkbox ng-model="data.let_loop" aria-label="Checkbox 1">
@@ -96,6 +55,44 @@
                 <md-button class="md-raised md-warn" ng-click="functions.gradientDescent()">Perform Once</md-button>
             </div>
         </div>
+        <div layout="column" layout-gt-md="row">
+            <div flex style="padding:10px;">
+                <h2>Learning Rate - slider (current value={{data.learining_rate}})</h2>
+                <md-slider-container>
+                    <md-slider flex md-discrete ng-model="sliderValue" ng-change="adjustSliderValue(this)" step="1" min="1" max="10" aria-label="rating"></md-slider>
+                </md-slider-container>
+            </div>
+        </div>
+        <div layout="column" layout-gt-md="row">
+            <div flex=20></div>
+            <div flex=60>
+                <canvas id="canvas" style="display: block;"></canvas>
+            </div>
+            <div flex=20></div>
+        </div>
+        <hr>
+            <div layout="column" layout-gt-md="row" style="padding:7px;">
+                <div flex>
+                    <h2 style="text-align: center;">Steps</h2>
+                    <p>Given slope: $${f(x) = m \cdot x + b}$$</p>
+                    <p>$${m,b\in \mathbb{R} ,m\neq0}$$</p>
+                    <p>For every datapoint: (x<sub>0</sub> ,y<sub>0</sub>) calculate</p>
+                    <p>$${guess = m \cdot x_0 + b}$$</p>
+                    <p>$${error = y_0 - guess}$$</p>
+                    <p>Calculate partial derivetives of <b>error^2</b></p>
+                    <p>$${\frac{\partial error^2}{\partial m} = -2 \cdot x \cdot error}$$</p>
+                    <p>$${\frac{\partial error^2}{\partial b} = -2 \cdot error }$$</p>
+                    <p>Drop <b>-2</b> constant</p>
+                    <p>$${\frac{\partial error^2}{\partial m} = x \cdot error}$$</p>
+                    <p>$${\frac{\partial error^2}{\partial b} = error }$$</p>
+                    <p>Choose learninig rate that you think will work fine:</p>
+                    <p>$${lr = 0.001}$$</p>
+                    <p>Modified <b>m</b> and <b>b</b> accordingly:</p>
+                    <p>$${m = m + \frac{\partial error^2}{\partial m} \cdot lr = m + x_0 \cdot error \cdot lr}$$</p>
+                    <p>$${b = b + \frac{\partial error^2}{\partial b} \cdot lr = b + error \cdot lr }$$</p>
+                </div>
+            </div>
+        <hr>
 
     </body>
         <script src="./js/js_example.js" charset="utf-8"></script>
