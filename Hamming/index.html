@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Hamming Code</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js" charset="utf-8"></script>
+        <style media="screen">
+            @import url('https://fonts.googleapis.com/css?family=Roboto');
+            * {
+                font-family: 'Roboto';
+            }
+            table {
+                border-collapse:collapse;
+            }
+            td {
+                padding: 7px 5px;
+            }
+            .parity {
+                background-color: #BBDEFB;
+            }
+            .data {
+                background-color: #E8F5E9;
+            }
+            .t-c {text-align: center;}
+        </style>
+    </head>
+    <script type="text/javascript">
+        var app = angular.module("App", []);
+    </script>
+    <script src="./angular-bit-operations.js" charset="utf-8"></script>
+    <body ng-app="App">
+        <div ng-controller="MainController as Ctrl">
+            <h2 class="t-c">Hamming Code ({{user_input.total_bits}}, {{user_input.data_bits}})</h2>
+            <hr>
+            <h3>
+                Total bits: <select style="font-size:1.17em;" ng-change="onBitsChange(user_input.total_bits)" ng-options="item for item in options_data.select_bits" ng-model="user_input.total_bits"></select>
+            </h3>
+            <h3>
+                Parity bits: {{ user_input.parity_bits }}
+            </h3>
+            <h3>
+                Data bits: {{ user_input.data_bits }}
+            </h3>
+            <hr>
+            Labels
+            <ul>
+                <li>p - parity</li>
+                <li>d - data</li>
+            </ul>
+            <hr>
+            <table border=1>
+                <tr>
+                    <td>Position</td>
+                    <td ng-repeat="num in hc_table" ng-class="{parity:num.isparity==true, data:num.isparity==false}">{{num.bin}}</td>
+                </tr>
+                <tr>
+                    <td>Value</td>
+                    <td ng-repeat="num in hc_table" ng-class="{parity:num.isparity==true, data:num.isparity==false}">
+                        <input ng-change="calcParityBits()" ng-show="!num.isparity" type="number" step=1 min=0 max=1 ng-model="num.value">
+                        <span ng-show="num.isparity">{{num.value}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Label</td>
+                    <td ng-repeat="num in hc_table" ng-class="{parity:num.isparity==true, data:num.isparity==false}">
+                        <span ng-if="num.isparity">{{ "p" + num.pos }}</span>
+                        <span ng-if="!num.isparity">{{ "d" + num.pos }}</span>
+                    </td>
+                </tr>
+            </table>
+            <hr>
+
+            <h2>
+                Data:&nbsp;<span ng-repeat="num in hc_table" ng-hide="num.isparity">{{num.value}}</span>
+            </h2>
+
+            <h2>
+                Encoded:&nbsp;<span ng-repeat="num in hc_table">{{num.value}}</span>
+            </h2>
+
+        </div>
+    </body>
+    <script type="text/javascript">
+        app.controller("MainController", function($scope, BitOperations) {
+
+            $scope.options_data = {
+                select_bits: [3, 7, 15, 31]
+            };
+
+            $scope.user_input = {
+                total_bits: 7,
+                parity_bits: 0,
+                data_bits: 0
+            };
+
+            $scope.calcParityBits = function() {
+                var start_pos = 0;
+                var result;
+                for(var i=0;i<$scope.hc_table.length;i++) {
+                    if($scope.hc_table[i].isparity) {
+                        result = 0;
+                        for(var j=0;j<$scope.hc_table.length;j++) {
+                            if(!$scope.hc_table[j].isparity && BitOperations.isSet($scope.hc_table[j].bin, start_pos)) {
+                                result += $scope.hc_table[j].value;
+                                // console.log("for",$scope.hc_table[i].pos,$scope.hc_table[j].pos, result);
+                            }
+                        }
+                        if(result % 2 == 1)
+                            $scope.hc_table[i].value = 1;
+                        else
+                            $scope.hc_table[i].value = 0;
+                        start_pos += 1;
+                    }
+                }
+            };
+
+            $scope.onBitsChange = function(to) {
+                // Table
+                var tmp = [];
+                var tmp2;
+                for(var i=1;i<to+1;i++){
+                    var bin_v = BitOperations.fromInt(i);
+                    tmp2 = {
+                        pos: i,
+                        bin: bin_v,
+                        isparity: BitOperations.isPowOfTwo(bin_v),
+                        value: 0,
+                    }
+                    tmp.push(tmp2);
+                }
+                console.log(tmp);
+                $scope.hc_table = tmp;
+                // Parity bits
+                $scope.user_input.parity_bits = Math.log2($scope.user_input.total_bits+1);
+                // Data bits
+                $scope.user_input.data_bits = $scope.user_input.total_bits - $scope.user_input.parity_bits;
+            }
+
+            $scope.onBitsChange($scope.user_input.total_bits);
+            $scope.calcParityBits();
+
+
+        });
+    </script>
+</html>
