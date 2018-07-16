@@ -4,6 +4,8 @@
         <meta charset="utf-8">
         <title>Hamming Code</title>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js" charset="utf-8"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
         <style media="screen">
             @import url('https://fonts.googleapis.com/css?family=Roboto');
             * {
@@ -20,6 +22,13 @@
             }
             .data {
                 background-color: #E8F5E9;
+            }
+            .paritytext {
+                color: white;
+                background-color: #1E88E5;
+            }
+            .datatext {
+                color: #1B5E20;
             }
             .t-c {text-align: center;}
         </style>
@@ -71,12 +80,20 @@
             <hr>
 
             <h2>
-                Data:&nbsp;<span ng-repeat="num in hc_table" ng-hide="num.isparity">{{num.value}}</span>
+                Data:&nbsp;<span ng-repeat="num in hc_table" ng-hide="num.isparity" ng-class="{paritytext: num.isparity == true, datatext: num.isparity == false}">{{num.value}}</span>
             </h2>
 
             <h2>
-                Encoded:&nbsp;<span ng-repeat="num in hc_table">{{num.value}}</span>
+                Encoded:&nbsp;<span ng-repeat="num in hc_table" ng-class="{paritytext: num.isparity == true, datatext: num.isparity == false}">{{num.value}}</span>
             </h2>
+            <hr>
+            $$
+            G=
+            \begin{bmatrix}
+            a_c & b_b & c_a \\
+            \end{bmatrix}
+            $$
+
 
         </div>
     </body>
