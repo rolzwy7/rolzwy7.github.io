@@ -87,14 +87,122 @@
                 Encoded:&nbsp;<span ng-repeat="num in hc_table" ng-class="{paritytext: num.isparity == true, datatext: num.isparity == false}">{{num.value}}</span>
             </h2>
             <hr>
+            <h2 style="text-align: center;">Example for Hamming(7, 4)</h2>
+            <h3>Generator matrix</h3>
+            $$G = [\quad I_d \quad | \quad -A^T \quad ]_{d \times t}$$
+            <h3>Parity-check matrix</h3>
+            $$H = [\quad A \quad | \quad I_{t-d} \quad ]_{p \times t}$$
+            <h3>where:</h3>
+            <ul>
+                <li>t - Number of total bits</li>
+                <li>d - Number of data bits</li>
+                <li>p - Number of parity bits</li>
+                <li>A - Matrix of data bits indices</li>
+                <li>I - Identity matrix (eye)</li>
+            </ul>
+            <!-- A matrix -->
             $$
-            G=
-            \begin{bmatrix}
-            a_c & b_b & c_a \\
-            \end{bmatrix}
+            A =
+            \left[
+            \begin{array}{cccc}
+            1 & 1 & 0 & 1 \\
+            1 & 0 & 1 & 1 \\
+            0 & 1 & 1 & 1
+            \end{array}
+            \right]
+            $$
+            <!-- A^t matrix -->
+            $$
+            A^t =
+            \left[
+            \begin{array}{ccc}
+            1 & 1 & 0 \\
+            1 & 0 & 1 \\
+            0 & 1 & 1 \\
+            1 & 1 & 1
+            \end{array}
+            \right]
+            $$
+            <!-- G matrix -->
+            $$
+            G =
+            \left[
+            \begin{array}{cccc|ccc}
+            1 & 0 & 0 & 0 & 1 & 1 & 0 \\
+            0 & 1 & 0 & 0 & 1 & 0 & 1 \\
+            0 & 0 & 1 & 0 & 0 & 1 & 1 \\
+            0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+            \end{array}
+            \right]
+            $$
+            <!-- H matrix -->
+            $$
+            H =
+            \left[
+            \begin{array}{cccc|ccc}
+            1 & 1 & 0 & 1 & 1 & 0 & 0 \\
+            1 & 0 & 1 & 1 & 0 & 1 & 0 \\
+            0 & 1 & 1 & 1 & 0 & 0 & 1 \\
+            \end{array}
+            \right]
+            $$
+            <h3>Encoding example: 1010</h3>
+            $$
+            s =
+            \left[
+            \begin{array}{cccc}
+            1 & 0 & 1 & 0
+            \end{array}
+            \right]
+            $$
+            <!-- Calc without switching columns -->
+            $$
+            sG \mod 2 =
+            \left[
+            \begin{array}{cccc|ccc}
+            1 & 0 & 1 & 0 & 1 & 2 & 1
+            \end{array}
+            \right]
+
+            \mod 2 =
+
+            \left[
+            \begin{array}{cccc|ccc}
+            1 & 0 & 1 & 0 & 1 & 0 & 1
+            \end{array}
+            \right]
+            $$
+            <p>Left part of <b>sG mod 2</b> result is <b>s</b> vector itself (data). Right part contains parity bits.</p>
+            <hr>
+            <h3>Columns in <b>G</b> matrix can be switched to produce result with parity bits on right positions</h3>
+            $$
+            G =
+            \left[
+            \begin{array}{cccc|ccc}
+            1 & 1 & 1 & 0 & 0 & 0 & 0 \\
+            1 & 0 & 0 & 1 & 1 & 0 & 0 \\
+            0 & 1 & 0 & 1 & 0 & 1 & 0 \\
+            1 & 1 & 0 & 1 & 0 & 0 & 1 \\
+            \end{array}
+            \right]
             $$
 
+            $$
+            sG \mod 2 =
+            \left[
+            \begin{array}{ccccccc}
+            1 & 0 & 1 & 0 & 1 & 2 & 1
+            \end{array}
+            \right]
 
+            \mod 2 =
+
+            \left[
+            \begin{array}{ccccccc}
+            1 & 0 & 1 & 1 & 0 & 1 & 0
+            \end{array}
+            \right]
+            $$
         </div>
     </body>
     <script type="text/javascript">
@@ -143,6 +251,7 @@
                         isparity: BitOperations.isPowOfTwo(bin_v),
                         value: 0,
                     }
+                    console.log(tmp);
                     tmp.push(tmp2);
                 }
                 console.log(tmp);
@@ -156,6 +265,10 @@
             $scope.onBitsChange($scope.user_input.total_bits);
             $scope.calcParityBits();
 
+            // Default data values for demo
+            $scope.hc_table[2].value = 1;
+            $scope.hc_table[5].value = 1;
+            $scope.calcParityBits();
 
         });
     </script>
