@@ -1,6 +1,0 @@
-Start two consoles.
-
-First consoles (Auto refresh + server):
-    npm run auto-refresh .\index.js
-Second consoles (Auto refresh + server):
-    gulp

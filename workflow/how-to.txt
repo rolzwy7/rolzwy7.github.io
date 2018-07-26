@@ -1,0 +1,4 @@
+Console 1:
+    npm run auto-refresh .\index.js
+Console 2:
+    gulp
