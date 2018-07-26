@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="GradientDescentApp">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Angular Material style sheet -->
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+        <meta charset="utf-8">
+        <title>Linear Regression with Gradient Descent</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
+        <!-- Angular Material requires Angular.js Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+        <!-- Angular Material Library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+
+    </head>
+    <body ng-controller="MainController as Ctrl" ng-cloak>
+        <h3 style="padding:7px;text-align:center;">
+            <a href="https://en.wikipedia.org/wiki/Linear_regression">Linear Regression</a>
+             with
+            <a href="https://en.wikipedia.org/wiki/Gradient_descent">Gradient Descent</a>
+        </h3>
+        <hr>
+        <div layout="column" layout-gt-md="row" layout-align="center center">
+            <div flex style="padding:10px;">
+                <h2>Slope equation</h2>
+                 <div>
+                     $${f(x) = mx + b}$$ <br>
+                     <table style="margin:0 auto;">
+                         <tr>
+                             <td>m =</td>
+                             <td>{{data.m}}</td>
+                         </tr>
+                         <tr>
+                             <td>b =</td>
+                             <td>{{data.b}}</td>
+                         </tr>
+                     </table>
+
+                 </div>
+            </div>
+        </div>
+        <div layout="column" layout-gt-md="row" style="padding:7px;">
+            <div flex>
+                <md-checkbox ng-model="data.let_loop" aria-label="Checkbox 1">
+                    <span ng-if="data.let_loop">Click here to stop calculating</span>
+                    <span ng-if="!data.let_loop">Click here to start calculating</span>
+                </md-checkbox>
+            </div>
+            <div flex>
+                <md-button class="md-raised md-primary" ng-click="functions.randomizePoints()">Randomize Points (Even)</md-button>
+                <md-button class="md-raised md-primary" ng-click="functions.randomizePointsClose()">Randomize Points (Extreme ends)</md-button>
+                <md-button class="md-raised md-warn" ng-click="functions.gradientDescent()">Perform Once</md-button>
+            </div>
+        </div>
+        <div layout="column" layout-gt-md="row">
+            <div flex style="padding:10px;">
+                <h2>Learning Rate - slider (current value={{data.learining_rate}})</h2>
+                <md-slider-container>
+                    <md-slider flex md-discrete ng-model="sliderValue" ng-change="adjustSliderValue(this)" step="1" min="1" max="10" aria-label="rating"></md-slider>
+                </md-slider-container>
+            </div>
+        </div>
+        <div layout="column" layout-gt-md="row">
+            <div flex=20></div>
+            <div flex=60>
+                <canvas id="canvas" style="display: block;"></canvas>
+            </div>
+            <div flex=20></div>
+        </div>
+        <hr>
+            <div layout="column" layout-gt-md="row" style="padding:7px;">
+                <div flex>
+                    <h2 style="text-align: center;">Steps</h2>
+                    <p>For given slope: $${f(x) = m \cdot x + b}$$</p>
+                    <p>$${m,b\in \mathbb{R} ,m\neq0}$$</p>
+                    <p>For every datapoint: (x<sub>0</sub> ,y<sub>0</sub>) calculate</p>
+                    <p>$${guess = m \cdot x_0 + b}$$</p>
+                    <p>$${error = y_0 - guess}$$</p>
+                    <p>Calculate partial derivetives of <b>error^2</b></p>
+                    <p>$${\frac{\partial error^2}{\partial m} = -2 \cdot x \cdot error}$$</p>
+                    <p>$${\frac{\partial error^2}{\partial b} = -2 \cdot error }$$</p>
+                    <p>Drop <b>-2</b> constant</p>
+                    <p>$${\frac{\partial error^2}{\partial m} = x \cdot error}$$</p>
+                    <p>$${\frac{\partial error^2}{\partial b} = error }$$</p>
+                    <p>Choose learninig rate that you think will work fine:</p>
+                    <p>$${lr = 0.001}$$</p>
+                    <p>Modifie <b>m</b> and <b>b</b> accordingly:</p>
+                    <p>$${m = m + \frac{\partial error^2}{\partial m} \cdot lr = m + x_0 \cdot error \cdot lr}$$</p>
+                    <p>$${b = b + \frac{\partial error^2}{\partial b} \cdot lr = b + error \cdot lr }$$</p>
+                </div>
+            </div>
+        <hr>
+
+    </body>
+        <script src="./js/js_example.js" charset="utf-8"></script>
+</html>

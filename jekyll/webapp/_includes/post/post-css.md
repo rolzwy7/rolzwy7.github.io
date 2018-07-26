@@ -1,0 +1,5 @@
+<style>
+    body {
+        background-color: #f5f6fa;
+    }
+</style>

@@ -1,0 +1,67 @@
+@keyframes         appear50 {from { opacity: 0; }50% { opacity: 0.5; }to { opacity: 1.0; }}
+@-webkit-keyframes appear50 {from { opacity: 0; }50% { opacity: 0.5; }to { opacity: 1.0; }}
+
+.left-panel {
+    position: fixed;
+    width: 250px;
+    height: 100vh;
+    // background-color: #40739e;
+    animation: appear50 500ms;
+    -webkit-animation: appear50 500ms;
+}
+
+#toc {
+    outline: none;
+}
+
+.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    transition-timing-function: ease;
+    transition-duration: .15s;
+    transition-property: transform;
+    border-radius: 4px;
+    background-color: $orchid;
+}
+
+.wrapper {
+    padding-left: 265px;
+}
+
+@media only screen and (max-width: 575px) {
+    .left-panel {
+        display: none;
+    }
+    .wrapper {
+        padding-left: 15px;
+    }
+}
+
+
+ul > li {
+    list-style: none;
+}
+
+.listing {
+    padding: 0px 6px;
+}
+.listing > span {
+    font-size: 0.7rem;
+    float:right;
+    display: none;
+}
+.listing:hover span {
+    display: block;
+}
+
+.appear50 {
+    animation:appear50 1000ms;
+    -webkit-animation:appear50 1000ms;
+}
+
+
+.breadcrumb {
+    background-color: #ffffff !important;
+    border-radius: 0rem !important;
+}

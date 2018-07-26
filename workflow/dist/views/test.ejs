@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js" charset="utf-8"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="/static/js/bootstrap.min.js" charset="utf-8"></script>
+        <link rel="stylesheet" href="/static/css/hamburgers.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+        <link rel="stylesheet" href="/static/css/main.css<%=TS%>">
+    </head>
+    <body>
+        <!-- Header (Extend) Main Container -> Row - start -->
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Toc - Mobile - Common -->
+                <div class="col-12">
+                    <nav class="navbar" id="header-navbar">
+                        <a class="navbar-brand"></a>
+                        <button id="toc" class="d-inline-block d-sm-none hamburger hamburger--collapse" type="button" data-toggle="collapse" data-target="#mobilemenu"  aria-expanded="true" aria-controls="collapseMobile">
+                        <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                        </span>
+                        </button>
+                    </nav>
+                </div>
+                <!-- Toc collapse - Mobile - Common -->
+                <div class="col-12 collapse show-on-mobile" id="mobilemenu">
+                    <a href="#">
+                        <button type="button" class="d-block d-sm-none rounded-0 mt-2 btn btn-primary btn-lg btn-block">Home</button>
+                    </a>
+                    <a href="#">
+                        <button type="button" class="d-block d-sm-none rounded-0 mt-2 btn btn-orchid btn-lg btn-block">Projects</button>
+                    </a>
+                    <a href="#">
+                        <button type="button" class="d-block d-sm-none rounded-0 mt-2 btn btn-pumpkinspace btn-lg btn-block">Writings</button>
+                    </a>
+                    <a href="#">
+                        <button type="button" class="d-block d-sm-none rounded-0 mt-2 btn btn-boundedrationality btn-lg btn-block">Miscellaneous</button>
+                    </a>
+                </div>
+                <!-- CONTENT HERE -->
+                <!-- Writings listing -->
+                <div class="col-lg-6 col-md-12 writings appear50">
+                    <h3 class="text-pumpkinspace">#Writings</h3>
+                    <p class="listing">
+                        <a href="#link">
+                            Lorem ipsum dolor sit amet,
+                        </a>
+                        <br><span>2018/03/19</span>
+                    </p>
+                </div>
+                <!-- Projects listing -->
+                <div class="col-lg-6 col-md-12 projects appear50">
+                    <h3 class="text-orchid">#Projects</h3>
+                    <p class="listing">
+                        <a href="#link">
+                            Lorem ipsum dolor sit amet,
+                        </a>
+                        <br><span>2018/03/19</span>
+                    </p>
+                </div>
+                <!-- Miscellaneous listing -->
+                <div class="col-lg-6 col-md-12 miscellaneous appear50">
+                    <h3 class="text-boundedrationality">#Miscellaneous</h3>
+                    <p class="listing">
+                        <a href="#link">
+                            Lorem ipsum dolor sit amet,
+                        </a>
+                    </p>
+                </div>
+                <!-- CONTENT HERE -->
+            </div>
+        </div>
+        <!-- Header (Extend) Main Container - stop -->
+    </body>
+    <!-- Script, Header - mobile toc toggle -->
+    <script type="text/javascript">
+        $('#mobilemenu').on('show.bs.collapse', function () {
+          $("#toc").toggleClass("is-active");
+        });
+        $('#mobilemenu').on('hide.bs.collapse', function () {
+          $("#toc").toggleClass("is-active");
+        });
+    </script>
+    <script src="<%=refreshScript%>"></script>
+</html>

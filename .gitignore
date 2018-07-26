@@ -1,0 +1,13 @@
+.git
+
+# Jekyll
+jekyll/webapp/_site
+jekyll/webapp/.sass-cache
+jekyll/webapp/.jekyll-metadata
+
+# Workflow
+workflow/node_modules
+workflow/dist/static/css/main.css
+workflow/dist/static/js
+workflow/src/bootstrap
+workflow/package-lock.json
