@@ -1,2 +1,0 @@
-title Update
-bundle update
