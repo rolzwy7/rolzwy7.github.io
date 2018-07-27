@@ -1,7 +1,7 @@
 <!-- Left Panel - start (Homepage include) -->
 <div class="left-panel">
     <div class="text-center mt-3">
-        <img src="/static/images/rolzwy7_150x150.jpg" alt="...">
+        <img src="./static/images/rolzwy7_150x150.jpg" alt="...">
         <h5 class="mt-1">Bartosz Nowakowski</h5>
     </div>
     <div class="text-left mt-1">
