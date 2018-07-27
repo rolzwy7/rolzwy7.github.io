@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <!-- Bootstrap - JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="/static/js/bootstrap.min.js" charset="utf-8"></script>
+        <!--
+        Hamburgers by Jonathan Suh
+        @description Tasty CSS-animated hamburgers
+        @author Jonathan Suh @jonsuh
+        @site https://jonsuh.com/hamburgers
+        @link https://github.com/jonsuh/hamburgers
+        -->
+        <link rel="stylesheet" href="/static/css/hamburgers.min.css">
+        <!-- FontAwesome - icons -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+        <!-- Bootstrap - CSS -->
+        <link rel="stylesheet" href="/static/css/main.css">
+    </head>
+    <body>
+        <!-- Header (Extend) Main Container -> Row - start -->
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Toc - Mobile - Common -->
+                <div class="col-12">
+                    <nav class="navbar" id="header-navbar">
+                        <a class="navbar-brand"></a>
+                        <button id="toc" class="d-inline-block d-sm-none hamburger hamburger--collapse" type="button" data-toggle="collapse" data-target="#mobilemenu"  aria-expanded="true" aria-controls="collapseMobile">
+                        <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                        </span>
+                        </button>
+                    </nav>
+                </div>
+                <!-- Toc collapse - Mobile - Common -->
+                <div class="col-12 collapse show-on-mobile" id="mobilemenu">
+                    <a href="/">
+    <button type="button" class="d-block d-sm-none rounded-0 mt-2 btn btn-primary btn-lg btn-block">Home</button>
+</a>
+<a href="/projects/">
+    <button type="button" class="d-block d-sm-none rounded-0 mt-2 btn btn-orchid btn-lg btn-block">Projects</button>
+</a>
+<a href="#">
+    <button type="button" class="d-block d-sm-none rounded-0 mt-2 btn btn-pumpkinspace btn-lg btn-block">Writings</button>
+</a>
+<a href="/misc/">
+    <button type="button" class="d-block d-sm-none rounded-0 mt-2 btn btn-boundedrationality btn-lg btn-block">Miscellaneous</button>
+</a>
+
+                </div>
+                <!-- CONTENT HERE -->
+                <!-- Left Panel - start (Homepage include) -->
+<div class="left-panel">
+    <div class="text-center mt-3">
+        <img src="/static/images/rolzwy7_150x150.jpg" alt="...">
+        <h5 class="mt-1">Bartosz Nowakowski</h5>
+    </div>
+    <div class="text-left mt-1">
+        <ul>
+            <li>
+                <i class="fab fa-github-alt"></i>&nbsp;<a target="_blank" href="https://github.com/rolzwy7">Github</a>
+            </li>
+            <li>
+                <i class="fab fa-twitter"></i>&nbsp;<a target="_blank" href="https://twitter.com/rolzwy7">Twitter</a>
+            </li>
+            <li>
+                <i class="fab fa-youtube"></i>&nbsp;<a target="_blank" href="https://www.youtube.com/channel/UChjyf-0BFC4CWhr3ClL_qug">YouTube</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Breadcrumb - Homepage -->
+<div class="col-12 show-on-mobile wrapper">
+    <nav aria-label="breadcrumb">
+    <ol class="breadcrumb d-none d-sm-flex">
+        <li class="breadcrumb-item active"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active"><a href="/projects/">Projects</a></li>
+        <li class="breadcrumb-item active"><a href="#writings">Writings</a></li>
+        <li class="breadcrumb-item active"><a href="/misc/">Miscellaneous</a></li>
+    </ol>
+</nav>
+
+</div>
+<!-- Welcome -->
+<div class="col-12 wrapper">
+    <hr>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <hr>
+</div>
+<!-- Writings listing -->
+<div class="col-lg-6 col-md-12 writings appear50 wrapper">
+    <h3 class="text-pumpkinspace">#Writings</h3>
+    
+    <p class="listing">
+        <a href="/dir1/dir2/dir3/2018/07/26/post-template.html">
+            Post Template
+        </a>
+        
+        <br><span>2018/07/26</span>
+    </p>
+    
+</div>
+<!-- Projects listing -->
+<div class="col-lg-6 col-md-12 projects appear50 wrapper">
+    <h3 class="text-orchid">#Projects</h3>
+    <p class="listing">
+        <a href="#link">
+            Lorem ipsum dolor sit amet,
+        </a>
+        <br><span>2018/03/19</span>
+    </p>
+</div>
+<!-- Miscellaneous listing -->
+<div class="col-lg-6 col-md-12 miscellaneous appear50 wrapper">
+    <h3 class="text-boundedrationality">#Miscellaneous</h3>
+    <p class="listing">
+        <a href="#link">
+            Lorem ipsum dolor sit amet,
+        </a>
+    </p>
+</div>
+
+                <!-- CONTENT HERE -->
+            </div>
+        </div>
+        <!-- Header (Extend) Main Container - stop -->
+    </body>
+    <!-- Script, Header - mobile toc toggle -->
+    <script type="text/javascript">
+        $('#mobilemenu').on('show.bs.collapse', function () {
+          $("#toc").toggleClass("is-active");
+        });
+        $('#mobilemenu').on('hide.bs.collapse', function () {
+          $("#toc").toggleClass("is-active");
+        });
+    </script>
+</html>

@@ -17,6 +17,9 @@
   ],
   "author": "Bartosz Nowakowski",
   "license": "ISC",
+  "dependencies": {
+    "gulp": "3.9.1"
+  },
   "bugs": {
     "url": "https://github.com/rolzwy7/rolzwy7.github.io/issues"
   },
