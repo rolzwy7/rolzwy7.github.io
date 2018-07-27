@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Monda');
+
+.monda-font {
+    font-family: Monda;
+}
+
+/* Angular material overrides */
+md-toolbar {
+    padding: 7px;
+    opacity: 0.9;
+}
+
+md-ink-bar {
+    color: #FFC107!important;
+    background: #FFC107!important;
+}
+
+md-tabs {
+    background: #eee;
+}
+
+.md-button {
+    border-radius: 0px;
+    color: black;
+}
+
+
+.lonely-x-col {
+    background-color: #5fba7d;
+}

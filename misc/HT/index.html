@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Hash Tables</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js" charset="utf-8"></script>
+        <script type="text/javascript">var app = angular.module("App", []);</script>
+        <script src="./assets/js/hash_tables.js" charset="utf-8"></script>
+        <script src="./assets/js/ctrl.js" charset="utf-8"></script>
+        <!-- dev - style - delete  -->
+        <style media="screen">
+            tr.visited {
+                background-color: dodgerblue;
+            }
+            tr.highlighted {
+                background-color: goldenrod;
+            }
+        </style>
+        <!-- dev - style - delete  -->
+    </head>
+    <body ng-app="App">
+        <div class="" ng-controller="MainCtrl as Ctrl">
+            <p>{{options.title}}</p>
+            <p>{{options.collision_handling.label}}</p>
+            <p>{{options.load_factor.label}}</p>
+            <p>{{options.restruct}}</p>
+            <select ng-options="item.label for item in collision_handling_types track by item.id" ng-model="options.collision_handling"></select>
+            <select ng-options="item.label for item in load_factors track by item.id" ng-model="options.load_factor"></select>
+            <input type="checkbox" ng-model="options.restruct">
+            <hr>
+            <input placeholder="Liczba" type="number" step="1" max="1000000" min=0 ng-model="to_insert_tmp">
+            <button ng-click="add_element(to_insert_tmp)">Wstaw element ({{options.collision_handling.label}})</button>
+            <hr>
+            <button ng-click="reset_hash_table()">Wyczyść tablicę</button>
+            <!-- Hash Table  -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Indeks</th>
+                        <th>Wartość</th>
+                        <th>Prób</th>
+                    </tr>
+                </thead>
+                <tr ng-repeat="item in hash_table" ng-class="{'highlighted': item.highlighted == true , 'visited': item.visited == true }">
+                    <td>{{item.id}}&emsp;</td>
+                    <td>{{item.value}}</td>
+                    <td>&emsp;{{item.tries}}</td>
+                </tr>
+            </table>
+            <!-- Hash Table  -->
+        </div>
+    </body>
+</html>
