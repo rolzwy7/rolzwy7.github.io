@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% include home/home-left-panel.md %}
+{% include home-left-panel.md %}
 <!-- Breadcrumb - Homepage -->
 <div class="col-12 show-on-mobile wrapper">
     {% include breadcrumb.md %}
