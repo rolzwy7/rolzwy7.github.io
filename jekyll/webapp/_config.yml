@@ -22,7 +22,7 @@ url: "https://rolzwy7.github.io" # the base hostname & protocol for your site
 twitter_username: rolzwy7
 github_username:  rolzwy7
 
-permalink: pretty
+# permalink: pretty
 
 exclude: [
     python_http_bind_site.bat,
