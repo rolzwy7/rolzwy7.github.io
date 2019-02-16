@@ -1,0 +1,15 @@
+.blog-post {
+    color: #1c1e29ed !important;
+    font-weight: 400;
+    letter-spacing: 0;
+    font-size: 1.125rem;
+    line-height: 2rem;
+    -webkit-font-smoothing: antialiased;
+}
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
