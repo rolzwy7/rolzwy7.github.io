@@ -1,6 +1,7 @@
 var SwiperTimeline = new Swiper ('.swiper-container-timeline', {
   effect: "slide", // slide fade cube coverflow flip
   hashNavigation: false,
+  speed: 200,
   // allowSlidePrev: false,
 	// allowSlideNext: false,
   on: {
@@ -26,12 +27,29 @@ var SwiperTimeline = new Swiper ('.swiper-container-timeline', {
 	keyboard: false
 })
 
-$(".tl-nav-szkolenia-krok__link").click(function() {
+function clear_active_timeline_tabs() {
   var items = $(".tl-nav-szkolenia-krok__item");
   for(var it=0;it<items.length;it++) {
     $(items[it]).removeClass("active");
   }
+}
+
+function set_as_active(num) {
+  var items = $(".tl-nav-szkolenia-krok__item");
+  for(var it=0;it<items.length;it++) {
+    var elem = $(items[it])[0];
+    if(it === num) {
+      $(elem).toggleClass("active");
+    }
+  }
+}
+
+$(".tl-nav-szkolenia-krok__link").click(function() {
   var idx = $(this).attr("data-slide-index");
-  $(this).parent().toggleClass("active");
   SwiperTimeline.slideTo(idx);
+});
+
+SwiperTimeline.on('slideChangeTransitionEnd', function() {
+  clear_active_timeline_tabs();
+  set_as_active($(this)[0].activeIndex);
 });
