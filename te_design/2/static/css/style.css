@@ -986,6 +986,12 @@ header.header.is-fixed-top {
   line-height: 1.88;
 }
 
+@media (max-width: 991px) {
+  .zaufali-container > .tabs > .tab > h4 {
+    font-size: 0.9em !important;
+  }
+}
+
 .dropdown-style-1.show::after {
   width: 24px;
   height: 12px;
