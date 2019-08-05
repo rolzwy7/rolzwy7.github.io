@@ -1340,12 +1340,6 @@ header.header.is-fixed-top {
   font-size: 1rem !important;
 }
 
-@media (max-width: 992px) {
-  .homepage-service-image img {
-    max-width: 400px;
-  }
-}
-
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
