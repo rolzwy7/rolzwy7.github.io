@@ -77,3 +77,52 @@ SwiperTimeline.on('slideChangeTransitionEnd', function() {
   set_as_active(to_be_active);
   center_active_blob(to_be_active);
 });
+
+
+// Swiper - brands
+var SwiperBrands = new Swiper ('.swiper-container-brands', {
+  effect: "slide", // slide fade cube coverflow flip
+  hashNavigation: false,
+  speed: 200,
+  direction: 'horizontal',
+  loop: false
+})
+
+SwiperBrands.on('slideChangeTransitionEnd', function() {
+  console.log("swiped");
+  var to_be_active = $(this)[0].activeIndex;
+  if(to_be_active == 0) {
+    $("#trusted_us_gr1").addClass("is-active");
+    $("#trusted_us_gr2").removeClass("is-active");
+    $("#trusted_us_gr3").removeClass("is-active");
+  }
+  if(to_be_active == 1) {
+    $("#trusted_us_gr2").addClass("is-active");
+    $("#trusted_us_gr1").removeClass("is-active");
+    $("#trusted_us_gr3").removeClass("is-active");
+  }
+  if(to_be_active == 2) {
+    $("#trusted_us_gr3").addClass("is-active");
+    $("#trusted_us_gr1").removeClass("is-active");
+    $("#trusted_us_gr2").removeClass("is-active");
+  }
+});
+
+$("#trusted_us_gr1").click(function() {
+  $(this).addClass("is-active");
+  $("#trusted_us_gr2").removeClass("is-active");
+  $("#trusted_us_gr3").removeClass("is-active");
+  SwiperBrands.slideTo(0);
+});
+$("#trusted_us_gr2").click(function() {
+  $(this).addClass("is-active");
+  $("#trusted_us_gr1").removeClass("is-active");
+  $("#trusted_us_gr3").removeClass("is-active");
+  SwiperBrands.slideTo(1);
+});
+$("#trusted_us_gr3").click(function() {
+  $(this).addClass("is-active");
+  $("#trusted_us_gr1").removeClass("is-active");
+  $("#trusted_us_gr2").removeClass("is-active");
+  SwiperBrands.slideTo(2);
+});
