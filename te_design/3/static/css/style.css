@@ -916,6 +916,12 @@ header.header.is-fixed-top {
   right: -27%;
 }
 
+@media (max-width: 575px) {
+  .mobile-menu.is-active > .submenu.is-expanded {
+    right: -45%;
+  }
+}
+
 .mobile-menu.is-active.is-expanded > .menu {
   right: -1000px !important;
 }
@@ -924,6 +930,13 @@ header.header.is-fixed-top {
   -webkit-transform: rotate(90deg) !important;
   transform: rotate(90deg) !important;
   left: 27% !important;
+  background-color: #f6f7fa;
+}
+
+@media (max-width: 575px) {
+  .mobile-menu.is-active.is-expanded .white-panel-top {
+    left: 45% !important;
+  }
 }
 
 .mobile-menu.is-active.is-expanded .white-panel-right {
