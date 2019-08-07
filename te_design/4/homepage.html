@@ -1,0 +1,964 @@
+<!-- dist compiled 2019/08/07 17:42:43 (1565192563) -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TotalExpert</title>
+    <link rel="icon" href="./static/favicon.gif" type="image/gif" sizes="32x32">
+    <link rel="stylesheet" href="./static/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+    <!-- Swiper End -->
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+    <!-- AOS End -->
+    <!-- JQuery Lazyload -->
+    <script src="./static/js/jquery.lazy.min.js" charset="utf-8"></script>
+    <!-- JQuery Lazyload End -->
+  </head>
+  <body class="header header-white header-shadow">
+    <div class="alert alert-primary bg-gradient-danger text-white fixed-bottom alert-flush alert-dismissible border-0 shadow-lg fade show mb-0" role="alert">
+  <div class="container">
+    Tak proszę Pana. Oczywiście proszę Pana. <strong>20%</strong> proszę Pana. <strong>30%</strong> też może być i <strong>50%</strong> proszę Pana się znajdzie.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span class="text-white opacity-10" aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</div>
+
+    <header class="header is-fixed-top" id="header">
+  <nav class="navbar navbar-expand-lg navbar-transparent navbar-dark" id="navbar-main">
+    <div class="container px-lg-0">
+      <a class="navbar-brand mr-lg-5" href="index.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="27.8" height="30" viewBox="0 0 27.8 30"><style>.st0{fill:url(#SVGID_1_)}</style><radialGradient id="SVGID_1_" cx="-328.717" cy="310.873" r=".428" gradientTransform="matrix(71.4087 0 0 -71.4086 23474.04 22204.375)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#20c4f4"/><stop offset=".304" stop-color="#09b4f0"/><stop offset=".5" stop-color="#00aeef"/><stop offset=".8" stop-color="#0092c8"/><stop offset="1" stop-color="#006e98"/></radialGradient><path class="st0" d="M26.7 6.5c-.3-.6-.8-1.4-1.5-2-.3-.3-.7-.5-1.2-.6-.4-.1-.8-.2-1.2-.2h-.1c-.5 0-1.5.1-2.1.9-.3.3-.4.8-.3 1.3.1.4.3.7.7.8 0 0 .1 0 .3.1-.1 0-.2.2-.2.2-.2.3-.7.8-2.1.8h-.1c-.7 0-1.3-.2-2-1.1-.4-.6-.7-1.5-.7-3.1 0-.8-.1-1.5-.3-2-.1-.4-.4-.7-.7-.9-.2-.2-.5-.3-.9-.4-.4-.3-1-.3-1.5-.3-.6 0-.9.1-1.1.4 0 0 0 .1-.1.1h-.4c-.3 0-.6.1-.9.1-.6.1-.9.3-1.3.6-.1.1-.4.4-.5.8-.1.3 0 .5.1.6 0 0 0 .1.1.1.2-.2.5-.3 1-.3.6 0 1.5.3 1.8.8.4.7.3 1.2.2 1.9-.2 1.7-.9 2.6-2.2 2.8h-.7c-1 0-1.7-.3-2-.9-.2-.2-.2-.3-.2-.3s.1 0 .2-.1c.4-.2.6-.4.7-.8.1-.4 0-.9-.3-1.3-.5-.5-1.2-.8-2.1-.8-.5 0-.9.1-1.2.2-1.2.3-2.1 1.1-2.8 2.6-.5 1-.9 2.4-1 3.8C0 11.7 0 12.9.1 14c.2 1.8.5 2.9.9 4 .4 1.2 1 2.3 1.6 3.3.2.4.3.6.4.7.1-.1.2-.2.3-.4.2-.2.9-1.1 1.1-1.4.3-.2.6-.8.8-1.2l.1-.2.2.2c.2.2.3.4.3.7 0 .3-.1.6-.2 1.2-.2.6-.5 1.4-.9 2 0 .1-.1.2-.1.2-.2.4-.3.6-.2.7.1 0 .4-.1.7-.4.3-.2 1-.8 1.9-2.1.7-.9 1.2-1.9 1.7-3l.1-.2.2.1c.1 0 .2.1.2.2.1.2.1.4.1.7-.1.7-.5 1.7-.8 2.4-.5 1.2-1.5 2.6-2.2 3.6 0 0-.2.2-.2.3.1.1.2.2.4.3l.3.2c1 .8 1.9 1.5 3.1 2.1.9.5 2.8 1.5 4 1.8 1.2-.3 3.1-1.3 4-1.8 1.2-.7 2.1-1.3 3.1-2.1l.3-.2c.2-.1.3-.3.4-.3 0 0-.1-.1-.1-.2l-.1-.1c-.7-1-1.7-2.4-2.2-3.6-.3-.7-.7-1.8-.8-2.4 0-.3 0-.5.1-.7 0-.1.1-.1.2-.2s.2-.1.2-.1l.1.2c.5 1.1 1.1 2 1.7 3 .9 1.3 1.6 1.9 1.9 2.1.3.2.6.4.7.4h.1c.1-.1 0-.3-.2-.7 0-.1-.1-.2-.1-.2-.4-.7-.7-1.4-.9-2-.2-.6-.3-.9-.3-1.2 0-.3.1-.6.3-.7l.2-.1.1.2c.2.4.6 1 .7 1.2.2.3.9 1.1 1.1 1.4l.3.3c.1-.1.2-.3.4-.6v-.1c.6-1 1.1-2.1 1.6-3.3.4-1.2.7-2.2.9-4 .1-1.1.2-2.3 0-3.7 0-1.4-.3-2.8-.9-3.8z"/></svg>
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="141.6" height="23.5" viewBox="0 0 141.6 23.5"><style>.st0{fill:#00aeef}</style><path class="st0" d="M11.2 10.1c2.4-.6 5.1-2.3 5.1-5.2C16.3.6 12.2.6 10.1.6H1.5c.4.2.6 1.3.6 2.8 0 1.8-.1 4.3-.4 7.7l-.1 1.4C1.2 18.4 1 21.8 0 22.6h7.7c5.9 0 9.5-3 9.5-6.9.1-3.6-2.5-5.2-6-5.6zM6.1 7.9c.1-1.6.3-3.2.5-4.7.5-.1 1.1-.1 1.5-.1 2.6 0 3.8 1.1 3.8 2.6 0 2.6-2.6 3.6-5.4 3.6H6l.1-1.4zm1.4 11.9c-1.5 0-2.1-.4-2.1-.6 0-1.4.1-2.5.2-4l.2-3.2h1.6c2.9 0 5.2.9 5.2 3.8 0 2.6-2 4-5.1 4zM136.7 9.8c-2.2-1.4-4.3-2.6-4.3-4.2 0-2 1.7-2.8 3.6-2.8 2.2 0 4.1 1.3 5 2.9l.6-5.2c-1.5 0-3-.4-5.4-.4-4.1 0-8.1 1.6-8.1 6.3 0 3.2 2.3 4.9 5.9 7.1 1.7 1 3.1 2.1 3.1 3.7 0 2-1.7 3.1-4 3.1-3 0-5-1.7-6.1-4l-.4 5.5c2.3.9 4.3 1.2 6.2 1.2 4.7 0 8.7-2.6 8.7-6.7 0-3.2-2.4-5-4.8-6.5zM121 10.7c1.1-1.8 6.2-9.9 7.4-10.1h-5.9c.2.2.3.8.3 1.3 0 .7-.3 1.3-.6 1.9-1.4 2.2-2.4 3.9-4 6.2-.6-1.8-1.7-4.2-3.1-7.5-.9-2-1.3-2.2-2.8-2.2-.8 0-2.6.1-3.9.2.8.4 2 2.3 3.1 4.3 1.7 3.2 2.8 5.9 3.6 8.7.1 1.9-.4 8.1-1.4 9.1h6c-.5-.5-.6-1.8-.6-2.8 0-2.4.2-4.6.5-6.2.2-.9.9-2 1.4-2.9zM56.3 18.9l-4.5-6c-.3-.4-.8-1.1-1.1-1.3 2.9-.9 5.3-2.8 5.3-6.3C56 1 52.3.6 49.7.6h-8.2c.4.2.6 1.2.6 2.8 0 1.8-.1 4.3-.4 7.7l-.1 1.4c-.5 6.8-.8 9.4-1.7 10.1h6c-.4-.2-.6-1.3-.6-2.8 0-1.3.1-3.1.2-5.4l.1-1.6h.1c.8 0 1.1.5 1.6 1.1l6.2 8.6c.5.7.9 1 2.6 1 1.1 0 2.8-.1 4-.2-.7-.5-1-.7-3.8-4.4zM47 10c-.3 0-.7 0-1-.1l.1-1.5c.2-2.6.3-4.3.5-5.2.5-.1 1.2-.1 1.7-.1 2.1 0 3.3 1 3.3 2.7 0 2.6-1.9 4.2-4.6 4.2zM34.7 12.7l-.9-3.4c-1.1-4-2.4-8.7-2.4-8.7h-4.8c.2.2.3.7.3 1.2S25.4 5.6 24 8.6l-1.5 3.3c-2.7 5.7-4.6 9.2-6.1 10.7h5.3c-.1-.2-.1-.7-.1-1 0-1.2 1.1-3.3 1.5-4.3l.5-.9h2.6c2.6 0 4.2-.3 5.2-.7l.5 1.9c1.5 5.2 1.7 5.3 3.6 5.3.6 0 2.1-.1 3.4-.2-1.5-1.3-2.5-4.1-4.2-10zm-9.9.6l3.6-7.7 2.2 7.7h-5.8zM63.6 12.2c0-4.4 1.9-9.5 6.6-9.5 2.4 0 4.2 1.3 5.2 3.3L76 .4c-1.9 0-3-.4-5.4-.4C63 0 59 5.7 59 13c0 5.3 3.3 10 9 10 4.4 0 7-2.2 8.2-5.9-2.8 2-4.5 2.5-6.4 2.5-3.5 0-6.2-2.6-6.2-7.4zM106.5 12.7l-.9-3.4c-.4-1.5-2.4-8.7-2.4-8.7h-4.8c.2.2.3.7.3 1.2 0 .6-1.4 3.7-2.9 6.8l-1.5 3.3c-1.1 2.5-2.3 4.8-3.4 6.7-1.7 1.1-2.6 1.2-6.2 1.2-1 0-1.4-.2-1.4-1.2 0-2.2.3-4.4.4-6.6l.1-1.3c.4-5.9.7-9.5 1.6-10h-6c.4.5.5 1.3.6 2.8 0 1.8-.1 4.3-.4 7.7l-.1 1.4c-.4 5.9-.7 9.1-1.6 10.1h15.6c-.1-.2-.1-.7-.1-1 0-1.2.9-2.9 1.5-4.3l.5-.9H98c2.6 0 4.2-.3 5.2-.7l.5 1.9c1.5 5.2 1.7 5.3 3.6 5.3.6 0 2.2-.1 3.4-.2-1.6-1.4-2.6-4.2-4.2-10.1zm-9.9.6l3.6-7.7 2.2 7.7h-5.8z"/></svg>
+
+      </a>
+      <div class="collapse navbar-collapse" id="szkolenia-collapse">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item dropdown dropdown-style-1">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+            Szkolenia
+          </a>
+          <div class="dropdown-menu text-nowrap p-0">
+            <div class="dropdown-header">
+              <div class="dropdown-icon py-2 pr-4">
+                <i class="fas fa-circle fa-3x"></i>
+              </div>
+              <div class="dropdown-text">
+                <a href="#" class="text-wrap">
+                  Szkolenia Otwarte
+                </a>
+                <p class="text-wrap">Skierowane dla różnych firm z różnych regionów</p>
+              </div>
+            </div>
+            <ul class="list-group py-2 m-0">
+              <a href="#">
+                <li class="list-group-item border-0 py-2 pl-4">
+                  <i class="fas fa-hand-holding-usd pr-3"></i>
+                    <span>Rachunkowe</span>
+                </li>
+              </a>
+              <a href="#">
+                <li class="list-group-item border-0 py-2 pl-4">
+                  <i class="fas fa-coins pr-3"></i>
+                    <span>Finansowe</span>
+                </li>
+              </a>
+              <a href="#">
+                <li class="list-group-item border-0 py-2 pl-4">
+                  <i class="fas fa-coins pr-3"></i>
+                    <span>Podatkowe</span>
+                </li>
+              </a>
+              <a href="#">
+                <li class="list-group-item border-0 py-2 pl-4">
+                  <i class="fas fa-building pr-3"></i>
+                    <span>Kadrowo Płacowe</span>
+                </li>
+              </a>
+              <a href="#">
+                <li class="list-group-item border-0 py-2 pl-4">
+                  <i class="fas fa-circle pr-3"></i>
+                    <span>Budżetowe</span>
+                </li>
+              </a>
+              <a href="#">
+                <li class="list-group-item border-0 py-2 pl-4">
+                  <i class="fas fa-circle pr-3"></i>
+                    <span>Emerytalne</span>
+                </li>
+              </a>
+              <a href="#">
+                <li class="list-group-item border-0 py-2 pl-4">
+                  <i class="fas fa-circle pr-3"></i>
+                    <span>Pozostałe</span>
+                </li>
+              </a>
+            </ul>
+          </div>
+        </li>
+
+        <li class="nav-item">
+        <a href="#" class="nav-link">Link</a>
+        </li>
+      </ul>
+      <form class="form-inline d-none d-lg-flex">
+        <input style="border-width: 0px; outline: none; box-shadow: 0px 0px transparent;" class="form-control header-search-input" type="search" placeholder="Szukaj" aria-label="Szukaj">
+        <button class="btn btn-outline-white header-search-btn my-2 my-sm-0" type="submit">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+      </div>
+    </div>
+  </nav>
+</header>
+
+    <div id="mobile-menu__shadow-overlay" class="shadow-overlay d-none"></div>
+<div id="mobile-menu" class="mobile-menu">
+  <!-- <div class="white-panel white-panel-top"></div> -->
+  <div class="white-panel white-panel-right"></div>
+  <button id="toc" class="hamburger hamburger--vortex" type="button">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </button>
+  <button id="toc_expanded" class="d-none hamburger hamburger--arrowalt" type="button">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </button>
+  <div class="menu">
+    <ul class="list-group text-nowrap">
+      <li class="list-group-item border-0">
+        <a id="mobile_menu__szkolenia__link" style="cursor:pointer;">
+          Szkolenia
+        </a>
+      </li>
+      <li class="list-group-item border-0">
+        <a href="#">
+          Link normal
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div id="mobile_menu__szkolenia__submenu" class="submenu dropdown-style-1">
+    <div class="dropdown-mobile-menu text-nowrap p-0">
+      <div class="dropdown-header m-0 py-4 bg-white">
+        <div class="dropdown-icon py-2 pr-2">
+          <i class="fas fa-circle fa-3x"></i>
+        </div>
+        <div class="dropdown-text">
+          <a href="#" class="text-wrap">
+            Szkolenia Otwarte
+          </a>
+          <p class="text-wrap">Skierowane dla różnych firm z różnych regionów</p>
+        </div>
+      </div>
+      <ul class="list-group py-2 m-0">
+        <a href="#">
+          <li class="list-group-item border-0 py-2 pl-4">
+            <i class="fas fa-hand-holding-usd pr-3"></i>
+              <span>Rachunkowe</span>
+          </li>
+        </a>
+        <a href="#">
+          <li class="list-group-item border-0 py-2 pl-4">
+            <i class="fas fa-coins pr-3"></i>
+              <span>Finansowe</span>
+          </li>
+        </a>
+        <a href="#">
+          <li class="list-group-item border-0 py-2 pl-4">
+            <i class="fas fa-coins pr-3"></i>
+              <span>Podatkowe</span>
+          </li>
+        </a>
+        <a href="#">
+          <li class="list-group-item border-0 py-2 pl-4">
+            <i class="fas fa-building pr-3"></i>
+              <span>Kadrowo Płacowe</span>
+          </li>
+        </a>
+        <a href="#">
+          <li class="list-group-item border-0 py-2 pl-4">
+            <i class="fas fa-circle pr-3"></i>
+              <span>Budżetowe</span>
+          </li>
+        </a>
+        <a href="#">
+          <li class="list-group-item border-0 py-2 pl-4">
+            <i class="fas fa-circle pr-3"></i>
+              <span>Emerytalne</span>
+          </li>
+        </a>
+        <a href="#">
+          <li class="list-group-item border-0 py-2 pl-4">
+            <i class="fas fa-circle pr-3"></i>
+              <span>Pozostałe</span>
+          </li>
+        </a>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+    <div class="main-content">
+      
+<section class="bg-gradient-primary">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <h1 class="text-white">TotalExpert Szkolenia</h1>
+        <p class="text-white">
+          <span class="typed"></span>
+        </p>
+
+        <a href="#" class="btn btn-light btn-icon rounded-pill py-2 px-4 mt-4">
+          <span class="btn-inner--icon"><i class="fab fa-amazon"></i></span>
+          <span class="btn-inner--text">button_01</span>
+        </a>
+
+      </div>
+    </div>
+  </div>
+  <svg class="header-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 1366 470" style="enable-background:new 0 0 1366 470;" xml:space="preserve">
+    <path class="header-svg-wave-one" d="M0.5,111.3c90,58.8,211.8,105.4,342.2,106.9C622.6,221.3,750.5-0.3,1032.8,0.4 c94.1,0.2,201.7,26.2,333.7,110l-0.5,444.2H0.5V111.3z"></path>
+    <path class="header-svg-wave-two" d="M1366.5,348.3c-90,58.8-211.8,105.4-342.2,106.9c-279.9,3.2-407.8-218.4-690.1-217.8 c-94.1,0.2-201.7,26.2-333.7,110v207.2H1366L1366.5,348.3z"></path>
+  </svg>
+</section>
+
+<!-- Kwadraty -> na komórce inaczej -->
+<section class="pb-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <p class="section__label text-center">section label</p>
+        <h2 class="section__title text-center">Kategorie szkoleń</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="border-bottom pb-4 pt-2">
+  <div class="container-fluid px-5">
+    <div class="row">
+
+      <div class="col-12 homepage-service-container">
+
+        <div class="row">
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="homepage-service">
+              <h5 class="m-0">
+                <a href="#">
+                  <strong>
+                    Prawo Pracy, Czas Pracy
+                  </strong>
+                </a>
+                <i class="fas fa-long-arrow-alt-right"></i>
+              </h5>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit delectus
+              </p>
+              <div><a href="#">
+                <i class="fas fa-sort-up"></i>
+                <strong>
+                  read more
+                </strong>
+              </a></div>
+            </div>
+          </div>
+
+
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="homepage-service">
+              <h5 class="m-0">
+                <a href="#">
+                  <strong>
+                    Ochrona Danych Osobowych, RODO, IOD
+                  </strong>
+                </a>
+                <i class="fas fa-long-arrow-alt-right"></i>
+              </h5>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit delectus
+              </p>
+              <div><a href="#">
+                <i class="fas fa-sort-up"></i>
+                <strong>
+                  read more
+                </strong>
+              </a></div>
+            </div>
+          </div>
+
+
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="homepage-service">
+              <h5 class="m-0">
+                <a href="#">
+                  <strong>
+                    Kadry i Płace, ZFŚS, Emerytury
+                  </strong>
+                </a>
+                <i class="fas fa-long-arrow-alt-right"></i>
+              </h5>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit delectus
+              </p>
+              <div><a href="#">
+                <i class="fas fa-sort-up"></i>
+                <strong>
+                  read more
+                </strong>
+              </a></div>
+            </div>
+          </div>
+
+
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="homepage-service">
+              <h5 class="m-0">
+                <a href="#">
+                  <strong>
+                    HR, ZZL
+                  </strong>
+                </a>
+                <i class="fas fa-long-arrow-alt-right"></i>
+              </h5>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit delectus
+              </p>
+              <div><a href="#">
+                <i class="fas fa-sort-up"></i>
+                <strong>
+                  read more
+                </strong>
+              </a></div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="homepage-service">
+              <h5 class="m-0">
+                <a href="#">
+                  <strong>
+                    Podatki - PIT CIT VAT
+                  </strong>
+                </a>
+                <i class="fas fa-long-arrow-alt-right"></i>
+              </h5>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit delectus
+              </p>
+              <div><a href="#">
+                <i class="fas fa-sort-up"></i>
+                <strong>
+                  read more
+                </strong>
+              </a></div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="homepage-service">
+              <h5 class="m-0">
+                <a href="#">
+                  <strong>
+                    Budżetowe
+                  </strong>
+                </a>
+                <i class="fas fa-long-arrow-alt-right"></i>
+              </h5>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit delectus
+              </p>
+              <div><a href="#">
+                <i class="fas fa-sort-up"></i>
+                <strong>
+                  read more
+                </strong>
+              </a></div>
+            </div>
+          </div>
+
+
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="homepage-service">
+              <h5 class="m-0">
+                <a href="#">
+                  <strong>
+                    PPK
+                  </strong>
+                </a>
+                <i class="fas fa-long-arrow-alt-right"></i>
+              </h5>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit delectus
+              </p>
+              <div><a href="#">
+                <i class="fas fa-sort-up"></i>
+                <strong>
+                  read more
+                </strong>
+              </a></div>
+            </div>
+          </div>
+
+
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="homepage-service">
+              <h5 class="m-0">
+                <a href="#">
+                  <strong>
+                      Coś na topie, pozostałe
+                  </strong>
+                </a>
+                <i class="fas fa-long-arrow-alt-right"></i>
+              </h5>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit delectus
+              </p>
+              <div><a href="#">
+                <i class="fas fa-sort-up"></i>
+                <strong>
+                  read more
+                </strong>
+              </a></div>
+            </div>
+          </div>
+
+
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Timeline -->
+<section class="py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-center">Przebieg zapisu na szkolenie</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tl-szkolenia-krok mt-5 mr-0">
+
+  <div class="tl-szkolenia-krok__header">
+  <ul class="tl-nav-szkolenia-krok px-4">
+  <li class="tl-nav-szkolenia-krok__item tl-nav-szkolenia-krok__item--1 active">
+  <div class="tl-nav-szkolenia-krok__blob">
+  <div class="tl-nav-szkolenia-krok__blob__inner"></div>
+</div><a class="tl-nav-szkolenia-krok__link" data-slide-index="0">zapis</a>
+  <div class="tl-nav-szkolenia-krok__decor tl-nav-szkolenia-krok__decor--left"></div>
+  <div class="tl-nav-szkolenia-krok__decor tl-nav-szkolenia-krok__decor--right"></div>
+  </li>
+  <li class="tl-nav-szkolenia-krok__item tl-nav-szkolenia-krok__item--2">
+  <div class="tl-nav-szkolenia-krok__blob">
+  <div class="tl-nav-szkolenia-krok__blob__inner"></div>
+</div><a class="tl-nav-szkolenia-krok__link" data-slide-index="1">przyjęcie zgłoszenia</a>
+  <div class="tl-nav-szkolenia-krok__decor tl-nav-szkolenia-krok__decor--left"></div>
+  <div class="tl-nav-szkolenia-krok__decor tl-nav-szkolenia-krok__decor--right"></div>
+  </li>
+  <li class="tl-nav-szkolenia-krok__item tl-nav-szkolenia-krok__item--3">
+  <div class="tl-nav-szkolenia-krok__blob">
+  <div class="tl-nav-szkolenia-krok__blob__inner"></div>
+  </div><a class="tl-nav-szkolenia-krok__link" data-slide-index="2">potwierdzenie szkolenia</a>
+  <div class="tl-nav-szkolenia-krok__decor tl-nav-szkolenia-krok__decor--left"></div>
+  <div class="tl-nav-szkolenia-krok__decor tl-nav-szkolenia-krok__decor--right"></div>
+  </li>
+  <li class="tl-nav-szkolenia-krok__item tl-nav-szkolenia-krok__item--4">
+  <div class="tl-nav-szkolenia-krok__blob">
+  <div class="tl-nav-szkolenia-krok__blob__inner"></div>
+</div><a class="tl-nav-szkolenia-krok__link" data-slide-index="3">szkolenie, certyfikat & faktura</a>
+  <div class="tl-nav-szkolenia-krok__decor tl-nav-szkolenia-krok__decor--left"></div>
+  <div class="tl-nav-szkolenia-krok__decor tl-nav-szkolenia-krok__decor--right"></div>
+  </li>
+  <li class="tl-nav-szkolenia-krok__item tl-nav-szkolenia-krok__item--5">
+  <div class="tl-nav-szkolenia-krok__blob">
+  <div class="tl-nav-szkolenia-krok__blob__inner"></div>
+</div><a class="tl-nav-szkolenia-krok__link" data-slide-index="4">opinie</a>
+  <div class="tl-nav-szkolenia-krok__decor tl-nav-szkolenia-krok__decor--left"></div>
+  <div class="tl-nav-szkolenia-krok__decor tl-nav-szkolenia-krok__decor--right"></div>
+  </li>
+  <li class="tl-nav-szkolenia-krok__item tl-nav-szkolenia-krok__item--6">
+  <div class="tl-nav-szkolenia-krok__blob">
+  <div class="tl-nav-szkolenia-krok__blob__inner"></div>
+</div><a class="tl-nav-szkolenia-krok__link" data-slide-index="5">faktury</a>
+  <div class="tl-nav-szkolenia-krok__decor tl-nav-szkolenia-krok__decor--left"></div>
+  <div class="tl-nav-szkolenia-krok__decor tl-nav-szkolenia-krok__decor--right"></div>
+  </li>
+  <li class="tl-nav-szkolenia-krok__item tl-nav-szkolenia-krok__item--7">
+  <div class="tl-nav-szkolenia-krok__blob">
+  <div class="tl-nav-szkolenia-krok__blob__inner"></div>
+</div><a class="tl-nav-szkolenia-krok__link" data-slide-index="6">kontakt z wykładowcą</a>
+  <div class="tl-nav-szkolenia-krok__decor tl-nav-szkolenia-krok__decor--left"></div>
+  <div class="tl-nav-szkolenia-krok__decor tl-nav-szkolenia-krok__decor--right"></div>
+  </li>
+  </ul>
+
+  </div>
+
+</section>
+
+<!-- Slider main container -->
+<div class="swiper-container swiper-container-timeline" style="width: 100%;">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-12 pt-3 px-5 tl-gradient">
+                  <h1>Lorem ipsum 1</h1>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+                  <ul>
+                    <li>element</li>
+                    <li>element</li>
+                    <li>element</li>
+                  </ul>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-slide">
+
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-12 pt-3 px-5 tl-gradient">
+                  <h1>Lorem ipsum 2</h1>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+                  <ul>
+                    <li>element</li>
+                    <li>element</li>
+                    <li>element</li>
+                  </ul>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-slide">
+
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-12 pt-3 px-5 tl-gradient">
+                  <h1>Lorem ipsum 3</h1>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+                  <ul>
+                    <li>element</li>
+                    <li>element</li>
+                    <li>element</li>
+                  </ul>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-slide">
+
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-12 pt-3 px-5 tl-gradient">
+                  <h1>Lorem ipsum 4</h1>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+                  <ul>
+                    <li>element</li>
+                    <li>element</li>
+                    <li>element</li>
+                  </ul>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-slide">
+
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-12 pt-3 px-5 tl-gradient">
+                  <h1>Lorem ipsum 5</h1>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+                  <ul>
+                    <li>element</li>
+                    <li>element</li>
+                    <li>element</li>
+                  </ul>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-slide">
+
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-12 pt-3 px-5 tl-gradient">
+                  <h1>Lorem ipsum 6</h1>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+                  <ul>
+                    <li>element</li>
+                    <li>element</li>
+                    <li>element</li>
+                  </ul>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-slide">
+
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-12 pt-3 px-5 tl-gradient">
+                  <h1>Lorem ipsum 7</h1>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+                  <ul>
+                    <li>element</li>
+                    <li>element</li>
+                    <li>element</li>
+                  </ul>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+      </div>
+      <!-- <svg class="header-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 2000 400" style="enable-background:new 0 0 2000 400;" xml:space="preserve">
+        <path fill="#f1f4f8" d="M 2160 0 C 1440 240 720 240 720 240 H 0 V 480 H 2880 V 0 H 216 0 Z"></path>
+      </svg> -->
+  </div>
+
+
+<!-- Numerki -->
+<div class="container pt-5">
+  <div class="row">
+
+    <div class="col-lg-4 col-md-6 col-12">
+      <div class="numbers-card">
+        <p class="numbers-card__title">
+          <span>2000</span> szkoleń
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-12">
+      <div class="numbers-card">
+        <p class="numbers-card__title">
+          <span>20+</span> lat na rynku
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-12">
+      <div class="numbers-card">
+        <p class="numbers-card__title">
+          <span>7925</span> uczestników
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Klienci -->
+<section class="zaufali swiper-container swiper-container-brands">
+  <div class="container zaufali-container">
+    <div class="row pb-5">
+      <div class="col-12">
+        <h2 class="text-center my-3 zaufali__title">Zaufali Nam</h2>
+      </div>
+    </div>
+    <div class="row tabs pb-5">
+      <div id="trusted_us_gr1" class="col-4 tab is-active">
+        <h4 class="text-uppercase text-center">
+          Services
+        </h4>
+      </div>
+      <div id="trusted_us_gr2" class="col-4 tab">
+        <h4 class="text-uppercase text-center">
+          Technologies
+        </h4>
+      </div>
+      <div id="trusted_us_gr3" class="col-4 tab">
+        <h4 class="text-uppercase text-center">
+          Industries
+        </h4>
+      </div>
+    </div>
+  </div>
+  <div class="swiper-wrapper">
+
+    <div class="swiper-slide">
+
+      <div class="container">
+        <div class="row pb-5">
+          <div class="col-6 col-sm-6 col-md-4 col-lg-2">
+            <img data-src="./static/images/zlogo_1.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 12px;">
+          </div>
+          <div class="col-6 col-sm-6 col-md-4 col-lg-2">
+            <img data-src="./static/images/zlogo_2.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 3px;">
+          </div>
+          <div class="col-6 col-sm-6 col-md-4 col-lg-2">
+            <img data-src="./static/images/zlogo_3.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 18px;">
+          </div>
+          <div class="col-6 col-sm-6 offset-md-2 offset-lg-0 col-md-4 col-lg-2">
+            <img data-src="./static/images/zlogo_4.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 0px;">
+          </div>
+          <div class="col-6 col-sm-6 offset-md-1 offset-lg-0 col-md-4 d-sm-none d-none d-md-block col-lg-2">
+            <img data-src="./static/images/zlogo_5.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 28px;">
+          </div>
+          <div class="col-6 col-sm-6 col-md-2 d-sm-none d-none d-lg-block col-lg-2">
+            <img data-src="./static/images/zlogo_6.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thmbnail border-0" style="position:relative;top: 21px;max-width:125%;">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="swiper-slide">
+
+      <div class="container">
+        <div class="row pb-5">
+          <div class="col-6 col-sm-6 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_2.png" alt="alt_text" class="img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 3px;">
+          </div>
+          <div class="col-6 col-sm-6 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_1.png" alt="alt_text" class="img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 12px;">
+          </div>
+          <div class="col-6 col-sm-6 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_3.png" alt="alt_text" class="img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 18px;">
+          </div>
+          <div class="col-6 col-sm-6 offset-md-2 offset-lg-0 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_4.png" alt="alt_text" class="img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 0px;">
+          </div>
+          <div class="col-6 col-sm-6 offset-md-1 offset-lg-0 col-md-4 d-sm-none d-none d-md-block col-lg-2">
+            <img src="./static/images/zlogo_5.png" alt="alt_text" class="img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 28px;">
+          </div>
+          <div class="col-6 col-sm-6 col-md-2 d-sm-none d-none d-lg-block col-lg-2">
+            <img src="./static/images/zlogo_6.png" alt="alt_text" class="img-greyscale-not-on-hover img-thmbnail border-0" style="position:relative;top: 21px;max-width:125%;">
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="swiper-slide">
+
+      <div class="container">
+        <div class="row pb-5">
+          <div class="col-6 col-sm-6 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_2.png" alt="alt_text" class="img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 3px;">
+          </div>
+          <div class="col-6 col-sm-6 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_3.png" alt="alt_text" class="img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 18px;">
+          </div>
+          <div class="col-6 col-sm-6 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_1.png" alt="alt_text" class="img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 12px;">
+          </div>
+          <div class="col-6 col-sm-6 offset-md-2 offset-lg-0 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_4.png" alt="alt_text" class="img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 0px;">
+          </div>
+          <div class="col-6 col-sm-6 offset-md-1 offset-lg-0 col-md-4 d-sm-none d-none d-md-block col-lg-2">
+            <img src="./static/images/zlogo_5.png" alt="alt_text" class="img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 28px;">
+          </div>
+          <div class="col-6 col-sm-6 col-md-2 d-sm-none d-none d-lg-block col-lg-2">
+            <img src="./static/images/zlogo_6.png" alt="alt_text" class="img-greyscale-not-on-hover img-thmbnail border-0" style="position:relative;top: 21px;max-width:125%;">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- grupa wsparcia -->
+<div class="container py-5">
+  <div class="row">
+    <div class="col-md-6 col-12">
+      <p class="text-uppercase">talk to us</p>
+      <h2>Have an idea? Looking for some new friends? Talk to the Code Addicts!</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+    <div class="col-md-6 col-12 text-center">
+      <img src="./static/images/messenger-chat.png" alt="" class="img-fluid" style="max-width: 305px;max-height: 380px;width: 100%;height: 100%;">
+    </div>
+  </div>
+</div>
+
+
+    </div>
+    <footer>
+  <div class="container-fluid bg-dark text-white">
+    <div class="row">
+      <div class="col-12">
+        <h6 class="text-white text-center pt-4">Sign in to Newsletter</h6>
+      </div>
+    </div>
+    <div class="row justify-content-center pb-4 mb-3">
+        <div class="col-xl-6 col-lg-7 col-md-9">
+          <form action="#" method="post" target="_blank" novalidate="">
+            <div class="input-group">
+              <input class="form-control form-control-light-skin" type="email" name="EMAIL" placeholder="Email address">
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="submit">Sign Up</button>
+              </div>
+            </div><small class="form-text text-white opacity-50 pt-1 text-center">Enter email to receive a newsletter about updates and new products.</small>
+            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+              <input type="text" name="b_c7103e2c981361a6639545bd5_1194bb7544" tabindex="-1">
+            </div>
+          </form>
+        </div>
+      </div>
+    <hr>
+    <div class="row px-2 py-4">
+      <div class="col-md-4">
+        <ul style="list-style: none;">
+          <li>
+            <b>Social Media</b><br>
+          </li>
+          <li>
+            <a class="text-decoration-none" href="#facebook" target="_blank">
+              <i class="fab fa-facebook"></i>&nbsp;
+              Facebook
+            </a>
+          </li>
+          <li>
+            <a class="text-decoration-none" href="#twitter" target="_blank">
+              <i class="fab fa-twitter"></i>&nbsp;
+              Twitter
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <ul style="list-style: none;">
+          <li>
+            <b>Lorem ipsum dolor sit amet</b><br>
+          </li>
+          <li>
+            consectetur adipisicing elit
+          </li>
+          <li>
+            incididunt ut labore et
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-4">
+        <address>
+          <ul style="list-style: none;">
+            <li>
+              <b>TotalExpert</b>
+            </li>
+            <li>
+              City, Street 1/2
+            </li>
+            <li>
+              <i class="fas fa-phone"></i>&nbsp; Phone: +48 123 456 789
+            </li>
+            <li>
+              <i class="far fa-envelope"></i>&nbsp; E-mail: <a class="text-decoration-none" href="mailto:example@site.com">example@site.com</a>
+            </li>
+          </ul>
+        </address>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="./static/js/swiper.init.js" charset="utf-8"></script>
+    <script src="./static/js/aos.init.js" charset="utf-8"></script>
+    <script src="./static/js/mobile.menu.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(function() {
+          $('.lazy').lazy();
+      });
+      var options = {
+        strings: [
+          "Nasi wykładowcy będący praktykami w swoich dziedzinach, nie zmarnują twojego bezcennego czasu!"
+        ],
+        smartBackspace: true,
+        typeSpeed: 10,
+      }
+      var typed = new Typed(".typed", options);
+    </script>
+  </body>
+</html>
