@@ -1162,12 +1162,52 @@ header.header.is-fixed-top {
   top: 3.8em;
 }
 
-.tl-szkolenia-krok__header {
-  overflow-x: auto;
+.member-container {
+  display: -ms-flexbox !important;
+  display: flex !important;
 }
 
-.tl-gradient {
-  background: linear-gradient(180deg, #008CFF 0%, white 100px);
+.member-container .member-photo > img {
+  border-radius: 50%;
+  width: 6.5em;
+}
+
+.member-container .member-details {
+  padding-left: 1.25em;
+}
+
+.member-container .member-details > small {
+  text-transform: uppercase;
+  width: 100%;
+  font-size: .75rem;
+  letter-spacing: .125rem;
+  color: #bababa;
+  line-height: 1rem;
+  margin-bottom: .5rem;
+}
+
+.member-container .member-details-phone {
+  clear: both;
+  margin-top: 0.5em;
+  white-space: nowrap;
+}
+
+.member-container .member-details-phone > a > i {
+  margin-right: 0.5em;
+}
+
+.member-container .member-details-email {
+  clear: both;
+  margin-top: 0.5em;
+  white-space: nowrap;
+}
+
+.member-container .member-details-email > a > i {
+  margin-right: 0.5em;
+}
+
+.tl-szkolenia-krok__header {
+  overflow-x: auto;
 }
 
 .tl-nav-szkolenia-krok {
@@ -1191,7 +1231,7 @@ header.header.is-fixed-top {
   position: absolute;
   left: 0;
   top: 22px;
-  background: linear-gradient(to right, #006EFF 0%, #1f7fff 17.17%, #338aff 33.36%, #4a97ff 50%, #5ba0fc 66.58%, #73afff 82.87%, #96c3ff 100%);
+  background: linear-gradient(to right, #00c6ff 0%, #00b3ff 17.17%, #009fff 33.36%, #008cff 50%, #0079ff 66.58%, #0066ff 82.87%, #0053ff 100%);
 }
 
 .tl-nav-szkolenia-krok__item {
@@ -1340,156 +1380,184 @@ header.header.is-fixed-top {
 
 .tl-nav-szkolenia-krok__item--1.active {
   color: black;
-  background: linear-gradient(180deg, #66baff 0%, #66baff 100%);
+  background: linear-gradient(180deg, #00c6ff 0%, #00c6ff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--1.active .tl-nav-szkolenia-krok__blob:after {
-  background: linear-gradient(135deg, #006EFF 0%, #008CFF 100%);
+  background: linear-gradient(135deg, #00c6ff 0%, #00c6ff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--1 .tl-nav-szkolenia-krok__decor {
-  background: linear-gradient(180deg, #66baff 0%, #66baff 100%);
+  background: linear-gradient(180deg, #00c6ff 0%, #00c6ff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--1 .tl-nav-szkolenia-krok__blob {
-  background: linear-gradient(135deg, #006EFF 0%, #008CFF 100%);
-  box-shadow: 0px 1px 1px #006EFF;
+  background: linear-gradient(135deg, #00c6ff 0%, #00c6ff 100%);
+  box-shadow: 0px 1px 1px #00c6ff;
 }
 
 .tl-nav-szkolenia-krok__item--1 .tl-nav-szkolenia-krok__blob__inner {
-  border-color: #008CFF;
+  border-color: #00c6ff;
 }
 
 .tl-nav-szkolenia-krok__item--2.active {
   color: black;
-  background: linear-gradient(180deg, #66baff 0%, #66baff 100%);
+  background: linear-gradient(180deg, #00b3ff 0%, #00b3ff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--2.active .tl-nav-szkolenia-krok__blob:after {
-  background: linear-gradient(135deg, #006EFF 0%, #008CFF 100%);
+  background: linear-gradient(135deg, #00b3ff 0%, #00b3ff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--2 .tl-nav-szkolenia-krok__decor {
-  background: linear-gradient(180deg, #66baff 0%, #66baff 100%);
+  background: linear-gradient(180deg, #00b3ff 0%, #00b3ff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--2 .tl-nav-szkolenia-krok__blob {
-  background: linear-gradient(135deg, #006EFF 0%, #008CFF 100%);
-  box-shadow: 0px 1px 1px #006EFF;
+  background: linear-gradient(135deg, #00b3ff 0%, #00b3ff 100%);
+  box-shadow: 0px 1px 1px #00b3ff;
 }
 
 .tl-nav-szkolenia-krok__item--2 .tl-nav-szkolenia-krok__blob__inner {
-  border-color: #008CFF;
+  border-color: #00b3ff;
 }
 
 .tl-nav-szkolenia-krok__item--3.active {
   color: black;
-  background: linear-gradient(180deg, #66baff 0%, #66baff 100%);
+  background: linear-gradient(180deg, #009fff 0%, #009fff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--3.active .tl-nav-szkolenia-krok__blob:after {
-  background: linear-gradient(135deg, #006EFF 0%, #008CFF 100%);
+  background: linear-gradient(135deg, #009fff 0%, #009fff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--3 .tl-nav-szkolenia-krok__decor {
-  background: linear-gradient(180deg, #66baff 0%, #66baff 100%);
+  background: linear-gradient(180deg, #009fff 0%, #009fff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--3 .tl-nav-szkolenia-krok__blob {
-  background: linear-gradient(135deg, #006EFF 0%, #008CFF 100%);
-  box-shadow: 0px 1px 1px #006EFF;
+  background: linear-gradient(135deg, #009fff 0%, #009fff 100%);
+  box-shadow: 0px 1px 1px #009fff;
 }
 
 .tl-nav-szkolenia-krok__item--3 .tl-nav-szkolenia-krok__blob__inner {
-  border-color: #008CFF;
+  border-color: #009fff;
 }
 
 .tl-nav-szkolenia-krok__item--4.active {
   color: black;
-  background: linear-gradient(180deg, #66baff 0%, #66baff 100%);
+  background: linear-gradient(180deg, #008cff 0%, #008cff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--4.active .tl-nav-szkolenia-krok__blob:after {
-  background: linear-gradient(135deg, #006EFF 0%, #008CFF 100%);
+  background: linear-gradient(135deg, #008cff 0%, #008cff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--4 .tl-nav-szkolenia-krok__decor {
-  background: linear-gradient(180deg, #66baff 0%, #66baff 100%);
+  background: linear-gradient(180deg, #008cff 0%, #008cff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--4 .tl-nav-szkolenia-krok__blob {
-  background: linear-gradient(135deg, #006EFF 0%, #008CFF 100%);
-  box-shadow: 0px 1px 1px #006EFF;
+  background: linear-gradient(135deg, #008cff 0%, #008cff 100%);
+  box-shadow: 0px 1px 1px #008cff;
 }
 
 .tl-nav-szkolenia-krok__item--4 .tl-nav-szkolenia-krok__blob__inner {
-  border-color: #008CFF;
+  border-color: #008cff;
 }
 
 .tl-nav-szkolenia-krok__item--5.active {
   color: black;
-  background: linear-gradient(180deg, #66baff 0%, #66baff 100%);
+  background: linear-gradient(180deg, #0079ff 0%, #0079ff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--5.active .tl-nav-szkolenia-krok__blob:after {
-  background: linear-gradient(135deg, #006EFF 0%, #008CFF 100%);
+  background: linear-gradient(135deg, #0079ff 0%, #0079ff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--5 .tl-nav-szkolenia-krok__decor {
-  background: linear-gradient(180deg, #66baff 0%, #66baff 100%);
+  background: linear-gradient(180deg, #0079ff 0%, #0079ff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--5 .tl-nav-szkolenia-krok__blob {
-  background: linear-gradient(135deg, #006EFF 0%, #008CFF 100%);
-  box-shadow: 0px 1px 1px #006EFF;
+  background: linear-gradient(135deg, #0079ff 0%, #0079ff 100%);
+  box-shadow: 0px 1px 1px #0079ff;
 }
 
 .tl-nav-szkolenia-krok__item--5 .tl-nav-szkolenia-krok__blob__inner {
-  border-color: #008CFF;
+  border-color: #0079ff;
 }
 
 .tl-nav-szkolenia-krok__item--6.active {
   color: black;
-  background: linear-gradient(180deg, #66baff 0%, #66baff 100%);
+  background: linear-gradient(180deg, #0066ff 0%, #0066ff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--6.active .tl-nav-szkolenia-krok__blob:after {
-  background: linear-gradient(135deg, #006EFF 0%, #008CFF 100%);
+  background: linear-gradient(135deg, #0066ff 0%, #0066ff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--6 .tl-nav-szkolenia-krok__decor {
-  background: linear-gradient(180deg, #66baff 0%, #66baff 100%);
+  background: linear-gradient(180deg, #0066ff 0%, #0066ff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--6 .tl-nav-szkolenia-krok__blob {
-  background: linear-gradient(135deg, #006EFF 0%, #008CFF 100%);
-  box-shadow: 0px 1px 1px #006EFF;
+  background: linear-gradient(135deg, #0066ff 0%, #0066ff 100%);
+  box-shadow: 0px 1px 1px #0066ff;
 }
 
 .tl-nav-szkolenia-krok__item--6 .tl-nav-szkolenia-krok__blob__inner {
-  border-color: #008CFF;
+  border-color: #0066ff;
 }
 
 .tl-nav-szkolenia-krok__item--7.active {
   color: black;
-  background: linear-gradient(180deg, #66baff 0%, #66baff 100%);
+  background: linear-gradient(180deg, #0053ff 0%, #0053ff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--7.active .tl-nav-szkolenia-krok__blob:after {
-  background: linear-gradient(135deg, #006EFF 0%, #008CFF 100%);
+  background: linear-gradient(135deg, #0053ff 0%, #0053ff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--7 .tl-nav-szkolenia-krok__decor {
-  background: linear-gradient(180deg, #66baff 0%, #66baff 100%);
+  background: linear-gradient(180deg, #0053ff 0%, #0053ff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--7 .tl-nav-szkolenia-krok__blob {
-  background: linear-gradient(135deg, #006EFF 0%, #008CFF 100%);
-  box-shadow: 0px 1px 1px #006EFF;
+  background: linear-gradient(135deg, #0053ff 0%, #0053ff 100%);
+  box-shadow: 0px 1px 1px #0053ff;
 }
 
 .tl-nav-szkolenia-krok__item--7 .tl-nav-szkolenia-krok__blob__inner {
-  border-color: #008CFF;
+  border-color: #0053ff;
+}
+
+.tl-gradient--1 {
+  background: linear-gradient(180deg, #00c6ff 0%, white 100px);
+}
+
+.tl-gradient--2 {
+  background: linear-gradient(180deg, #00b3ff 0%, white 100px);
+}
+
+.tl-gradient--3 {
+  background: linear-gradient(180deg, #009fff 0%, white 100px);
+}
+
+.tl-gradient--4 {
+  background: linear-gradient(180deg, #008cff 0%, white 100px);
+}
+
+.tl-gradient--5 {
+  background: linear-gradient(180deg, #0079ff 0%, white 100px);
+}
+
+.tl-gradient--6 {
+  background: linear-gradient(180deg, #0066ff 0%, white 100px);
+}
+
+.tl-gradient--7 {
+  background: linear-gradient(180deg, #0053ff 0%, white 100px);
 }
 
 @media (max-width: 576px) {
@@ -12962,5 +13030,31 @@ a.text-dark:hover, a.text-dark:focus {
 .img-greyscale-not-on-hover:hover {
   -webkit-filter: none;
   filter: none;
+}
+
+.brand-logo {
+  text-align: center;
+}
+
+.brand-logo > img {
+  max-width: 110px !important;
+}
+
+@media (max-width: 992px) {
+  .brand-logo > img {
+    max-width: 140px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .brand-logo > img {
+    max-width: 130px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .brand-logo > img {
+    max-width: 120px !important;
+  }
 }
 /*# sourceMappingURL=style.css.map */
