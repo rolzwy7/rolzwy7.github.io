@@ -879,7 +879,7 @@ header.header.is-fixed-top {
 
 @media (max-width: 576px) {
   .mobile-menu {
-    width: 100vw;
+    width: 88vw;
     height: 2vh;
   }
 }
