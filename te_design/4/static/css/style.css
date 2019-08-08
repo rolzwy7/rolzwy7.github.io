@@ -879,7 +879,7 @@ header.header.is-fixed-top {
 
 @media (max-width: 576px) {
   .mobile-menu {
-    width: 75vw;
+    width: 85vw;
     height: 2vh;
   }
 }
@@ -1152,6 +1152,10 @@ header.header.is-fixed-top {
 .dropdown-style-1 > .dropdown-menu > ul.list-group > a > li span, .dropdown-style-1 > .dropdown-mobile-menu > ul.list-group > a > li span {
   color: #48525a !important;
   text-decoration: none !important;
+}
+
+.dropdown-style-1 > .dropdown-menu > .dropdown-header {
+  min-width: 370px;
 }
 
 .dropdown-style-1 > .dropdown-menu {
