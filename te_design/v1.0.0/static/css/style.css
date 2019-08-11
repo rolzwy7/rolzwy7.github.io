@@ -744,6 +744,33 @@ textarea:focus, input:focus {
   background: linear-gradient(50deg, #dc3545 0, #ff9430 100%) !important;
 }
 
+.footer {
+  background-color: red;
+}
+
+.footer-container > div > .left-panel > div > .left-panel {
+  font-size: 0.875em;
+  line-height: 0.875;
+  color: #2b2d42;
+}
+
+.footer-container > div > .left-panel > div > .left-panel > h6 {
+  font-weight: 800;
+}
+
+.footer-container > div > .left-panel > div > .right-panel > p {
+  margin: 0;
+  margin-bottom: 0.3em;
+}
+
+.footer-container > div > .left-panel > div > .right-panel > p > i {
+  margin-right: 0.5em;
+}
+
+.footer-container > div > .left-panel > div > .right-panel > p.info-upper.divider {
+  margin-bottom: 2em !important;
+}
+
 .hamburger-inner {
   background-color: !important;
   border-radius: 0 !important;
@@ -1028,6 +1055,9 @@ header.header.is-fixed-top {
 }
 
 .numbers-card > p {
+  width: 70%;
+  margin-left: 0;
+  margin-right: 0;
   text-align: center;
 }
 
@@ -1054,6 +1084,71 @@ header.header.is-fixed-top {
   box-shadow: none;
   transition: all 0.28s ease-out;
   background: linear-gradient(315deg, #006EFF 0, #008CFF 100%) !important;
+}
+
+.testimonials-mobile-container {
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+@media (max-width: 576px) {
+  .testimonials-mobile-container {
+    display: block !important;
+  }
+}
+
+.testimonials-mobile-container__image {
+  text-align: center;
+}
+
+@media (max-width: 576px) {
+  .testimonials-mobile-container__image {
+    padding-bottom: 1em;
+  }
+}
+
+.testimonials-mobile-container__image > img {
+  border-radius: 50%;
+  min-width: 6em;
+  max-width: 7em;
+}
+
+@media (max-width: 576px) {
+  .testimonials-mobile-container__image > img {
+    min-width: 3em;
+    max-width: 7em;
+  }
+}
+
+.testimonials-mobile-container__desc {
+  padding-left: 2em;
+}
+
+.testimonials-mobile-container__desc > .desc__text {
+  line-height: 1.875rem;
+  font-size: 1.1em;
+}
+
+.testimonials-mobile-container__desc > .desc__name {
+  font-size: 1em;
+  font-weight: 800;
+  margin: 0;
+}
+
+@media (max-width: 576px) {
+  .testimonials-mobile-container__desc > .desc__name {
+    text-align: center;
+  }
+}
+
+.testimonials-mobile-container__desc > .desc__url {
+  margin: 0;
+}
+
+@media (max-width: 576px) {
+  .testimonials-mobile-container__desc > .desc__url {
+    text-align: center;
+  }
 }
 
 .zaufali-container > .tabs > .tab {
@@ -1219,7 +1314,7 @@ header.header.is-fixed-top {
   align-items: flex-end;
   padding-top: 58px;
   position: relative;
-  min-width: 1440px;
+  min-width: 1420px;
   list-style-type: none;
   margin-bottom: 0px;
 }
@@ -1380,7 +1475,7 @@ header.header.is-fixed-top {
 
 .tl-nav-szkolenia-krok__item--1.active {
   color: black;
-  background: linear-gradient(180deg, #00c6ff 0%, #00c6ff 100%);
+  background: linear-gradient(180deg, #00c6ff 0%, #b3eeff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--1.active .tl-nav-szkolenia-krok__blob:after {
@@ -1388,7 +1483,7 @@ header.header.is-fixed-top {
 }
 
 .tl-nav-szkolenia-krok__item--1 .tl-nav-szkolenia-krok__decor {
-  background: linear-gradient(180deg, #00c6ff 0%, #00c6ff 100%);
+  background: linear-gradient(180deg, #80e3ff 0%, #b3eeff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--1 .tl-nav-szkolenia-krok__blob {
@@ -1402,7 +1497,7 @@ header.header.is-fixed-top {
 
 .tl-nav-szkolenia-krok__item--2.active {
   color: black;
-  background: linear-gradient(180deg, #00b3ff 0%, #00b3ff 100%);
+  background: linear-gradient(180deg, #00b3ff 0%, #b3e8ff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--2.active .tl-nav-szkolenia-krok__blob:after {
@@ -1410,7 +1505,7 @@ header.header.is-fixed-top {
 }
 
 .tl-nav-szkolenia-krok__item--2 .tl-nav-szkolenia-krok__decor {
-  background: linear-gradient(180deg, #00b3ff 0%, #00b3ff 100%);
+  background: linear-gradient(180deg, #80d9ff 0%, #b3e8ff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--2 .tl-nav-szkolenia-krok__blob {
@@ -1424,7 +1519,7 @@ header.header.is-fixed-top {
 
 .tl-nav-szkolenia-krok__item--3.active {
   color: black;
-  background: linear-gradient(180deg, #009fff 0%, #009fff 100%);
+  background: linear-gradient(180deg, #009fff 0%, #b3e2ff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--3.active .tl-nav-szkolenia-krok__blob:after {
@@ -1432,7 +1527,7 @@ header.header.is-fixed-top {
 }
 
 .tl-nav-szkolenia-krok__item--3 .tl-nav-szkolenia-krok__decor {
-  background: linear-gradient(180deg, #009fff 0%, #009fff 100%);
+  background: linear-gradient(180deg, #80cfff 0%, #b3e2ff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--3 .tl-nav-szkolenia-krok__blob {
@@ -1446,7 +1541,7 @@ header.header.is-fixed-top {
 
 .tl-nav-szkolenia-krok__item--4.active {
   color: black;
-  background: linear-gradient(180deg, #008cff 0%, #008cff 100%);
+  background: linear-gradient(180deg, #008cff 0%, #b3ddff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--4.active .tl-nav-szkolenia-krok__blob:after {
@@ -1454,7 +1549,7 @@ header.header.is-fixed-top {
 }
 
 .tl-nav-szkolenia-krok__item--4 .tl-nav-szkolenia-krok__decor {
-  background: linear-gradient(180deg, #008cff 0%, #008cff 100%);
+  background: linear-gradient(180deg, #80c6ff 0%, #b3ddff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--4 .tl-nav-szkolenia-krok__blob {
@@ -1468,7 +1563,7 @@ header.header.is-fixed-top {
 
 .tl-nav-szkolenia-krok__item--5.active {
   color: black;
-  background: linear-gradient(180deg, #0079ff 0%, #0079ff 100%);
+  background: linear-gradient(180deg, #0079ff 0%, #b3d7ff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--5.active .tl-nav-szkolenia-krok__blob:after {
@@ -1476,7 +1571,7 @@ header.header.is-fixed-top {
 }
 
 .tl-nav-szkolenia-krok__item--5 .tl-nav-szkolenia-krok__decor {
-  background: linear-gradient(180deg, #0079ff 0%, #0079ff 100%);
+  background: linear-gradient(180deg, #80bcff 0%, #b3d7ff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--5 .tl-nav-szkolenia-krok__blob {
@@ -1490,7 +1585,7 @@ header.header.is-fixed-top {
 
 .tl-nav-szkolenia-krok__item--6.active {
   color: black;
-  background: linear-gradient(180deg, #0066ff 0%, #0066ff 100%);
+  background: linear-gradient(180deg, #0066ff 0%, #b3d1ff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--6.active .tl-nav-szkolenia-krok__blob:after {
@@ -1498,7 +1593,7 @@ header.header.is-fixed-top {
 }
 
 .tl-nav-szkolenia-krok__item--6 .tl-nav-szkolenia-krok__decor {
-  background: linear-gradient(180deg, #0066ff 0%, #0066ff 100%);
+  background: linear-gradient(180deg, #80b3ff 0%, #b3d1ff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--6 .tl-nav-szkolenia-krok__blob {
@@ -1512,7 +1607,7 @@ header.header.is-fixed-top {
 
 .tl-nav-szkolenia-krok__item--7.active {
   color: black;
-  background: linear-gradient(180deg, #0053ff 0%, #0053ff 100%);
+  background: linear-gradient(180deg, #0053ff 0%, #b3cbff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--7.active .tl-nav-szkolenia-krok__blob:after {
@@ -1520,7 +1615,7 @@ header.header.is-fixed-top {
 }
 
 .tl-nav-szkolenia-krok__item--7 .tl-nav-szkolenia-krok__decor {
-  background: linear-gradient(180deg, #0053ff 0%, #0053ff 100%);
+  background: linear-gradient(180deg, #80a9ff 0%, #b3cbff 100%);
 }
 
 .tl-nav-szkolenia-krok__item--7 .tl-nav-szkolenia-krok__blob {
@@ -1533,31 +1628,31 @@ header.header.is-fixed-top {
 }
 
 .tl-gradient--1 {
-  background: linear-gradient(180deg, #00c6ff 0%, white 100px);
+  background: linear-gradient(180deg, #b3eeff 20%, white 80%);
 }
 
 .tl-gradient--2 {
-  background: linear-gradient(180deg, #00b3ff 0%, white 100px);
+  background: linear-gradient(180deg, #b3e8ff 20%, white 80%);
 }
 
 .tl-gradient--3 {
-  background: linear-gradient(180deg, #009fff 0%, white 100px);
+  background: linear-gradient(180deg, #b3e2ff 20%, white 80%);
 }
 
 .tl-gradient--4 {
-  background: linear-gradient(180deg, #008cff 0%, white 100px);
+  background: linear-gradient(180deg, #b3ddff 20%, white 80%);
 }
 
 .tl-gradient--5 {
-  background: linear-gradient(180deg, #0079ff 0%, white 100px);
+  background: linear-gradient(180deg, #b3d7ff 20%, white 80%);
 }
 
 .tl-gradient--6 {
-  background: linear-gradient(180deg, #0066ff 0%, white 100px);
+  background: linear-gradient(180deg, #b3d1ff 20%, white 80%);
 }
 
 .tl-gradient--7 {
-  background: linear-gradient(180deg, #0053ff 0%, white 100px);
+  background: linear-gradient(180deg, #b3cbff 20%, white 80%);
 }
 
 @media (max-width: 576px) {
@@ -11788,6 +11883,10 @@ a.text-dark:hover, a.text-dark:focus {
 
 .navbar-dark .navbar-toggler {
   border: none !important;
+}
+
+.alert {
+  border-radius: 0 !important;
 }
 
 /*!

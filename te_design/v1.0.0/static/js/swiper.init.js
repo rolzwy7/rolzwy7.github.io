@@ -1,3 +1,4 @@
+// Swiper timeline
 var SwiperTimeline = new Swiper ('.swiper-container-timeline', {
   effect: "slide", // slide fade cube coverflow flip
   hashNavigation: false,
@@ -126,3 +127,42 @@ $("#trusted_us_gr3").click(function() {
   $("#trusted_us_gr2").removeClass("is-active");
   SwiperBrands.slideTo(2);
 });
+
+// Swiper - testimonials mobile
+var SwiperTestimonialsMobile = new Swiper ('.swiper-container-testimonials-mobile', {
+  effect: "slide",
+  hashNavigation: false,
+  speed: 200,
+  direction: 'horizontal',
+  loop: false,
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'bullets',
+    clickable: true
+  }
+})
+
+// Swiper - Numbers Squares
+var SwiperNumbersSquares = new Swiper ('.swiper-container-numbers-squares', {
+  slidesPerView: 1,
+  effect: "coverflow",
+  hashNavigation: false,
+  speed: 200,
+  direction: 'horizontal',
+  loop: false,
+  coverflowEffect: {
+    rotate: 40,
+    stretch: 0,
+    depth: 500,
+    modifier: 1.2,
+    slideShadows : false
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'bullets',
+    clickable: true
+  },
+  renderBullet: function (index, className) {
+    return '<span class="' + className + '">' + (index + 1) + '</span>';
+  }
+})
