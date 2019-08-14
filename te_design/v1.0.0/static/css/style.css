@@ -27,32 +27,8 @@
 */
 /** Grid
 */
-@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
-* {
-  font-family: "Lato", sans-serif;
-}
-
 textarea:focus, input:focus {
   outline: none;
-}
-
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: #F5F5F5;
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-  background-color: #F5F5F5;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #008CFF;
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
-}
-
-::-webkit-scrollbar {
-  width: 15px;
 }
 
 .bg-blue {
@@ -771,6 +747,17 @@ textarea:focus, input:focus {
   margin-bottom: 2em !important;
 }
 
+.nav-link {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.navbar {
+  height: 88px;
+}
+
 .hamburger-inner {
   background-color: !important;
   border-radius: 0 !important;
@@ -1180,9 +1167,10 @@ header.header.is-fixed-top {
   height: 12px;
   background: url(/static/images/arrow-white-top.png) no-repeat;
   position: absolute;
-  bottom: -1.5em;
+  bottom: -0.4em;
   left: calc(50% - 12px);
   content: '';
+  z-index: 10000;
 }
 
 .dropdown-style-1 > .dropdown-menu, .dropdown-style-1 > .dropdown-mobile-menu {
@@ -1254,7 +1242,7 @@ header.header.is-fixed-top {
 }
 
 .dropdown-style-1 > .dropdown-menu {
-  top: 3.8em;
+  top: 2.7em;
 }
 
 .member-container {
@@ -1666,25 +1654,20 @@ header.header.is-fixed-top {
   .homepage-service-container > .row > div:first-child {
     border-top: 2px solid rgba(0, 0, 0, 0.1);
   }
-  .homepage-service > h5 > i {
-    position: relative;
-    opacity: 1 !important;
-    left: 0em !important;
-    float: right;
-    font-size: 1.5em;
-  }
 }
 
 .homepage-service-container > .row > div {
-  min-height: 14em;
   padding-top: 2em;
   padding-bottom: 2em;
 }
 
-.homepage-service-container > .row > div:hover > div.homepage-service > h5 > i {
-  position: relative;
-  opacity: 1;
+.homepage-service-container > .row > div:hover > div.homepage-service > div > a > i {
   left: 0;
+  opacity: 1;
+}
+
+.homepage-service-container > .row > div > div.homepage-service > h5 {
+  color: black !important;
 }
 
 .homepage-service > p {
@@ -1704,22 +1687,10 @@ header.header.is-fixed-top {
 }
 
 .homepage-service > div > a > i {
+  transition: .5s all ease-out;
   position: relative;
-  top: 4px;
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
-  padding-right: 0.45em;
-}
-
-.homepage-service > h5 > a {
-  color: black !important;
-}
-
-.homepage-service > h5 i {
-  position: relative;
-  transition: all .25s ease-out;
+  left: -1.5em;
   opacity: 0;
-  left: -1em;
 }
 
 /*!

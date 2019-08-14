@@ -1,7 +1,13 @@
-<!-- dist compiled 2019/08/12 13:10:02 (1565608202) -->
+<!-- dist compiled 2019/08/14 18:05:41 (1565798741) -->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400&display=swap" rel="stylesheet">
+    <style media="screen">
+    * {
+      font-family: $font_family, sans-serif;
+    }
+    </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TotalExpert</title>
@@ -24,7 +30,7 @@
     <script src="./static/js/jquery.lazy.min.js" charset="utf-8"></script>
     <!-- JQuery Lazyload End -->
   </head>
-  <body class="header header-white header-shadow">
+  <body class="header header-white">
     <div class="alert alert-primary bg-gradient-danger text-white fixed-bottom alert-flush alert-dismissible border-0 shadow-lg fade show mb-0" role="alert">
   <div class="container">
     Tak proszę Pana. Oczywiście proszę Pana. <strong>20%</strong> proszę Pana. <strong>30%</strong> też może być i <strong>50%</strong> proszę Pana się znajdzie.
@@ -37,12 +43,15 @@
     <header class="header is-fixed-top" id="header">
   <nav class="navbar navbar-expand-lg navbar-transparent navbar-dark" id="navbar-main">
     <div class="container px-lg-0">
-      <a class="navbar-brand mr-lg-5" href="index.html">
-        <svg xmlns="http://www.w3.org/2000/svg" width="27.8" height="30" viewBox="0 0 27.8 30"><style>.st0{fill:url(#SVGID_1_)}</style><radialGradient id="SVGID_1_" cx="-328.717" cy="310.873" r=".428" gradientTransform="matrix(71.4087 0 0 -71.4086 23474.04 22204.375)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#20c4f4"/><stop offset=".304" stop-color="#09b4f0"/><stop offset=".5" stop-color="#00aeef"/><stop offset=".8" stop-color="#0092c8"/><stop offset="1" stop-color="#006e98"/></radialGradient><path class="st0" d="M26.7 6.5c-.3-.6-.8-1.4-1.5-2-.3-.3-.7-.5-1.2-.6-.4-.1-.8-.2-1.2-.2h-.1c-.5 0-1.5.1-2.1.9-.3.3-.4.8-.3 1.3.1.4.3.7.7.8 0 0 .1 0 .3.1-.1 0-.2.2-.2.2-.2.3-.7.8-2.1.8h-.1c-.7 0-1.3-.2-2-1.1-.4-.6-.7-1.5-.7-3.1 0-.8-.1-1.5-.3-2-.1-.4-.4-.7-.7-.9-.2-.2-.5-.3-.9-.4-.4-.3-1-.3-1.5-.3-.6 0-.9.1-1.1.4 0 0 0 .1-.1.1h-.4c-.3 0-.6.1-.9.1-.6.1-.9.3-1.3.6-.1.1-.4.4-.5.8-.1.3 0 .5.1.6 0 0 0 .1.1.1.2-.2.5-.3 1-.3.6 0 1.5.3 1.8.8.4.7.3 1.2.2 1.9-.2 1.7-.9 2.6-2.2 2.8h-.7c-1 0-1.7-.3-2-.9-.2-.2-.2-.3-.2-.3s.1 0 .2-.1c.4-.2.6-.4.7-.8.1-.4 0-.9-.3-1.3-.5-.5-1.2-.8-2.1-.8-.5 0-.9.1-1.2.2-1.2.3-2.1 1.1-2.8 2.6-.5 1-.9 2.4-1 3.8C0 11.7 0 12.9.1 14c.2 1.8.5 2.9.9 4 .4 1.2 1 2.3 1.6 3.3.2.4.3.6.4.7.1-.1.2-.2.3-.4.2-.2.9-1.1 1.1-1.4.3-.2.6-.8.8-1.2l.1-.2.2.2c.2.2.3.4.3.7 0 .3-.1.6-.2 1.2-.2.6-.5 1.4-.9 2 0 .1-.1.2-.1.2-.2.4-.3.6-.2.7.1 0 .4-.1.7-.4.3-.2 1-.8 1.9-2.1.7-.9 1.2-1.9 1.7-3l.1-.2.2.1c.1 0 .2.1.2.2.1.2.1.4.1.7-.1.7-.5 1.7-.8 2.4-.5 1.2-1.5 2.6-2.2 3.6 0 0-.2.2-.2.3.1.1.2.2.4.3l.3.2c1 .8 1.9 1.5 3.1 2.1.9.5 2.8 1.5 4 1.8 1.2-.3 3.1-1.3 4-1.8 1.2-.7 2.1-1.3 3.1-2.1l.3-.2c.2-.1.3-.3.4-.3 0 0-.1-.1-.1-.2l-.1-.1c-.7-1-1.7-2.4-2.2-3.6-.3-.7-.7-1.8-.8-2.4 0-.3 0-.5.1-.7 0-.1.1-.1.2-.2s.2-.1.2-.1l.1.2c.5 1.1 1.1 2 1.7 3 .9 1.3 1.6 1.9 1.9 2.1.3.2.6.4.7.4h.1c.1-.1 0-.3-.2-.7 0-.1-.1-.2-.1-.2-.4-.7-.7-1.4-.9-2-.2-.6-.3-.9-.3-1.2 0-.3.1-.6.3-.7l.2-.1.1.2c.2.4.6 1 .7 1.2.2.3.9 1.1 1.1 1.4l.3.3c.1-.1.2-.3.4-.6v-.1c.6-1 1.1-2.1 1.6-3.3.4-1.2.7-2.2.9-4 .1-1.1.2-2.3 0-3.7 0-1.4-.3-2.8-.9-3.8z"/></svg>
+      <!-- <a class="navbar-brand mr-lg-5" href="index.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="27.8" height="30" viewBox="0 0 27.8 30">
+  <style>.st0{fill:url(#SVGID_1_)}</style>
+  <radialGradient id="SVGID_1_" cx="-328.717" cy="310.873" r=".428" gradientTransform="matrix(71.4087 0 0 -71.4086 23474.04 22204.375)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#20c4f4"/><stop offset=".304" stop-color="#09b4f0"/><stop offset=".5" stop-color="#00aeef"/><stop offset=".8" stop-color="#0092c8"/><stop offset="1" stop-color="#006e98"/></radialGradient><path class="st0" d="M26.7 6.5c-.3-.6-.8-1.4-1.5-2-.3-.3-.7-.5-1.2-.6-.4-.1-.8-.2-1.2-.2h-.1c-.5 0-1.5.1-2.1.9-.3.3-.4.8-.3 1.3.1.4.3.7.7.8 0 0 .1 0 .3.1-.1 0-.2.2-.2.2-.2.3-.7.8-2.1.8h-.1c-.7 0-1.3-.2-2-1.1-.4-.6-.7-1.5-.7-3.1 0-.8-.1-1.5-.3-2-.1-.4-.4-.7-.7-.9-.2-.2-.5-.3-.9-.4-.4-.3-1-.3-1.5-.3-.6 0-.9.1-1.1.4 0 0 0 .1-.1.1h-.4c-.3 0-.6.1-.9.1-.6.1-.9.3-1.3.6-.1.1-.4.4-.5.8-.1.3 0 .5.1.6 0 0 0 .1.1.1.2-.2.5-.3 1-.3.6 0 1.5.3 1.8.8.4.7.3 1.2.2 1.9-.2 1.7-.9 2.6-2.2 2.8h-.7c-1 0-1.7-.3-2-.9-.2-.2-.2-.3-.2-.3s.1 0 .2-.1c.4-.2.6-.4.7-.8.1-.4 0-.9-.3-1.3-.5-.5-1.2-.8-2.1-.8-.5 0-.9.1-1.2.2-1.2.3-2.1 1.1-2.8 2.6-.5 1-.9 2.4-1 3.8C0 11.7 0 12.9.1 14c.2 1.8.5 2.9.9 4 .4 1.2 1 2.3 1.6 3.3.2.4.3.6.4.7.1-.1.2-.2.3-.4.2-.2.9-1.1 1.1-1.4.3-.2.6-.8.8-1.2l.1-.2.2.2c.2.2.3.4.3.7 0 .3-.1.6-.2 1.2-.2.6-.5 1.4-.9 2 0 .1-.1.2-.1.2-.2.4-.3.6-.2.7.1 0 .4-.1.7-.4.3-.2 1-.8 1.9-2.1.7-.9 1.2-1.9 1.7-3l.1-.2.2.1c.1 0 .2.1.2.2.1.2.1.4.1.7-.1.7-.5 1.7-.8 2.4-.5 1.2-1.5 2.6-2.2 3.6 0 0-.2.2-.2.3.1.1.2.2.4.3l.3.2c1 .8 1.9 1.5 3.1 2.1.9.5 2.8 1.5 4 1.8 1.2-.3 3.1-1.3 4-1.8 1.2-.7 2.1-1.3 3.1-2.1l.3-.2c.2-.1.3-.3.4-.3 0 0-.1-.1-.1-.2l-.1-.1c-.7-1-1.7-2.4-2.2-3.6-.3-.7-.7-1.8-.8-2.4 0-.3 0-.5.1-.7 0-.1.1-.1.2-.2s.2-.1.2-.1l.1.2c.5 1.1 1.1 2 1.7 3 .9 1.3 1.6 1.9 1.9 2.1.3.2.6.4.7.4h.1c.1-.1 0-.3-.2-.7 0-.1-.1-.2-.1-.2-.4-.7-.7-1.4-.9-2-.2-.6-.3-.9-.3-1.2 0-.3.1-.6.3-.7l.2-.1.1.2c.2.4.6 1 .7 1.2.2.3.9 1.1 1.1 1.4l.3.3c.1-.1.2-.3.4-.6v-.1c.6-1 1.1-2.1 1.6-3.3.4-1.2.7-2.2.9-4 .1-1.1.2-2.3 0-3.7 0-1.4-.3-2.8-.9-3.8z"/></svg>
 
-        <svg xmlns="http://www.w3.org/2000/svg" width="141.6" height="23.5" viewBox="0 0 141.6 23.5"><style>.st0{fill:#00aeef}</style><path class="st0" d="M11.2 10.1c2.4-.6 5.1-2.3 5.1-5.2C16.3.6 12.2.6 10.1.6H1.5c.4.2.6 1.3.6 2.8 0 1.8-.1 4.3-.4 7.7l-.1 1.4C1.2 18.4 1 21.8 0 22.6h7.7c5.9 0 9.5-3 9.5-6.9.1-3.6-2.5-5.2-6-5.6zM6.1 7.9c.1-1.6.3-3.2.5-4.7.5-.1 1.1-.1 1.5-.1 2.6 0 3.8 1.1 3.8 2.6 0 2.6-2.6 3.6-5.4 3.6H6l.1-1.4zm1.4 11.9c-1.5 0-2.1-.4-2.1-.6 0-1.4.1-2.5.2-4l.2-3.2h1.6c2.9 0 5.2.9 5.2 3.8 0 2.6-2 4-5.1 4zM136.7 9.8c-2.2-1.4-4.3-2.6-4.3-4.2 0-2 1.7-2.8 3.6-2.8 2.2 0 4.1 1.3 5 2.9l.6-5.2c-1.5 0-3-.4-5.4-.4-4.1 0-8.1 1.6-8.1 6.3 0 3.2 2.3 4.9 5.9 7.1 1.7 1 3.1 2.1 3.1 3.7 0 2-1.7 3.1-4 3.1-3 0-5-1.7-6.1-4l-.4 5.5c2.3.9 4.3 1.2 6.2 1.2 4.7 0 8.7-2.6 8.7-6.7 0-3.2-2.4-5-4.8-6.5zM121 10.7c1.1-1.8 6.2-9.9 7.4-10.1h-5.9c.2.2.3.8.3 1.3 0 .7-.3 1.3-.6 1.9-1.4 2.2-2.4 3.9-4 6.2-.6-1.8-1.7-4.2-3.1-7.5-.9-2-1.3-2.2-2.8-2.2-.8 0-2.6.1-3.9.2.8.4 2 2.3 3.1 4.3 1.7 3.2 2.8 5.9 3.6 8.7.1 1.9-.4 8.1-1.4 9.1h6c-.5-.5-.6-1.8-.6-2.8 0-2.4.2-4.6.5-6.2.2-.9.9-2 1.4-2.9zM56.3 18.9l-4.5-6c-.3-.4-.8-1.1-1.1-1.3 2.9-.9 5.3-2.8 5.3-6.3C56 1 52.3.6 49.7.6h-8.2c.4.2.6 1.2.6 2.8 0 1.8-.1 4.3-.4 7.7l-.1 1.4c-.5 6.8-.8 9.4-1.7 10.1h6c-.4-.2-.6-1.3-.6-2.8 0-1.3.1-3.1.2-5.4l.1-1.6h.1c.8 0 1.1.5 1.6 1.1l6.2 8.6c.5.7.9 1 2.6 1 1.1 0 2.8-.1 4-.2-.7-.5-1-.7-3.8-4.4zM47 10c-.3 0-.7 0-1-.1l.1-1.5c.2-2.6.3-4.3.5-5.2.5-.1 1.2-.1 1.7-.1 2.1 0 3.3 1 3.3 2.7 0 2.6-1.9 4.2-4.6 4.2zM34.7 12.7l-.9-3.4c-1.1-4-2.4-8.7-2.4-8.7h-4.8c.2.2.3.7.3 1.2S25.4 5.6 24 8.6l-1.5 3.3c-2.7 5.7-4.6 9.2-6.1 10.7h5.3c-.1-.2-.1-.7-.1-1 0-1.2 1.1-3.3 1.5-4.3l.5-.9h2.6c2.6 0 4.2-.3 5.2-.7l.5 1.9c1.5 5.2 1.7 5.3 3.6 5.3.6 0 2.1-.1 3.4-.2-1.5-1.3-2.5-4.1-4.2-10zm-9.9.6l3.6-7.7 2.2 7.7h-5.8zM63.6 12.2c0-4.4 1.9-9.5 6.6-9.5 2.4 0 4.2 1.3 5.2 3.3L76 .4c-1.9 0-3-.4-5.4-.4C63 0 59 5.7 59 13c0 5.3 3.3 10 9 10 4.4 0 7-2.2 8.2-5.9-2.8 2-4.5 2.5-6.4 2.5-3.5 0-6.2-2.6-6.2-7.4zM106.5 12.7l-.9-3.4c-.4-1.5-2.4-8.7-2.4-8.7h-4.8c.2.2.3.7.3 1.2 0 .6-1.4 3.7-2.9 6.8l-1.5 3.3c-1.1 2.5-2.3 4.8-3.4 6.7-1.7 1.1-2.6 1.2-6.2 1.2-1 0-1.4-.2-1.4-1.2 0-2.2.3-4.4.4-6.6l.1-1.3c.4-5.9.7-9.5 1.6-10h-6c.4.5.5 1.3.6 2.8 0 1.8-.1 4.3-.4 7.7l-.1 1.4c-.4 5.9-.7 9.1-1.6 10.1h15.6c-.1-.2-.1-.7-.1-1 0-1.2.9-2.9 1.5-4.3l.5-.9H98c2.6 0 4.2-.3 5.2-.7l.5 1.9c1.5 5.2 1.7 5.3 3.6 5.3.6 0 2.2-.1 3.4-.2-1.6-1.4-2.6-4.2-4.2-10.1zm-9.9.6l3.6-7.7 2.2 7.7h-5.8z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="141.6" height="23.5" viewBox="0 0 141.6 23.5">
+  <style>.st0{fill:#000000}</style><path class="st0" d="M11.2 10.1c2.4-.6 5.1-2.3 5.1-5.2C16.3.6 12.2.6 10.1.6H1.5c.4.2.6 1.3.6 2.8 0 1.8-.1 4.3-.4 7.7l-.1 1.4C1.2 18.4 1 21.8 0 22.6h7.7c5.9 0 9.5-3 9.5-6.9.1-3.6-2.5-5.2-6-5.6zM6.1 7.9c.1-1.6.3-3.2.5-4.7.5-.1 1.1-.1 1.5-.1 2.6 0 3.8 1.1 3.8 2.6 0 2.6-2.6 3.6-5.4 3.6H6l.1-1.4zm1.4 11.9c-1.5 0-2.1-.4-2.1-.6 0-1.4.1-2.5.2-4l.2-3.2h1.6c2.9 0 5.2.9 5.2 3.8 0 2.6-2 4-5.1 4zM136.7 9.8c-2.2-1.4-4.3-2.6-4.3-4.2 0-2 1.7-2.8 3.6-2.8 2.2 0 4.1 1.3 5 2.9l.6-5.2c-1.5 0-3-.4-5.4-.4-4.1 0-8.1 1.6-8.1 6.3 0 3.2 2.3 4.9 5.9 7.1 1.7 1 3.1 2.1 3.1 3.7 0 2-1.7 3.1-4 3.1-3 0-5-1.7-6.1-4l-.4 5.5c2.3.9 4.3 1.2 6.2 1.2 4.7 0 8.7-2.6 8.7-6.7 0-3.2-2.4-5-4.8-6.5zM121 10.7c1.1-1.8 6.2-9.9 7.4-10.1h-5.9c.2.2.3.8.3 1.3 0 .7-.3 1.3-.6 1.9-1.4 2.2-2.4 3.9-4 6.2-.6-1.8-1.7-4.2-3.1-7.5-.9-2-1.3-2.2-2.8-2.2-.8 0-2.6.1-3.9.2.8.4 2 2.3 3.1 4.3 1.7 3.2 2.8 5.9 3.6 8.7.1 1.9-.4 8.1-1.4 9.1h6c-.5-.5-.6-1.8-.6-2.8 0-2.4.2-4.6.5-6.2.2-.9.9-2 1.4-2.9zM56.3 18.9l-4.5-6c-.3-.4-.8-1.1-1.1-1.3 2.9-.9 5.3-2.8 5.3-6.3C56 1 52.3.6 49.7.6h-8.2c.4.2.6 1.2.6 2.8 0 1.8-.1 4.3-.4 7.7l-.1 1.4c-.5 6.8-.8 9.4-1.7 10.1h6c-.4-.2-.6-1.3-.6-2.8 0-1.3.1-3.1.2-5.4l.1-1.6h.1c.8 0 1.1.5 1.6 1.1l6.2 8.6c.5.7.9 1 2.6 1 1.1 0 2.8-.1 4-.2-.7-.5-1-.7-3.8-4.4zM47 10c-.3 0-.7 0-1-.1l.1-1.5c.2-2.6.3-4.3.5-5.2.5-.1 1.2-.1 1.7-.1 2.1 0 3.3 1 3.3 2.7 0 2.6-1.9 4.2-4.6 4.2zM34.7 12.7l-.9-3.4c-1.1-4-2.4-8.7-2.4-8.7h-4.8c.2.2.3.7.3 1.2S25.4 5.6 24 8.6l-1.5 3.3c-2.7 5.7-4.6 9.2-6.1 10.7h5.3c-.1-.2-.1-.7-.1-1 0-1.2 1.1-3.3 1.5-4.3l.5-.9h2.6c2.6 0 4.2-.3 5.2-.7l.5 1.9c1.5 5.2 1.7 5.3 3.6 5.3.6 0 2.1-.1 3.4-.2-1.5-1.3-2.5-4.1-4.2-10zm-9.9.6l3.6-7.7 2.2 7.7h-5.8zM63.6 12.2c0-4.4 1.9-9.5 6.6-9.5 2.4 0 4.2 1.3 5.2 3.3L76 .4c-1.9 0-3-.4-5.4-.4C63 0 59 5.7 59 13c0 5.3 3.3 10 9 10 4.4 0 7-2.2 8.2-5.9-2.8 2-4.5 2.5-6.4 2.5-3.5 0-6.2-2.6-6.2-7.4zM106.5 12.7l-.9-3.4c-.4-1.5-2.4-8.7-2.4-8.7h-4.8c.2.2.3.7.3 1.2 0 .6-1.4 3.7-2.9 6.8l-1.5 3.3c-1.1 2.5-2.3 4.8-3.4 6.7-1.7 1.1-2.6 1.2-6.2 1.2-1 0-1.4-.2-1.4-1.2 0-2.2.3-4.4.4-6.6l.1-1.3c.4-5.9.7-9.5 1.6-10h-6c.4.5.5 1.3.6 2.8 0 1.8-.1 4.3-.4 7.7l-.1 1.4c-.4 5.9-.7 9.1-1.6 10.1h15.6c-.1-.2-.1-.7-.1-1 0-1.2.9-2.9 1.5-4.3l.5-.9H98c2.6 0 4.2-.3 5.2-.7l.5 1.9c1.5 5.2 1.7 5.3 3.6 5.3.6 0 2.2-.1 3.4-.2-1.6-1.4-2.6-4.2-4.2-10.1zm-9.9.6l3.6-7.7 2.2 7.7h-5.8z"/></svg>
 
-      </a>
+      </a> -->
       <div class="collapse navbar-collapse" id="szkolenia-collapse">
       <ul class="navbar-nav mr-auto">
 
@@ -50,7 +59,7 @@
           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
             Szkolenia
           </a>
-          <div class="dropdown-menu text-nowrap p-0">
+          <div class="dropdown-menu text-nowrap p-0" style="box-shadow: 0 2px 14px rgba(30, 34, 37, 0.27);">
             <div class="dropdown-header">
               <div class="dropdown-icon py-2 pr-4">
                 <i class="fas fa-circle fa-3x"></i>
@@ -108,9 +117,29 @@
             </ul>
           </div>
         </li>
-        <!-- <li class="nav-item">
-        <a href="#" class="nav-link">Link</a>
-        </li> -->
+
+        <li class="nav-item"><a class="nav-link">/</a></li>
+
+
+        <li class="nav-item">
+        <a href="#" class="nav-link">szkolenia zamknięte</a>
+        </li>
+
+        <li class="nav-item"><a class="nav-link">/</a></li>
+
+        <li class="nav-item">
+        <a href="#" class="nav-link">dofinansowania & rabaty</a>
+        </li>
+
+        <li class="nav-item"><a class="nav-link">/</a></li>
+
+        <li class="nav-item">
+        <a href="#" class="nav-link">o nas</a>
+        </li>
+
+        <li class="nav-item" style="background-color: #000000; margin-left: 2em;">
+        <a href="#" class="nav-link" style="color: white!important;">kontakt</a>
+        </li>
       </ul>
       <!-- <form class="form-inline d-none d-lg-flex">
         <input style="border-width: 0px; outline: none; box-shadow: 0px 0px transparent;" class="form-control header-search-input" type="search" placeholder="Szukaj" aria-label="Szukaj">
@@ -216,16 +245,20 @@
 
     <div class="main-content">
       
-<section class="bg-gradient-primary">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-8">
-        <!-- <h1 class="text-white">TotalExpert Szkolenia</h1> -->
-        <p class="text-white">
-          <span class="typed"></span>
-        </p>
+<!-- FullPage JS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.css">
+<!-- FullPage JS - End -->
 
-        <!-- <a href="#" class="btn btn-light btn-icon rounded-pill py-2 px-4 mt-4">
+<div class="main-homepage" id="fullpage">
+
+<div class="section fp-auto-height" style="min-height:400px;"> <!-- bg-gradient-primary -->
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-12">
+          <h1 class="text-left" style="font-size:40px;font-weight: 300;">
+            <span class="typed"></span>
+          </h1>
+          <!-- <a href="#" class="btn btn-light btn-icon rounded-pill py-2 px-4 mt-4">
           <span class="btn-inner--icon"><i class="fab fa-amazon"></i></span>
           <span class="btn-inner--text">button_01</span>
         </a> -->
@@ -233,26 +266,32 @@
       </div>
     </div>
   </div>
-  <svg class="header-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 1366 470" style="enable-background:new 0 0 1366 470;" xml:space="preserve">
+  <!-- <svg class="header-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 1366 470" style="enable-background:new 0 0 1366 470;" xml:space="preserve">
     <path class="header-svg-wave-one" d="M0.5,111.3c90,58.8,211.8,105.4,342.2,106.9C622.6,221.3,750.5-0.3,1032.8,0.4 c94.1,0.2,201.7,26.2,333.7,110l-0.5,444.2H0.5V111.3z"></path>
     <path class="header-svg-wave-two" d="M1366.5,348.3c-90,58.8-211.8,105.4-342.2,106.9c-279.9,3.2-407.8-218.4-690.1-217.8 c-94.1,0.2-201.7,26.2-333.7,110v207.2H1366L1366.5,348.3z"></path>
-  </svg>
-</section>
+  </svg> -->
+</div>
 
-<!-- Kwadraty -> na komórce inaczej -->
-<section class="pb-3">
+<div class="section fp-auto-height">
+  <!-- Kwadraty -> na komórce inaczej -->
+  <!-- <section>
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <!-- <p class="section__label text-center">section label</p> -->
+        <p class="section__label text-center">section label</p>
         <h2 class="section__title text-center">Kategorie szkoleń</h2>
       </div>
     </div>
   </div>
-</section>
-
-<section class="pb-4 pt-2">
-  <div class="container-fluid px-5">
+</section> -->
+<style media="screen">
+  .squares-title {
+    color: black!important;
+    font-weight: 700;
+  }
+</style>
+<section>
+  <div class="container">
     <div class="row">
 
       <div class="col-12 homepage-service-container">
@@ -262,21 +301,21 @@
           <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <div class="homepage-service">
               <h5 class="m-0">
-                <a href="#">
-                  <strong>
+                <a href="#" class="squares-title">
+
                     Prawo Pracy, Czas Pracy
-                  </strong>
+
                 </a>
-                <i class="fas fa-long-arrow-alt-right"></i>
               </h5>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit delectus
               </p>
               <div><a href="#">
-                <i class="fas fa-sort-up"></i>
-                <strong>
+
+
                   read more
-                </strong>
+
+                <i class="fas fa-long-arrow-alt-right"></i>
               </a></div>
             </div>
           </div>
@@ -286,21 +325,21 @@
           <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <div class="homepage-service">
               <h5 class="m-0">
-                <a href="#">
-                  <strong>
+                <a href="#" class="squares-title">
+
                     Ochrona Danych Osobowych, RODO, IOD
-                  </strong>
+
                 </a>
-                <i class="fas fa-long-arrow-alt-right"></i>
               </h5>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit delectus
               </p>
               <div><a href="#">
-                <i class="fas fa-sort-up"></i>
-                <strong>
+
+
                   read more
-                </strong>
+
+                <i class="fas fa-long-arrow-alt-right"></i>
               </a></div>
             </div>
           </div>
@@ -310,21 +349,21 @@
           <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <div class="homepage-service">
               <h5 class="m-0">
-                <a href="#">
-                  <strong>
+                <a href="#" class="squares-title">
+
                     Kadry i Płace, ZFŚS, Emerytury
-                  </strong>
+
                 </a>
-                <i class="fas fa-long-arrow-alt-right"></i>
               </h5>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit delectus
               </p>
               <div><a href="#">
-                <i class="fas fa-sort-up"></i>
-                <strong>
+
+
                   read more
-                </strong>
+
+                <i class="fas fa-long-arrow-alt-right"></i>
               </a></div>
             </div>
           </div>
@@ -334,21 +373,21 @@
           <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <div class="homepage-service">
               <h5 class="m-0">
-                <a href="#">
-                  <strong>
+                <a href="#" class="squares-title">
+
                     HR, ZZL
-                  </strong>
+
                 </a>
-                <i class="fas fa-long-arrow-alt-right"></i>
               </h5>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit delectus
               </p>
               <div><a href="#">
-                <i class="fas fa-sort-up"></i>
-                <strong>
+
+
                   read more
-                </strong>
+
+                <i class="fas fa-long-arrow-alt-right"></i>
               </a></div>
             </div>
           </div>
@@ -356,21 +395,21 @@
           <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <div class="homepage-service">
               <h5 class="m-0">
-                <a href="#">
-                  <strong>
+                <a href="#" class="squares-title">
+
                     Podatki - PIT CIT VAT
-                  </strong>
+
                 </a>
-                <i class="fas fa-long-arrow-alt-right"></i>
               </h5>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit delectus
               </p>
               <div><a href="#">
-                <i class="fas fa-sort-up"></i>
-                <strong>
+
+
                   read more
-                </strong>
+
+                <i class="fas fa-long-arrow-alt-right"></i>
               </a></div>
             </div>
           </div>
@@ -378,21 +417,21 @@
           <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <div class="homepage-service">
               <h5 class="m-0">
-                <a href="#">
-                  <strong>
+                <a href="#" class="squares-title">
+
                     Budżetowe
-                  </strong>
+
                 </a>
-                <i class="fas fa-long-arrow-alt-right"></i>
               </h5>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit delectus
               </p>
               <div><a href="#">
-                <i class="fas fa-sort-up"></i>
-                <strong>
+
+
                   read more
-                </strong>
+
+                <i class="fas fa-long-arrow-alt-right"></i>
               </a></div>
             </div>
           </div>
@@ -402,21 +441,21 @@
           <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <div class="homepage-service">
               <h5 class="m-0">
-                <a href="#">
-                  <strong>
+                <a href="#" class="squares-title">
+
                     PPK
-                  </strong>
+
                 </a>
-                <i class="fas fa-long-arrow-alt-right"></i>
               </h5>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit delectus
               </p>
               <div><a href="#">
-                <i class="fas fa-sort-up"></i>
-                <strong>
+
+
                   read more
-                </strong>
+
+                <i class="fas fa-long-arrow-alt-right"></i>
               </a></div>
             </div>
           </div>
@@ -426,21 +465,21 @@
           <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <div class="homepage-service">
               <h5 class="m-0">
-                <a href="#">
-                  <strong>
+                <a href="#" class="squares-title">
+
                       Coś na topie, pozostałe
-                  </strong>
+
                 </a>
-                <i class="fas fa-long-arrow-alt-right"></i>
               </h5>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit delectus
               </p>
               <div><a href="#">
-                <i class="fas fa-sort-up"></i>
-                <strong>
+
+
                   read more
-                </strong>
+
+                <i class="fas fa-long-arrow-alt-right"></i>
               </a></div>
             </div>
           </div>
@@ -455,19 +494,20 @@
   </div>
 </section>
 
+</div>
 
-<!-- Timeline -->
-<section class="py-4">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <h2 class="text-center">Przebieg zapisu na szkolenie</h2>
-      </div>
+<div class="section">
+  <!-- Timeline -->
+  
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="text-center">Przebieg zapisu na szkolenie</h2>
     </div>
   </div>
-</section>
+</div>
 
-<section class="tl-szkolenia-krok mt-5 mr-0">
+<section class="tl-szkolenia-krok">
 
   <div class="tl-szkolenia-krok__header">
   <ul class="tl-nav-szkolenia-krok px-4">
@@ -692,9 +732,11 @@
       </svg> -->
   </div>
 
+</div>
 
-<!-- Numerki -->
-<div class="container pt-5 d-none d-lg-block">
+<div class="section">
+  <!-- Numerki -->
+  <div class="container d-none d-lg-block">
   <div class="row">
 
     <div class="col-lg-4 col-md-6 col-12">
@@ -796,9 +838,11 @@
   </div>
 </div>
 
+</div>
 
-<!-- Klienci -->
-<section class="zaufali swiper-container swiper-container-brands pb-5">
+<div class="section">
+  <!-- Klienci -->
+  <section class="zaufali swiper-container swiper-container-brands">
   <div class="container zaufali-container">
     <div class="row pb-5">
       <div class="col-12">
@@ -908,9 +952,11 @@
   </div>
 </section>
 
+</div>
 
-<!-- Klienci -->
-<section class="swiper-container-testimonials-mobile swiper-container">
+<div class="section">
+  <!-- Klienci -->
+  <section class="swiper-container-testimonials-mobile swiper-container">
 
 <div class="swiper-wrapper">
 
@@ -1007,9 +1053,11 @@
 
 </section>
 
+</div>
 
-<!-- grupa wsparcia -->
-<div class="container py-5">
+<div class="section">
+  <!-- grupa wsparcia -->
+  <div class="container">
   <div class="row">
     <div class="col-md-6 col-12">
       <p class="text-uppercase">talk to us</p>
@@ -1027,9 +1075,11 @@
   </div>
 </div>
 
+</div>
 
-<!-- kontakty do klientów -->
-<div class="container py-4">
+<div class="section">
+  <!-- kontakty do klientów -->
+  <div class="container py-4">
   <div class="row">
 
     <div class="member col-12 col-md-6 col-lg-4 pb-4">
@@ -1127,6 +1177,22 @@
   </div>
 </div>
 
+</div>
+
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $('#fullpage').fullpage({
+    paddingTop: '4em',
+    verticalCentered: true,
+    scrollingSpeed: 520,
+    fitToSection: false
+  });
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.extensions.min.js" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js" charset="utf-8"></script>
 
     </div>
     <footer class="bg-white pb-5 footer">
@@ -1227,7 +1293,7 @@
       });
       var options = {
         strings: [
-          "Nasi wykładowcy będący praktykami w swoich dziedzinach, nie zmarnują twojego bezcennego czasu!"
+          "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod."
         ],
         smartBackspace: true,
         typeSpeed: 10,
