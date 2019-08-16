@@ -1,4 +1,4 @@
-<!-- dist compiled 2019/08/14 18:10:42 (1565799042) -->
+<!-- dist compiled 2019/08/16 22:33:18 (1565987598) -->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -33,7 +33,13 @@
   <body class="header header-white">
     <div class="alert alert-primary bg-gradient-danger text-white fixed-bottom alert-flush alert-dismissible border-0 shadow-lg fade show mb-0" role="alert">
   <div class="container">
-    Tak proszę Pana. Oczywiście proszę Pana. <strong>20%</strong> proszę Pana. <strong>30%</strong> też może być i <strong>50%</strong> proszę Pana się znajdzie.
+    <div class="row">
+      <div class="col-12">
+        <p class="m-0" style="font-weight:300;">
+          Tak proszę Pana. Oczywiście proszę Pana. <strong>20%</strong> proszę Pana. <strong>30%</strong> też może być i <strong>50%</strong> proszę Pana się znajdzie.
+        </p>
+      </div>
+    </div>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span class="text-white opacity-10" aria-hidden="true">&times;</span>
     </button>
@@ -41,7 +47,7 @@
 </div>
 
     <header class="header is-fixed-top" id="header">
-  <nav class="navbar navbar-expand-lg navbar-transparent navbar-dark" id="navbar-main">
+  <nav class="navbar navbar-expand-lg navbar-transparent" id="navbar-main">
     <div class="container px-lg-0">
       <!-- <a class="navbar-brand mr-lg-5" href="index.html">
         <svg xmlns="http://www.w3.org/2000/svg" width="27.8" height="30" viewBox="0 0 27.8 30">
@@ -134,13 +140,13 @@
         <li class="nav-item"><a class="nav-link">/</a></li>
 
         <li class="nav-item">
-        <a href="#" class="nav-link">o nas</a>
+        <a href="./about" class="nav-link">o nas</a>
         </li>
       </ul>
 
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item" style="background-color: #000000; margin-left: 2em;">
-        <a href="#" class="nav-link" style="color: white!important;">kontakt</a>
+        <li class="nav-item kontakt-nav">
+        <a href="#" class="nav-link">kontakt</a>
         </li>
       </ul>
       <!-- <form class="form-inline d-none d-lg-flex">
@@ -177,7 +183,17 @@
       </li>
       <li class="list-group-item border-0">
         <a href="#">
-          Link normal
+          Szkolenia zamknięte
+        </a>
+      </li>
+      <li class="list-group-item border-0">
+        <a href="#">
+          Dofinansowania & rabaty
+        </a>
+      </li>
+      <li class="list-group-item border-0">
+        <a href="#">
+          O nas
         </a>
       </li>
     </ul>
@@ -250,102 +266,10 @@
 contact
 
     </div>
-    <footer class="bg-white pb-5 footer">
-  <div class="container footer-container">
-    <div class="row px-2 py-4">
-
-      <div class="col-12 col-md-6 px-4 left-panel">
-
-        <div class="row">
-          <div class="col-12 col-lg-7 left-panel">
-            <h6>TotalExpert</h6>
-            <p>
-              Wypizdów dolny, ul. Kruczkowskiego 9/11
-            </p>
-            <p>
-              VAT EU: PL1234567890
-            </p>
-            <p>
-              NIP: 1234567890
-            </p>
-            <p>
-              REGON: 123456789
-            </p>
-          </div>
-          <div class="col-12 col-lg-5 right-panel">
-
-            <p class="info-upper">
-              <a href="#phone">
-                <i class="fas fa-phone-alt"></i>
-                +48 517 100 900
-              </a>
-            </p>
-
-            <p class="info-upper divider">
-              <a href="#email">
-                <i class="fas fa-envelope"></i>
-                biuro@totalexpert.com
-              </a>
-            </p>
-
-            <p class="info-lower">
-              <a href="#email">
-                <i class="fab fa-facebook"></i>
-                Facebook
-              </a>
-            </p>
-
-            <p class="info-lower">
-              <a href="#email">
-                <i class="fab fa-linkedin"></i>
-                Linkedin
-              </a>
-            </p>
-
-          </div>
-        </div>
-
-      </div>
-      <div class="col-12 col-md-6 right-panel pt-4 pt-md-0" style="">
-        <h3>.title</h3>
-        <div style="margin-bottom: 2.75em;">
-          <small style="text-transform:uppercase;">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed.
-          </small>
-        </div>
-        <form class="" action="./" method="post">
-
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Nazwa firmy" style="outline:none !important; background-color: #dee5f1; color: #000; border: 1px solid #dee5f1; border-radius: 1px;">
-          </div>
-
-          <div class="form-row">
-            <div class="form-group col-md-6">
-            <input type="email" class="form-control" placeholder="E-mail" style="outline:none !important; background-color: #dee5f1; color: #000; border: 1px solid #dee5f1; border-radius: 1px;">
-            </div>
-            <div class="form-group col-md-6">
-            <input type="password" class="form-control" placeholder="Telefon" style="outline:none !important; background-color: #dee5f1; color: #000; border: 1px solid #dee5f1; border-radius: 1px;">
-            </div>
-          </div>
-
-
-          <div class="form-group">
-            <textarea col="40" rows="10" class="form-control" placeholder="Wiadomość" style="outline: none !important; background-color: #dee5f1; color: #000; border: 1px solid #dee5f1; border-radius: 1px;"></textarea>
-          </div>
-
-        </form>
-      </div>
-    </div>
-  </div>
-</footer>
-
     <script src="./static/js/swiper.init.js" charset="utf-8"></script>
     <script src="./static/js/aos.init.js" charset="utf-8"></script>
     <script src="./static/js/mobile.menu.js" charset="utf-8"></script>
     <script type="text/javascript">
-        $(function() {
-          $('.lazy').lazy();
-      });
       var options = {
         strings: [
           "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod."

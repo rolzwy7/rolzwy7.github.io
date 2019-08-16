@@ -1,4 +1,4 @@
-<!-- dist compiled 2019/08/14 18:10:42 (1565799042) -->
+<!-- dist compiled 2019/08/16 22:33:18 (1565987598) -->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -33,7 +33,13 @@
   <body class="header header-white">
     <div class="alert alert-primary bg-gradient-danger text-white fixed-bottom alert-flush alert-dismissible border-0 shadow-lg fade show mb-0" role="alert">
   <div class="container">
-    Tak proszę Pana. Oczywiście proszę Pana. <strong>20%</strong> proszę Pana. <strong>30%</strong> też może być i <strong>50%</strong> proszę Pana się znajdzie.
+    <div class="row">
+      <div class="col-12">
+        <p class="m-0" style="font-weight:300;">
+          Tak proszę Pana. Oczywiście proszę Pana. <strong>20%</strong> proszę Pana. <strong>30%</strong> też może być i <strong>50%</strong> proszę Pana się znajdzie.
+        </p>
+      </div>
+    </div>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span class="text-white opacity-10" aria-hidden="true">&times;</span>
     </button>
@@ -41,7 +47,7 @@
 </div>
 
     <header class="header is-fixed-top" id="header">
-  <nav class="navbar navbar-expand-lg navbar-transparent navbar-dark" id="navbar-main">
+  <nav class="navbar navbar-expand-lg navbar-transparent" id="navbar-main">
     <div class="container px-lg-0">
       <!-- <a class="navbar-brand mr-lg-5" href="index.html">
         <svg xmlns="http://www.w3.org/2000/svg" width="27.8" height="30" viewBox="0 0 27.8 30">
@@ -134,13 +140,13 @@
         <li class="nav-item"><a class="nav-link">/</a></li>
 
         <li class="nav-item">
-        <a href="#" class="nav-link">o nas</a>
+        <a href="./about" class="nav-link">o nas</a>
         </li>
       </ul>
 
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item" style="background-color: #000000; margin-left: 2em;">
-        <a href="#" class="nav-link" style="color: white!important;">kontakt</a>
+        <li class="nav-item kontakt-nav">
+        <a href="#" class="nav-link">kontakt</a>
         </li>
       </ul>
       <!-- <form class="form-inline d-none d-lg-flex">
@@ -177,7 +183,17 @@
       </li>
       <li class="list-group-item border-0">
         <a href="#">
-          Link normal
+          Szkolenia zamknięte
+        </a>
+      </li>
+      <li class="list-group-item border-0">
+        <a href="#">
+          Dofinansowania & rabaty
+        </a>
+      </li>
+      <li class="list-group-item border-0">
+        <a href="#">
+          O nas
         </a>
       </li>
     </ul>
@@ -253,8 +269,14 @@
 
 <div class="main-homepage" id="fullpage">
 
-<div class="section fp-auto-height" style="min-height:400px;"> <!-- bg-gradient-primary -->
-    <div class="container">
+<div class="section fp-auto-height"> <!-- bg-gradient-primary -->
+  <div style="height:100vh;width:100vw;position:absolute;">
+    <svg class="header-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 -20 1000 470" style="enable-background:new 0 0 1000 470;" xml:space="preserve">
+      <path class="header-svg-wave-one" style="fill:black; opacity:0.02;" d="M0.5,111.3c90,58.8,211.8,105.4,342.2,106.9C622.6,221.3,750.5-0.3,1032.8,0.4 c94.1,0.2,201.7,26.2,333.7,110l-0.5,444.2H0.5V111.3z"></path>
+      <path class="header-svg-wave-two" d="M1366.5,348.3c-90,58.8-211.8,105.4-342.2,106.9c-279.9,3.2-407.8-218.4-690.1-217.8 c-94.1,0.2-201.7,26.2-333.7,110v207.2H1366L1366.5,348.3z"></path>
+    </svg>
+  </div>
+    <div class="container" style="padding-top: 8em;padding-bottom: 7em;">
       <div class="row align-items-center">
         <div class="col-lg-12">
           <h1 class="text-left" style="font-size:40px;font-weight: 300;">
@@ -268,14 +290,10 @@
       </div>
     </div>
   </div>
-  <!-- <svg class="header-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 1366 470" style="enable-background:new 0 0 1366 470;" xml:space="preserve">
-    <path class="header-svg-wave-one" d="M0.5,111.3c90,58.8,211.8,105.4,342.2,106.9C622.6,221.3,750.5-0.3,1032.8,0.4 c94.1,0.2,201.7,26.2,333.7,110l-0.5,444.2H0.5V111.3z"></path>
-    <path class="header-svg-wave-two" d="M1366.5,348.3c-90,58.8-211.8,105.4-342.2,106.9c-279.9,3.2-407.8-218.4-690.1-217.8 c-94.1,0.2-201.7,26.2-333.7,110v207.2H1366L1366.5,348.3z"></path>
-  </svg> -->
+
 </div>
 
 <div class="section fp-auto-height">
-  <!-- Kwadraty -> na komórce inaczej -->
   <!-- <section>
   <div class="container">
     <div class="row">
@@ -304,9 +322,7 @@
             <div class="homepage-service">
               <h5 class="m-0">
                 <a href="#" class="squares-title">
-
                     Prawo Pracy, Czas Pracy
-
                 </a>
               </h5>
               <p>
@@ -328,9 +344,7 @@
             <div class="homepage-service">
               <h5 class="m-0">
                 <a href="#" class="squares-title">
-
                     Ochrona Danych Osobowych, RODO, IOD
-
                 </a>
               </h5>
               <p>
@@ -352,9 +366,7 @@
             <div class="homepage-service">
               <h5 class="m-0">
                 <a href="#" class="squares-title">
-
                     Kadry i Płace, ZFŚS, Emerytury
-
                 </a>
               </h5>
               <p>
@@ -376,9 +388,7 @@
             <div class="homepage-service">
               <h5 class="m-0">
                 <a href="#" class="squares-title">
-
                     HR, ZZL
-
                 </a>
               </h5>
               <p>
@@ -398,9 +408,7 @@
             <div class="homepage-service">
               <h5 class="m-0">
                 <a href="#" class="squares-title">
-
                     Podatki - PIT CIT VAT
-
                 </a>
               </h5>
               <p>
@@ -420,9 +428,7 @@
             <div class="homepage-service">
               <h5 class="m-0">
                 <a href="#" class="squares-title">
-
                     Budżetowe
-
                 </a>
               </h5>
               <p>
@@ -444,9 +450,7 @@
             <div class="homepage-service">
               <h5 class="m-0">
                 <a href="#" class="squares-title">
-
                     PPK
-
                 </a>
               </h5>
               <p>
@@ -468,9 +472,7 @@
             <div class="homepage-service">
               <h5 class="m-0">
                 <a href="#" class="squares-title">
-
                       Coś na topie, pozostałe
-
                 </a>
               </h5>
               <p>
@@ -501,15 +503,15 @@
 <div class="section">
   <!-- Timeline -->
   
-<div class="container">
+<!-- <div class="container">
   <div class="row">
     <div class="col-12">
-      <h2 class="text-center">Przebieg zapisu na szkolenie</h2>
+      <h2 class="text-center" style="font-weight: 300;">Przebieg zapisu na szkolenie</h2>
     </div>
   </div>
-</div>
+</div> -->
 
-<section class="tl-szkolenia-krok">
+<section class="tl-szkolenia-krok p-0">
 
   <div class="tl-szkolenia-krok__header">
   <ul class="tl-nav-szkolenia-krok px-4">
@@ -575,21 +577,32 @@
           <!-- Slides -->
           <div class="swiper-slide">
 
-            <div class="container-fluid">
+            <div class="container-fluid tl-gradient--1">
               <div class="row">
-                <div class="col-12 pt-3 px-5 tl-gradient--1">
-                  <h1>Lorem ipsum 1</h1>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                  </p>
-                  <ul>
-                    <li>element</li>
-                    <li>element</li>
-                    <li>element</li>
-                  </ul>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                  </p>
+                <div class="col-12">
+
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-12">
+
+                        <h1 class="pt-5 pb-2" style="font-weight: 500;">Zapis</h1>
+                        <p style="font-weight: 400; font-size:1.2em;">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -893,6 +906,42 @@
           <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
             <img data-src="./static/images/zlogo_6.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thmbnail border-0" style="position:relative;top: 21px;">
           </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img data-src="./static/images/zlogo_1.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 12px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img data-src="./static/images/zlogo_2.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 3px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img data-src="./static/images/zlogo_3.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 18px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img data-src="./static/images/zlogo_4.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 0px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img data-src="./static/images/zlogo_5.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 28px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img data-src="./static/images/zlogo_6.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thmbnail border-0" style="position:relative;top: 21px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img data-src="./static/images/zlogo_1.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 12px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img data-src="./static/images/zlogo_2.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 3px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img data-src="./static/images/zlogo_3.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 18px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img data-src="./static/images/zlogo_4.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 0px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img data-src="./static/images/zlogo_5.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 28px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img data-src="./static/images/zlogo_6.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thmbnail border-0" style="position:relative;top: 21px;">
+          </div>
         </div>
       </div>
 
@@ -920,6 +969,42 @@
           <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
             <img src="./static/images/zlogo_6.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thmbnail border-0" style="position:relative;top: 21px;">
           </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_1.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 12px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_2.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 3px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_3.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 18px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_4.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 0px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_5.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 28px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_6.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thmbnail border-0" style="position:relative;top: 21px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_1.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 12px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_2.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 3px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_3.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 18px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_4.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 0px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_5.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 28px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_6.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thmbnail border-0" style="position:relative;top: 21px;">
+          </div>
         </div>
       </div>
 
@@ -928,6 +1013,42 @@
 
       <div class="container">
         <div class="row">
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_1.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 12px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_2.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 3px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_3.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 18px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_4.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 0px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_5.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 28px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_6.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thmbnail border-0" style="position:relative;top: 21px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_1.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 12px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_2.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 3px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_3.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 18px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_4.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 0px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_5.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 28px;">
+          </div>
+          <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
+            <img src="./static/images/zlogo_6.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thmbnail border-0" style="position:relative;top: 21px;">
+          </div>
           <div class="brand-logo col-6 col-sm-6 col-md-4 col-lg-2">
             <img src="./static/images/zlogo_1.png" alt="alt_text" class="lazy img-greyscale-not-on-hover img-thumbnail border-0" style="position:relative;top: 12px;">
           </div>
@@ -1181,23 +1302,8 @@
 
 </div>
 
-</div>
-
-<script type="text/javascript">
-$(document).ready(function() {
-  $('#fullpage').fullpage({
-    paddingTop: '4em',
-    verticalCentered: true,
-    scrollingSpeed: 520,
-    fitToSection: false
-  });
-});
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.extensions.min.js" charset="utf-8"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js" charset="utf-8"></script>
-
-    </div>
-    <footer class="bg-white pb-5 footer">
+<div class="section">
+  <footer class="bg-white pb-5 footer">
   <div class="container footer-container">
     <div class="row px-2 py-4">
 
@@ -1286,13 +1392,28 @@ $(document).ready(function() {
   </div>
 </footer>
 
+</div>
+
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $('#fullpage').fullpage({
+    paddingTop: '4em',
+    verticalCentered: true,
+    scrollingSpeed: 100, //520
+    fitToSection: false
+  });
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.extensions.min.js" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js" charset="utf-8"></script>
+
+    </div>
     <script src="./static/js/swiper.init.js" charset="utf-8"></script>
     <script src="./static/js/aos.init.js" charset="utf-8"></script>
     <script src="./static/js/mobile.menu.js" charset="utf-8"></script>
     <script type="text/javascript">
-        $(function() {
-          $('.lazy').lazy();
-      });
       var options = {
         strings: [
           "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod."
