@@ -1,4 +1,4 @@
-<!-- dist compiled 2019/08/16 22:33:18 (1565987598) -->
+<!-- dist compiled 2019/08/17 16:26:16 (1566051976) -->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -17,19 +17,37 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+
     <!-- Swiper -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
     <!-- Swiper End -->
+
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
     <!-- AOS End -->
+
     <!-- JQuery Lazyload -->
     <script src="./static/js/jquery.lazy.min.js" charset="utf-8"></script>
     <!-- JQuery Lazyload End -->
+
   </head>
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5d56d65477aa790be32f3de4/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
   <body class="header header-white">
     <div class="alert alert-primary bg-gradient-danger text-white fixed-bottom alert-flush alert-dismissible border-0 shadow-lg fade show mb-0" role="alert">
   <div class="container">
@@ -176,23 +194,23 @@
   </button>
   <div class="menu">
     <ul class="list-group text-nowrap">
-      <li class="list-group-item border-0">
+      <li class="list-group-item border-0 pr-0">
         <a id="mobile_menu__szkolenia__link" style="cursor:pointer;">
           Szkolenia
         </a>
       </li>
-      <li class="list-group-item border-0">
+      <li class="list-group-item border-0 pr-0">
         <a href="#">
           Szkolenia zamknięte
         </a>
       </li>
-      <li class="list-group-item border-0">
+      <li class="list-group-item border-0 pr-0">
         <a href="#">
           Dofinansowania & rabaty
         </a>
       </li>
-      <li class="list-group-item border-0">
-        <a href="#">
+      <li class="list-group-item border-0 pr-0">
+        <a href="./about/">
           O nas
         </a>
       </li>
@@ -261,8 +279,10 @@
 
 </div>
 
-    <div class="main-content">
+    <div class="main-content noise-animation">
       
+
+<div class="main-about">
 
 <section class="history">
 
@@ -356,11 +376,17 @@
 
 </section>
 
+</div>
+
     </div>
     <script src="./static/js/swiper.init.js" charset="utf-8"></script>
     <script src="./static/js/aos.init.js" charset="utf-8"></script>
     <script src="./static/js/mobile.menu.js" charset="utf-8"></script>
     <script type="text/javascript">
+
+      $(function() {
+          $('.lazy').Lazy();
+      });
       var options = {
         strings: [
           "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod."

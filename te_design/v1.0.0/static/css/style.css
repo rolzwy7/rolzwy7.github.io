@@ -1193,7 +1193,7 @@ header.header.is-fixed-top {
 .dropdown-style-1.show::after {
   width: 24px;
   height: 12px;
-  background: url(/static/images/arrow-white-top.png) no-repeat;
+  background: url(./static/images/arrow-white-top.png) no-repeat;
   position: absolute;
   bottom: -0.4em;
   left: calc(50% - 12px);
@@ -1332,27 +1332,27 @@ header.header.is-fixed-top {
 .history-left > .icon-big {
   float: left;
   position: relative;
-  right: -4em;
+  right: -25%;
   top: 0.25em;
 }
 
 @media (max-width: 992px) {
   .history-left > .icon-big {
-    right: -1em !important;
+    right: -10% !important;
     top: 0.25em !important;
   }
 }
 
 @media (max-width: 768px) {
   .history-left > .icon-big {
-    right: -7em !important;
+    right: -150% !important;
     top: 0.25em !important;
   }
 }
 
 @media (max-width: 576px) {
   .history-left > .icon-big {
-    right: -6em !important;
+    right: -150% !important;
     top: 0.25em !important;
   }
 }
@@ -1371,27 +1371,27 @@ header.header.is-fixed-top {
 .history-right > .icon-big {
   float: right;
   position: relative;
-  right: 4em;
+  right: 25%;
   top: 0.80em;
 }
 
 @media (max-width: 992px) {
   .history-right > .icon-big {
-    right: 1em !important;
+    right: 10% !important;
     top: 0.80em !important;
   }
 }
 
 @media (max-width: 768px) {
   .history-right > .icon-big {
-    right: 7em !important;
+    right: 150% !important;
     top: 0.80em !important;
   }
 }
 
 @media (max-width: 576px) {
   .history-right > .icon-big {
-    right: 6em !important;
+    right: 150% !important;
     top: 0.80em !important;
   }
 }
@@ -1479,6 +1479,122 @@ header.header.is-fixed-top {
 
 .member-container .member-details-email > a > i {
   margin-right: 0.5em;
+}
+
+@-webkit-keyframes noiseAnimation {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  10% {
+    -webkit-transform: translate(-5%, -5%);
+    transform: translate(-5%, -5%);
+  }
+  20% {
+    -webkit-transform: translate(-10%, 5%);
+    transform: translate(-10%, 5%);
+  }
+  30% {
+    -webkit-transform: translate(5%, -10%);
+    transform: translate(5%, -10%);
+  }
+  40% {
+    -webkit-transform: translate(-5%, 15%);
+    transform: translate(-5%, 15%);
+  }
+  50% {
+    -webkit-transform: translate(-10%, 5%);
+    transform: translate(-10%, 5%);
+  }
+  60% {
+    -webkit-transform: translate(15%);
+    transform: translate(15%);
+  }
+  70% {
+    -webkit-transform: translateY(10%);
+    transform: translateY(10%);
+  }
+  80% {
+    -webkit-transform: translate(-15%);
+    transform: translate(-15%);
+  }
+  90% {
+    -webkit-transform: translate(10%, 5%);
+    transform: translate(10%, 5%);
+  }
+  to {
+    -webkit-transform: translate(5%);
+    transform: translate(5%);
+  }
+}
+
+@keyframes noiseAnimation {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  10% {
+    -webkit-transform: translate(-5%, -5%);
+    transform: translate(-5%, -5%);
+  }
+  20% {
+    -webkit-transform: translate(-10%, 5%);
+    transform: translate(-10%, 5%);
+  }
+  30% {
+    -webkit-transform: translate(5%, -10%);
+    transform: translate(5%, -10%);
+  }
+  40% {
+    -webkit-transform: translate(-5%, 15%);
+    transform: translate(-5%, 15%);
+  }
+  50% {
+    -webkit-transform: translate(-10%, 5%);
+    transform: translate(-10%, 5%);
+  }
+  60% {
+    -webkit-transform: translate(15%);
+    transform: translate(15%);
+  }
+  70% {
+    -webkit-transform: translateY(10%);
+    transform: translateY(10%);
+  }
+  80% {
+    -webkit-transform: translate(-15%);
+    transform: translate(-15%);
+  }
+  90% {
+    -webkit-transform: translate(10%, 5%);
+    transform: translate(10%, 5%);
+  }
+  to {
+    -webkit-transform: translate(5%);
+    transform: translate(5%);
+  }
+}
+
+.noise-animation {
+  position: relative;
+  overflow: hidden;
+}
+
+.noise-animation::after {
+  content: "";
+  position: absolute;
+  z-index: 800;
+  height: 180%;
+  left: -40%;
+  top: -40%;
+  width: 180%;
+  pointer-events: none;
+  will-change: transform;
+  transition: opacity .6s ease-out;
+  -webkit-animation: noiseAnimation 1s steps(4) infinite;
+  animation: noiseAnimation 1s steps(4) infinite;
+  background-image: url(./static/images/noise-image.png);
+  opacity: 0.85;
 }
 
 .tl-szkolenia-krok__header {
@@ -1839,6 +1955,29 @@ header.header.is-fixed-top {
 
 .tl-gradient--7 {
   background: linear-gradient(180deg, #e6f7ff -50%, white 50%);
+}
+
+.homepage-welcome-text {
+  font-size: 40px;
+  font-weight: 300;
+}
+
+@media (max-width: 992px) {
+  .homepage-welcome-text {
+    font-size: 38px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .homepage-welcome-text {
+    font-size: 35px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .homepage-welcome-text {
+    font-size: 30px !important;
+  }
 }
 
 @media (max-width: 576px) {
