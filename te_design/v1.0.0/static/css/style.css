@@ -1593,7 +1593,7 @@ header.header.is-fixed-top {
   transition: opacity .6s ease-out;
   -webkit-animation: noiseAnimation 1s steps(4) infinite;
   animation: noiseAnimation 1s steps(4) infinite;
-  background-image: url(./static/images/noise-image.png);
+  background-image: url(../images/noise-image.png);
   opacity: 0.85;
 }
 
