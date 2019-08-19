@@ -27,6 +27,11 @@
 */
 /** Grid
 */
+body {
+  margin: 0;
+  overflow-x: hidden !important;
+}
+
 textarea:focus, input:focus {
   outline: none;
 }
@@ -696,6 +701,34 @@ textarea:focus, input:focus {
   font-weight: 400;
 }
 
+.disintegration-container-fix > canvas {
+  position: relative;
+  top: 0;
+  left: -66%;
+  z-index: -1;
+  background-color: transparent;
+}
+
+@media (max-width: 992px) {
+  .disintegration-container-fix > canvas {
+    top: 0 !important;
+    left: -75% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .disintegration-container-fix > canvas {
+    top: 0 !important;
+    left: -21% !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .disintegration-container-fix > canvas {
+    display: none;
+  }
+}
+
 .bg-gradient-primary {
   background: linear-gradient(315deg, #006EFF 0, #008CFF 100%) !important;
 }
@@ -760,6 +793,24 @@ textarea:focus, input:focus {
 
 .navbar {
   height: 88px;
+}
+
+@media (max-width: 992px) {
+  .navbar {
+    height: 88px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 55px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    height: 55px !important;
+  }
 }
 
 .hamburger-inner {
@@ -1278,7 +1329,7 @@ header.header.is-fixed-top {
 }
 
 .history-line {
-  height: 1150px;
+  height: 1100px;
   width: 2px;
   position: absolute;
   right: 49.9%;
@@ -1290,19 +1341,19 @@ header.header.is-fixed-top {
 
 @media (max-width: 992px) {
   .history-line {
-    height: 1240px !important;
+    height: 1140px !important;
   }
 }
 
 @media (max-width: 768px) {
   .history-line {
-    height: 1230px !important;
+    height: 1130px !important;
   }
 }
 
 @media (max-width: 576px) {
   .history-line {
-    height: 1230px !important;
+    height: 1130px !important;
   }
 }
 
@@ -1593,7 +1644,7 @@ header.header.is-fixed-top {
   transition: opacity .6s ease-out;
   -webkit-animation: noiseAnimation 1s steps(4) infinite;
   animation: noiseAnimation 1s steps(4) infinite;
-  background-image: url(../images/noise-image.png);
+  background-image: url(./static/images/noise-image.png);
   opacity: 0.85;
 }
 
