@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/prism.css" />
+    <link rel="stylesheet" href="/assets/css/photoswipe.css" />
+    <link rel="stylesheet" href="/assets/css/default-skin.css" />
+    <script src="/assets/js/prism.js"></script>
+    
+    <title>BartN</title>
+    
+    <style>
+      .highlight > div,
+      .highlight > pre {
+        border-radius: 0rem;
+      }
+    </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-MQCSS3E6QE"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-MQCSS3E6QE");
+    </script>
+  </head>
+
+  <body class="colorscheme-auto line-numbers">
+    <main class="wrapper">
+      <nav class="navigation">
+        <section class="container">
+          <a class="navigation-title" href="/"> BartN </a>
+          <input type="checkbox" id="menu-toggle" />
+          <label class="menu-button float-right" for="menu-toggle">
+            <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+          </label>
+          <ul class="navigation-list">
+            <li class="navigation-item">
+              <a class="navigation-link" href="/portfolio/">Portfolio</a>
+            </li>
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Posts</a>
+            </li>
+            <!-- <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li> -->
+          </ul>
+        </section>
+      </nav>
+      <div class="content">
+        <section class="container centered"><section class="container list">
+  <h1 class="title">
+    <a class="title-link" href="/portfolio/"> Portfolio </a>
+  </h1>
+
+  <ul>
+    <li>
+      <span class="date">01/09/2021</span>
+      <a class="title" href="/portfolio/instytutekonomiczny.pl/">
+        Django webapp for organizing seminars and selling offline courses to
+        Accounting & HR specialists
+      </a>
+    </li>
+    <li>
+      <span class="date">18/04/2019</span>
+      <a class="title" href="/portfolio/RegonAPI/">
+        RegonAPI - API Client for Polish REGON database
+      </a>
+    </li>
+    <li>
+      <span class="date">06/07/2020</span>
+      <a class="title" href="/portfolio/totalexpert.opole.pl/">
+        Web application for business dealing with organizing seminars for
+        Accounting & HR specialists
+      </a>
+    </li>
+    <li>
+      <span class="date">08/01/2021</span>
+      <a class="title" href="/portfolio/inz/">
+        A system for handling medical appointments working in epidemic hazard
+        circumstances (Diploma thesis)
+      </a>
+    </li>
+  </ul>
+
+  <h3>
+    <a class="title-link" href="/portfolio/"> Smaller projects </a>
+  </h3>
+
+  <ul>
+    <!-- <li>
+      <span class="date">XX/XX/XXXX</span>
+      <a class="title" href="#"> PldbDatabase </a>
+    </li> -->
+    <!-- <li>
+      <span class="date">XX/XX/XXXX</span>
+      <a class="title" href="#"> MFileShare </a>
+    </li> -->
+    <li>
+      <span class="date">08/10/2020</span>
+      <a class="title" href="/portfolio/android-project/">
+        Android Mobile App - assignment for a Android programming course
+      </a>
+    </li>
+    <li>
+      <span class="date">27/06/2020</span>
+      <a class="title" href="/portfolio/smiw/">
+        Flood detection and notification device based on ESP8266EX
+        microcontroller - <i>embedded systems</i>
+      </a>
+    </li>
+    <li>
+      <span class="date">11/05/2020</span>
+      <a class="title" href="/portfolio/telemedycynaprojekt/">
+        Detecting spherical objects from tomographic images - Telemedicine
+      </a>
+    </li>
+    <li>
+      <span class="date">20/07/2019</span>
+      <a class="title" href="/portfolio/projektkregielnia/">
+        Web application for bowling alley booking
+      </a>
+    </li>
+    <li>
+      <span class="date">01/06/2019</span>
+      <a class="title" href="/portfolio/projektygminne/">
+        Web application allowing municipality residents to vote for local
+        projects
+      </a>
+    </li>
+    <li>
+      <span class="date">01/12/2018</span>
+      <a class="title" href="/portfolio/cnn/">
+        Convolutional Neural Network (CNN) - assignment for a computer
+        programming course
+      </a>
+    </li>
+  </ul>
+</section>
+</section>
+      </div>
+      <footer class="footer">
+        <section class="container">
+          &copy; 2021 Powered by ⚡
+          <a href="https://jekyllrb.com/">Jekyll</a>.
+        </section>
+      </footer>
+    </main>
+    <script src="/assets/js/photoswipe.min.js"></script>
+    <script src="/assets/js/photoswipe-ui-default.min.js"></script>
+    <script>
+      (function () {
+        if (document.getElementsByClassName("startGallery")) {
+          let seqLen = document.getElementsByClassName("startGallery").length;
+          for (var i = 0; i < seqLen; ++i) {
+            elem = document.getElementsByClassName("startGallery")[i];
+            elem.onclick = function (e) {
+              console.log("Gallery opened");
+              var pswpElement = document.querySelectorAll(".pswp")[0];
+
+              var options = {
+                index: i,
+              };
+
+              // Initializes and opens PhotoSwipe
+              var gallery = new PhotoSwipe(
+                pswpElement,
+                PhotoSwipeUI_Default,
+                GalleryItems,
+                options
+              );
+              gallery.init();
+              // console.log("Goto", options.index);
+              // gallery.goTo(options.index);
+            };
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>
